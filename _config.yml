@@ -4,8 +4,8 @@ description: "Grupo de investigación en teoría crítica de la sociedad: Escuel
 lang: es
 timezone: America/Mexico_City
 
-# Dirección del sitio. Si se conecta criticainmanente.org, cambiar url a https://criticainmanente.org y dejar baseurl vacío.
-url: "https://critica-inmanente.github.io"
+# Dirección del sitio (dominio propio criticainmanente.org).
+url: "https://criticainmanente.org"
 baseurl: ""
 
 markdown: kramdown
