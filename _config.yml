@@ -8,6 +8,9 @@ timezone: America/Mexico_City
 url: "https://criticainmanente.org"
 baseurl: ""
 
+# Estadísticas de visitas (GoatCounter). Código de la cuenta: https://CODIGO.goatcounter.com
+goatcounter: criticainmanente
+
 markdown: kramdown
 kramdown:
   input: GFM

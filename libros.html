@@ -9,9 +9,9 @@ permalink: /libros/
   <article class="book">
     {% if l.portada and l.portada != "" %}<img class="book-cover" src="{{ l.portada | relative_url }}" alt="Portada de {{ l.title }}" loading="lazy">{% else %}<div class="book-cover book-cover-empty"></div>{% endif %}
     <div class="book-body">
-      <span class="ref-year">{{ l.anio }}</span>
+      {% if l.anio %}<span class="ref-year">{{ l.anio }}</span>{% endif %}
       <h2>{{ l.title }}</h2>
-      {% if l.autores != "" %}<p class="book-authors">{{ l.autores }}</p>{% endif %}
+      {% if l.autores and l.autores != "" %}<p class="book-authors">{{ l.autores }}</p>{% endif %}
       {% if l.subtitulo and l.subtitulo != "" %}<p class="book-sub">{{ l.subtitulo }}</p>{% endif %}
       {% if l.datos and l.datos != "" %}<p class="book-data">{{ l.datos }}</p>{% endif %}
       {% assign c = l.content | strip %}{% if c != "" %}<div class="prose">{{ l.content | markdownify }}</div>{% endif %}

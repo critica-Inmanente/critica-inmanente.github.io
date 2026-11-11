@@ -2,7 +2,7 @@
 <article class="ref">
   <span class="ref-year">{{ r.anio }}</span>
   <div class="ref-body">
-    <p class="ref-text">{{ r.autores }}, «{{ r.title }}», <em>{{ r.publicacion }}</em>{% if r.detalles and r.detalles != "" %}, {{ r.detalles }}{% endif %}.</p>
+    <p class="ref-text">{% if r.autores and r.autores != "" %}{{ r.autores }}, {% endif %}«{{ r.title }}»{% if r.publicacion and r.publicacion != "" %}, <em>{{ r.publicacion }}</em>{% endif %}{% if r.detalles and r.detalles != "" %}, {{ r.detalles }}{% endif %}.</p>
     {% if r.tipo and r.tipo != "" %}<span class="ref-type">{{ r.tipo }}</span>{% endif %}
   </div>
   <div class="ref-links">

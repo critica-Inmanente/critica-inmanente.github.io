@@ -27,3 +27,7 @@ Imágenes y PDF se suben desde los propios campos del formulario (quedan en `ass
 ## Dominio propio
 
 Para usar `criticainmanente.org`: agregar un archivo `CNAME` con el dominio, cambiar `url` en `_config.yml` y configurar el DNS del registrador según la guía de GitHub Pages.
+
+## Estadísticas de visitas
+
+El sitio cuenta visitas con [GoatCounter](https://www.goatcounter.com), un servicio gratuito, sin cookies y respetuoso de la privacidad, que no requiere aviso de cookies. El panel está en https://criticainmanente.goatcounter.com. El código de la cuenta se configura en `_config.yml` (`goatcounter:`).
