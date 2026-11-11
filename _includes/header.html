@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Crítica Inmanente, inicio">
+      <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Crítica Inmanente" width="190" height="64">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+    <label for="nav-toggle" class="nav-button" aria-hidden="true"><span></span><span></span><span></span></label>
+    <nav class="site-nav" aria-label="Menú principal">
+      <ul>
+        {% for item in site.data.menu.items %}
+        {% assign activo = false %}{% if page.url contains item.url %}{% assign activo = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}"{% if activo %} aria-current="page"{% endif %}>{{ item.titulo }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

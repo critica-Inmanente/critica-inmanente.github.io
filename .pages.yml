@@ -1,0 +1,312 @@
+# Configuración del editor Pages CMS (https://app.pagescms.org)
+# Cada bloque de "content" es una sección del panel de edición.
+
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: entradas
+    label: Entradas
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title, autor, date ]
+      sort: [ date ]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: date
+        label: Fecha
+        type: date
+        required: true
+      - name: autor
+        label: Autor o autora
+        type: string
+      - name: resumen
+        label: Resumen (aparece en los listados)
+        type: text
+      - name: imagen
+        label: Imagen principal (opcional)
+        type: image
+      - name: body
+        label: Texto
+        type: rich-text
+
+  - name: investigaciones
+    label: Investigaciones
+    type: collection
+    path: _investigaciones
+    view:
+      fields: [ title, autores, anio ]
+      primary: title
+      default:
+        sort: anio
+        order: desc
+    fields:
+      - name: title
+        label: Título del trabajo (sin comillas)
+        type: string
+        required: true
+      - name: autores
+        label: Autores (como deben aparecer)
+        type: string
+        required: true
+      - name: anio
+        label: Año
+        type: number
+        required: true
+      - name: tipo
+        label: Tipo
+        type: select
+        options:
+          values: [ Artículo, Capítulo de libro, Entrevista, Reseña, Traducción, Ponencia ]
+      - name: publicacion
+        label: Revista, libro o medio
+        type: string
+      - name: detalles
+        label: Volumen, número y páginas (ej. «año 7, núm. 14, pp. 388-407»)
+        type: string
+      - name: enlace
+        label: Enlace (DOI o página de la revista)
+        type: string
+      - name: pdf
+        label: PDF propio (opcional)
+        type: file
+
+  - name: libros
+    label: Libros
+    type: collection
+    path: _libros
+    view:
+      fields: [ title, anio ]
+      primary: title
+      default:
+        sort: anio
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: anio
+        label: Año
+        type: number
+        required: true
+      - name: autores
+        label: Autor(es) o coordinadores
+        type: string
+      - name: subtitulo
+        label: Subtítulo o descripción breve
+        type: text
+      - name: datos
+        label: Datos de edición (editorial, edición, ISBN)
+        type: text
+      - name: portada
+        label: Portada
+        type: image
+      - name: pdf
+        label: PDF para descargar
+        type: file
+      - name: enlace
+        label: Enlace a la editorial (opcional)
+        type: string
+      - name: body
+        label: Presentación (opcional)
+        type: rich-text
+
+  - name: integrantes
+    label: Integrantes
+    type: collection
+    path: _integrantes
+    view:
+      fields: [ title, orden ]
+      primary: title
+      default:
+        sort: orden
+        order: asc
+    fields:
+      - name: title
+        label: Nombre con grado (ej. «Dr. Nombre Apellido»)
+        type: string
+        required: true
+      - name: orden
+        label: Orden en la página (1, 2, 3…)
+        type: number
+        required: true
+      - name: grado
+        label: Grado o línea breve bajo el nombre
+        type: string
+      - name: foto
+        label: Fotografía (vertical; se muestra en blanco y negro)
+        type: image
+      - name: body
+        label: Biografía
+        type: rich-text
+
+  - name: eventos
+    label: Eventos
+    type: collection
+    path: _eventos
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title, fecha ]
+      primary: title
+      default:
+        sort: fecha
+        order: desc
+    fields:
+      - name: title
+        label: Nombre del evento
+        type: string
+        required: true
+      - name: fecha
+        label: Fecha
+        type: date
+        required: true
+      - name: hora
+        label: Hora (ej. «17:00 h, hora de México»)
+        type: string
+      - name: modalidad
+        label: Modalidad
+        type: select
+        options:
+          values: [ Presencial, En línea, Híbrida ]
+      - name: lugar
+        label: Lugar
+        type: string
+      - name: enlace
+        label: Enlace de registro o transmisión
+        type: string
+      - name: imagen
+        label: Cartel o imagen (opcional)
+        type: image
+      - name: body
+        label: Descripción
+        type: rich-text
+
+  - name: difusion
+    label: Difusión
+    type: collection
+    path: _difusion
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title, tipo, fecha ]
+      primary: title
+      default:
+        sort: fecha
+        order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: tipo
+        label: Tipo
+        type: select
+        options:
+          values: [ Podcast, Video, Ensayo, Entrevista ]
+      - name: fecha
+        label: Fecha
+        type: date
+        required: true
+      - name: enlace
+        label: Enlace de YouTube o Spotify (se inserta solo) u otro sitio
+        type: string
+      - name: body
+        label: Descripción
+        type: rich-text
+
+  - name: inicio
+    label: Página de inicio
+    type: file
+    path: _data/inicio.yml
+    format: yaml
+    fields:
+      - name: etiqueta
+        label: Etiqueta superior
+        type: string
+      - name: cita
+        label: Cita principal (sin comillas)
+        type: text
+      - name: cita_autor
+        label: Autor de la cita
+        type: string
+      - name: cita_obra
+        label: Obra de la cita
+        type: string
+      - name: presentacion
+        label: Presentación breve (sección «Acerca de» del inicio)
+        type: text
+      - name: eventos_texto
+        label: Texto de la franja de eventos cuando no hay eventos próximos
+        type: text
+
+  - name: acerca
+    label: Acerca de
+    type: file
+    path: acerca-de.md
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: page
+      - name: permalink
+        type: string
+        hidden: true
+        default: /acerca-de/
+      - name: title
+        label: Nombre en el menú y en la pestaña
+        type: string
+      - name: encabezado
+        label: Título visible
+        type: string
+      - name: body
+        label: Texto
+        type: rich-text
+
+  - name: contacto
+    label: Contacto
+    type: file
+    path: _data/contacto.yml
+    format: yaml
+    fields:
+      - name: texto
+        label: Texto de la página
+        type: text
+      - name: correo
+        label: Correo del grupo
+        type: string
+      - name: instagram
+        label: Instagram (enlace completo)
+        type: string
+      - name: youtube
+        label: YouTube (enlace completo)
+        type: string
+      - name: facebook
+        label: Facebook (enlace completo)
+        type: string
+
+  - name: menu
+    label: Menú
+    type: file
+    path: _data/menu.yml
+    format: yaml
+    fields:
+      - name: items
+        label: Elementos del menú (arrastra para reordenar)
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Texto
+            type: string
+          - name: url
+            label: Dirección (ej. /libros/)
+            type: string

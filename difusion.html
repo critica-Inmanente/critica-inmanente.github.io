@@ -1,0 +1,30 @@
+---
+layout: page
+title: Difusión
+permalink: /difusion/
+intro: Compartimos el material audiovisual, sonoro y ensayístico generado por el grupo de investigación. Un espacio de divulgación y análisis crítico en torno a la teoría, la cultura y la praxis social.
+---
+{% assign items = site.difusion | sort: "fecha" | reverse %}
+{% if items.size > 0 %}
+<div class="media-grid">
+  {% for d in items %}
+  <article class="media">
+    {% assign emb = "" %}
+    {% if d.enlace contains "youtube.com/watch" %}{% assign vid = d.enlace | split: "v=" | last | split: "&" | first %}{% capture emb %}https://www.youtube-nocookie.com/embed/{{ vid }}{% endcapture %}
+    {% elsif d.enlace contains "youtu.be/" %}{% assign vid = d.enlace | split: "youtu.be/" | last | split: "?" | first %}{% capture emb %}https://www.youtube-nocookie.com/embed/{{ vid }}{% endcapture %}
+    {% elsif d.enlace contains "open.spotify.com/" %}{% assign emb = d.enlace | replace: "open.spotify.com/", "open.spotify.com/embed/" | split: "?" | first %}{% endif %}
+    {% if emb != "" %}
+    <div class="media-embed{% if emb contains 'spotify' %} media-audio{% endif %}"><iframe src="{{ emb }}" title="{{ d.title }}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    {% endif %}
+    <div class="media-body">
+      <p class="card-meta">{{ d.tipo }}{% if d.fecha %} · {{ d.fecha | date: '%d.%m.%Y' }}{% endif %}</p>
+      <h2>{{ d.title }}</h2>
+      <div class="prose">{{ d.content | markdownify }}</div>
+      {% if d.enlace and d.enlace != "" and emb == "" %}<a class="link-arrow" href="{{ d.enlace }}" target="_blank" rel="noopener">Ver o escuchar</a>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty">Muy pronto compartiremos aquí podcasts, videos y otros materiales.</p>
+{% endif %}

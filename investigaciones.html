@@ -1,0 +1,10 @@
+---
+layout: page
+title: Investigaciones
+permalink: /investigaciones/
+intro: Artículos, entrevistas y capítulos de los integrantes del grupo.
+---
+{% assign refs = site.investigaciones | sort: "anio" | reverse %}
+<div class="refs">
+  {% for r in refs %}{% include referencia.html item=r %}{% endfor %}
+</div>

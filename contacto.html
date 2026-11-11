@@ -1,0 +1,16 @@
+---
+layout: page
+title: Contáctanos
+permalink: /contacto/
+---
+{% assign c = site.data.contacto %}
+<div class="contact">
+  <p class="lead">{{ c.texto }}</p>
+  <ul class="contact-list">
+    {% if c.correo != "" %}<li><span>Correo</span><a href="mailto:{{ c.correo }}">{{ c.correo }}</a></li>{% endif %}
+    {% if c.instagram != "" %}<li><span>Instagram</span><a href="{{ c.instagram }}" target="_blank" rel="noopener">{{ c.instagram | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+    {% if c.youtube != "" %}<li><span>YouTube</span><a href="{{ c.youtube }}" target="_blank" rel="noopener">{{ c.youtube | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+    {% if c.facebook != "" %}<li><span>Facebook</span><a href="{{ c.facebook }}" target="_blank" rel="noopener">{{ c.facebook | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+  </ul>
+  {% if c.correo == "" and c.instagram == "" and c.youtube == "" and c.facebook == "" %}<p class="empty">Muy pronto publicaremos aquí nuestro correo de contacto.</p>{% endif %}
+</div>

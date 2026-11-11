@@ -1,0 +1,19 @@
+---
+layout: page
+title: Entradas
+permalink: /entradas/
+intro: Textos breves, notas y ensayos de los integrantes de Crítica Inmanente.
+---
+{% if site.posts.size > 0 %}
+<div class="post-list">
+  {% for p in site.posts %}
+  <a class="post-item" href="{{ p.url | relative_url }}">
+    <p class="card-meta">{{ p.date | date: '%d.%m.%Y' }}{% if p.autor and p.autor != "" %} · {{ p.autor }}{% endif %}</p>
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.resumen | default: p.excerpt | strip_html | truncatewords: 40 }}</p>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p class="empty">Pronto publicaremos aquí nuestras primeras entradas.</p>
+{% endif %}

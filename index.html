@@ -1,0 +1,74 @@
+---
+layout: default
+title: Inicio
+---
+{% assign ini = site.data.inicio %}
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ ini.etiqueta }}</p>
+    <blockquote class="hero-quote">
+      <p>“{{ ini.cita }}”</p>
+      <footer>{{ ini.cita_autor }}{% if ini.cita_obra != "" %} · <cite>{{ ini.cita_obra }}</cite>{% endif %}</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <h2 class="section-title">Acerca de</h2>
+    <div class="prose">
+      <p class="lead">{{ ini.presentacion }}</p>
+      <p><a class="link-arrow" href="{{ '/acerca-de/' | relative_url }}">Conoce el proyecto</a></p>
+    </div>
+  </div>
+</section>
+
+{% assign hoy = site.time | date: '%Y-%m-%d' %}
+{% assign proximos = site.eventos | where_exp: "e", "e.fecha" | sort: "fecha" %}
+<section class="band">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Próximos eventos</p>
+      <h2 class="section-title">Foros, coloquios y conversatorios</h2>
+    </div>
+    <div>
+      {% assign hay = 0 %}
+      {% for e in proximos %}{% assign f = e.fecha | date: '%Y-%m-%d' %}{% if f >= hoy and hay < 3 %}{% assign hay = hay | plus: 1 %}{% include evento.html item=e %}{% endif %}{% endfor %}
+      {% if hay == 0 %}<p class="band-text">{{ ini.eventos_texto }}</p>{% endif %}
+      <a class="btn btn-light" href="{{ '/eventos/' | relative_url }}">Ver eventos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Publicaciones recientes</h2>
+      <a class="link-arrow" href="{{ '/investigaciones/' | relative_url }}">Todas las investigaciones</a>
+    </div>
+    {% assign refs = site.investigaciones | sort: "anio" | reverse %}
+    <div class="refs">
+      {% for r in refs limit: 4 %}{% include referencia.html item=r %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Últimas entradas</h2>
+      <a class="link-arrow" href="{{ '/entradas/' | relative_url }}">Todas las entradas</a>
+    </div>
+    <div class="cards">
+      {% for p in site.posts limit: 3 %}
+      <a class="card" href="{{ p.url | relative_url }}">
+        <p class="card-meta">{{ p.date | date: '%d.%m.%Y' }}{% if p.autor and p.autor != "" %} · {{ p.autor }}{% endif %}</p>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.resumen | default: p.excerpt | strip_html | truncatewords: 30 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

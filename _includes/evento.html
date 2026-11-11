@@ -1,0 +1,15 @@
+{% assign e = include.item %}
+<article class="evento">
+  <div class="evento-fecha">
+    <span class="dia">{{ e.fecha | date: '%d' }}</span>
+    {% assign m = e.fecha | date: '%-m' | minus: 1 %}
+    <span class="mes">{{ site.data.meses[m] }} {{ e.fecha | date: '%Y' }}</span>
+  </div>
+  <div class="evento-body">
+    <h3>{{ e.title }}</h3>
+    <p class="evento-meta">{% if e.hora and e.hora != "" %}{{ e.hora }}{% endif %}{% if e.modalidad and e.modalidad != "" %} · {{ e.modalidad }}{% endif %}{% if e.lugar and e.lugar != "" %} · {{ e.lugar }}{% endif %}</p>
+    {% if include.completo %}<div class="evento-texto">{{ e.content | markdownify }}</div>{% endif %}
+    {% if e.enlace and e.enlace != "" %}<a class="btn btn-small" href="{{ e.enlace }}" target="_blank" rel="noopener">Más información</a>{% endif %}
+  </div>
+  {% if e.imagen and e.imagen != "" and include.completo %}<img class="evento-img" src="{{ e.imagen | relative_url }}" alt="" loading="lazy">{% endif %}
+</article>

@@ -1,0 +1,25 @@
+---
+layout: page
+title: Libros
+permalink: /libros/
+---
+{% assign libros = site.libros | sort: "anio" | reverse %}
+<div class="books">
+  {% for l in libros %}
+  <article class="book">
+    {% if l.portada and l.portada != "" %}<img class="book-cover" src="{{ l.portada | relative_url }}" alt="Portada de {{ l.title }}" loading="lazy">{% else %}<div class="book-cover book-cover-empty"></div>{% endif %}
+    <div class="book-body">
+      <span class="ref-year">{{ l.anio }}</span>
+      <h2>{{ l.title }}</h2>
+      {% if l.autores != "" %}<p class="book-authors">{{ l.autores }}</p>{% endif %}
+      {% if l.subtitulo and l.subtitulo != "" %}<p class="book-sub">{{ l.subtitulo }}</p>{% endif %}
+      {% if l.datos and l.datos != "" %}<p class="book-data">{{ l.datos }}</p>{% endif %}
+      {% assign c = l.content | strip %}{% if c != "" %}<div class="prose">{{ l.content | markdownify }}</div>{% endif %}
+      <div class="book-actions">
+        {% if l.pdf and l.pdf != "" %}<a class="btn" href="{{ l.pdf | relative_url }}" download>Descargar PDF</a>{% endif %}
+        {% if l.enlace and l.enlace != "" %}<a class="btn btn-ghost" href="{{ l.enlace }}" target="_blank" rel="noopener">Ver en la editorial</a>{% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

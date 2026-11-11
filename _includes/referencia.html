@@ -1,0 +1,12 @@
+{% assign r = include.item %}
+<article class="ref">
+  <span class="ref-year">{{ r.anio }}</span>
+  <div class="ref-body">
+    <p class="ref-text">{{ r.autores }}, «{{ r.title }}», <em>{{ r.publicacion }}</em>{% if r.detalles and r.detalles != "" %}, {{ r.detalles }}{% endif %}.</p>
+    {% if r.tipo and r.tipo != "" %}<span class="ref-type">{{ r.tipo }}</span>{% endif %}
+  </div>
+  <div class="ref-links">
+    {% if r.enlace and r.enlace != "" %}<a href="{{ r.enlace }}" target="_blank" rel="noopener">Leer</a>{% endif %}
+    {% if r.pdf and r.pdf != "" %}<a href="{{ r.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+  </div>
+</article>

@@ -1,0 +1,21 @@
+---
+layout: page
+title: Integrantes
+permalink: /integrantes/
+intro: El núcleo de Crítica Inmanente está conformado por un colectivo de académicos e investigadores comprometidos con la actualización de la teoría crítica, el análisis de la totalidad social y los procesos de emancipación.
+---
+{% assign gente = site.integrantes | sort: "orden" %}
+<div class="people">
+  {% for i in gente %}
+  <article class="person">
+    <div class="person-card">
+      {% if i.foto and i.foto != "" %}<img class="person-photo" src="{{ i.foto | relative_url }}" alt="{{ i.title }}" loading="lazy">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | relative_url }}" alt=""></div>{% endif %}
+    </div>
+    <div class="person-body">
+      <h2>{{ i.title }}</h2>
+      {% if i.grado and i.grado != "" %}<p class="person-degree">{{ i.grado }}</p>{% endif %}
+      <div class="prose">{{ i.content | markdownify }}</div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

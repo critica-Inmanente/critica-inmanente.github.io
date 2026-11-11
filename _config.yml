@@ -1,0 +1,43 @@
+# Configuración general del sitio Crítica Inmanente
+title: Crítica Inmanente
+description: "Grupo de investigación en teoría crítica de la sociedad: Escuela de Frankfurt, nuevas lecturas de Marx y crítica del capitalismo contemporáneo."
+lang: es
+timezone: America/Mexico_City
+
+# Dirección del sitio. Si se conecta criticainmanente.org, cambiar url a https://criticainmanente.org y dejar baseurl vacío.
+url: "https://critica-inmanente.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  libros:
+    output: false
+  investigaciones:
+    output: false
+  integrantes:
+    output: false
+  eventos:
+    output: false
+  difusion:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: entrada
+      permalink: /entradas/:year/:title/
+
+exclude:
+  - README.md
+  - .pages.yml
+  - Gemfile
+  - Gemfile.lock

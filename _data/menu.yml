@@ -1,0 +1,18 @@
+# Menú principal (el orden de esta lista es el orden del menú)
+items:
+  - titulo: Acerca de
+    url: /acerca-de/
+  - titulo: Investigaciones
+    url: /investigaciones/
+  - titulo: Entradas
+    url: /entradas/
+  - titulo: Libros
+    url: /libros/
+  - titulo: Integrantes
+    url: /integrantes/
+  - titulo: Difusión
+    url: /difusion/
+  - titulo: Eventos
+    url: /eventos/
+  - titulo: Contáctanos
+    url: /contacto/

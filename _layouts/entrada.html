@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head wrap narrow">
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d' }} de {% assign m = page.date | date: '%-m' | minus: 1 %}{{ site.data.meses[m] }} de {{ page.date | date: '%Y' }}</time>{% if page.autor and page.autor != "" %} · {{ page.autor }}{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.resumen and page.resumen != "" %}<p class="lead">{{ page.resumen }}</p>{% endif %}
+  </header>
+  {% if page.imagen and page.imagen != "" %}<figure class="post-image wrap"><img src="{{ page.imagen | relative_url }}" alt=""></figure>{% endif %}
+  <div class="post-body wrap narrow prose">
+    {{ content }}
+  </div>
+  <nav class="post-nav wrap narrow"><a href="{{ '/entradas/' | relative_url }}">← Todas las entradas</a></nav>
+</article>

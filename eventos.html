@@ -1,0 +1,18 @@
+---
+layout: page
+title: Eventos
+permalink: /eventos/
+intro: Foros, coloquios y conversatorios organizados o acompañados por Crítica Inmanente.
+---
+{% assign hoy = site.time | date: '%Y-%m-%d' %}
+{% assign todos = site.eventos | where_exp: "e", "e.fecha" | sort: "fecha" %}
+<h2 class="sub-title">Próximos</h2>
+{% assign n = 0 %}
+<div class="eventos">
+{% for e in todos %}{% assign f = e.fecha | date: '%Y-%m-%d' %}{% if f >= hoy %}{% assign n = n | plus: 1 %}{% include evento.html item=e completo=true %}{% endif %}{% endfor %}
+</div>
+{% if n == 0 %}<p class="empty">Por ahora no hay eventos programados. Vuelve pronto.</p>{% endif %}
+{% assign pasados = todos | reverse %}
+{% assign m = 0 %}
+{% capture lista %}{% for e in pasados %}{% assign f = e.fecha | date: '%Y-%m-%d' %}{% if f < hoy %}{% assign m = m | plus: 1 %}{% include evento.html item=e completo=true %}{% endif %}{% endfor %}{% endcapture %}
+{% if m > 0 %}<h2 class="sub-title">Realizados</h2><div class="eventos eventos-pasados">{{ lista }}</div>{% endif %}
