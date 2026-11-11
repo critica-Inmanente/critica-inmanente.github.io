@@ -4,7 +4,7 @@ Sitio del grupo de investigación **Crítica Inmanente** (teoría crítica de la
 
 ## Cómo editar (sin tocar código)
 
-1. Entra a https://app.pagescms.org con tu cuenta de GitHub y abre el proyecto **Critica-Inmanente / criticainmanente.github.io**.
+1. Entra a https://app.pagescms.org con tu cuenta de GitHub y abre el proyecto **critica-Inmanente / critica-inmanente.github.io**.
 2. En el menú izquierdo elige la sección: Entradas, Investigaciones, Libros, Integrantes, Eventos, Difusión, Página de inicio, Acerca de, Contacto o Menú.
 3. Pulsa **Add an entry** (o abre una existente), llena el formulario y pulsa **Save**.
 4. En uno o dos minutos el cambio aparece en el sitio.
