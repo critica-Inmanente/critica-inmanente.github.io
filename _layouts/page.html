@@ -8,7 +8,7 @@ layout: default
   </div>
 </section>
 <section class="page-body">
-  <div class="wrap {% if page.ancho == 'texto' or page.layout_ancho == 'texto' %}narrow{% endif %}">
+  <div class="wrap {% if page.path contains '.md' %}narrow{% endif %}">
     {{ content }}
   </div>
 </section>
