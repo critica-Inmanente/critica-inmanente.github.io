@@ -474,6 +474,36 @@ content:
         fields:
           - { name: es, label: Español, type: text }
           - { name: en, label: Inglés, type: text }
+      - name: boletin_gracias_titulo
+        label: "Boletín · página tras suscribirse · título"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
+      - name: boletin_gracias_intro
+        label: "Boletín · página tras suscribirse · texto"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: boletin_confirmado_titulo
+        label: "Boletín · página de confirmación · título"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
+      - name: boletin_confirmado_intro
+        label: "Boletín · página de confirmación · texto"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: boletin_seguir
+        label: "Boletín · botón hacia Entradas"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
       - name: contacto_general_titulo
         label: "Contacto · título del bloque de contacto general"
         type: object

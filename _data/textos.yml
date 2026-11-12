@@ -163,3 +163,18 @@ error_texto:
 error_boton:
   es: Volver al inicio
   en: Back to home
+boletin_gracias_titulo:
+  es: Revisa tu correo
+  en: Check your inbox
+boletin_gracias_intro:
+  es: Te enviamos un mensaje para confirmar tu suscripción. Abre el correo y pulsa el enlace de confirmación; si no lo ves en unos minutos, revisa la carpeta de spam o de promociones.
+  en: We have sent you a message to confirm your subscription. Open it and click the confirmation link; if you do not see it within a few minutes, check your spam or promotions folder.
+boletin_confirmado_titulo:
+  es: ¡Gracias por suscribirte!
+  en: Thank you for subscribing!
+boletin_confirmado_intro:
+  es: Tu suscripción al boletín de Crítica Inmanente está confirmada. Desde ahora recibirás en tu correo nuestros nuevos textos, publicaciones y eventos.
+  en: Your subscription to the Crítica Inmanente newsletter is confirmed. From now on you will receive our new texts, publications and events by email.
+boletin_seguir:
+  es: Leer las entradas
+  en: Read the posts

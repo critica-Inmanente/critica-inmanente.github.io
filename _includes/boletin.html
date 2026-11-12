@@ -3,7 +3,7 @@
   <h2>{% include t.html k="boletin_titulo" %}</h2>
   <p>{% include t.html k="boletin_texto" %}</p>
   {% if u != "" %}
-  <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ u }}" method="post" target="_blank">
+  <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ u }}" method="post">
     <label class="visually-hidden" for="bd-email{{ include.id }}"><span class="l-es">{{ site.data.textos.boletin_campo.es }}</span><span class="l-en">{{ site.data.textos.boletin_campo.en }}</span></label>
     <input type="email" name="email" id="bd-email{{ include.id }}" required autocomplete="email" placeholder="{{ site.data.textos.boletin_campo.es }}" data-ph-en="{{ site.data.textos.boletin_campo.en }}" data-ph-es="{{ site.data.textos.boletin_campo.es }}">
     <input type="hidden" name="embed" value="1">
