@@ -5,3 +5,7 @@ correo: "criticainmanente@gmail.com"
 instagram: ""
 youtube: ""
 facebook: ""
+
+# Boletín (newsletter) con Buttondown: nombre de usuario de la cuenta (https://buttondown.com/USUARIO).
+# Si queda vacío, el formulario de suscripción se muestra como «próximamente».
+boletin_usuario: ""

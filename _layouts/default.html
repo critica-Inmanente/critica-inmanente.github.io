@@ -18,6 +18,7 @@
   {%- endif %}
   <title>{{ doc_es }}</title>
   {% seo title=false %}
+  {% feed_meta %}
   <script>
     (function () {
       var d = document.documentElement, l = null;
@@ -26,6 +27,11 @@
       d.setAttribute('data-title-en', {{ doc_en | jsonify }});
       if (l === 'en') { d.setAttribute('data-lang', 'en'); d.lang = 'en'; document.title = {{ doc_en | jsonify }}; }
     })();
+    document.addEventListener('DOMContentLoaded', function () {
+      if (document.documentElement.getAttribute('data-lang') === 'en') {
+        document.querySelectorAll('[data-ph-en]').forEach(function (i) { i.placeholder = i.getAttribute('data-ph-en'); });
+      }
+    });
   </script>
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
@@ -50,6 +56,7 @@
           if (en) { d.setAttribute('data-lang', 'en'); } else { d.removeAttribute('data-lang'); }
           d.lang = en ? 'en' : 'es';
           document.title = d.getAttribute(en ? 'data-title-en' : 'data-title-es');
+          document.querySelectorAll('[data-ph-en]').forEach(function (i) { i.placeholder = i.getAttribute(en ? 'data-ph-en' : 'data-ph-es'); });
           try { localStorage.setItem('ci-lang', en ? 'en' : 'es'); } catch (e) {}
         });
       });

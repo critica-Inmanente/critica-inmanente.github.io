@@ -192,6 +192,25 @@ html:not([data-lang="en"]) .l-en { display: none !important; }
 .contact-list span { font-family: var(--sans); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gris); padding-top: 4px; }
 .contact-list a { color: var(--rojo); }
 
+/* Boletín y contacto */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.contact-grid h2, .newsletter h2 { font-size: 1.5rem; margin-bottom: .6em; }
+.newsletter { background: var(--negro); color: var(--marfil); padding: 40px; }
+.newsletter p { color: #E7E3DB; }
+.newsletter .empty { color: #B8B3AA; }
+.newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 10px; }
+.newsletter-form input[type=email] {
+  flex: 1 1 240px; font-family: var(--serif); font-size: 1.1rem; padding: 12px 14px;
+  border: 1px solid var(--marfil); background: transparent; color: var(--marfil);
+}
+.newsletter-form input[type=email]::placeholder { color: #9C978F; }
+.newsletter-form .btn { border-color: var(--marfil); color: var(--negro); background: var(--marfil); }
+.newsletter-form .btn:hover { background: var(--rojo); border-color: var(--rojo); color: var(--marfil); }
+.newsletter-note { font-size: .9rem; color: #B8B3AA !important; margin: 0; }
+.newsletter-after { margin-top: 64px; max-width: 760px; }
+.contact .contact-list { margin-top: 18px; }
+
 /* Pie */
 .site-footer { background: var(--negro); color: var(--marfil); padding: 56px 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; }
@@ -217,7 +236,8 @@ html:not([data-lang="en"]) .l-en { display: none !important; }
   .site-nav ul { flex-direction: column; padding: 8px 28px 20px; gap: 0; }
   .site-nav li { border-top: 1px solid var(--piedra); }
   .site-nav a { display: block; padding: 14px 0; font-size: 1.15rem; border: 0; }
-  .split, .cards, .media-grid { grid-template-columns: 1fr; gap: 28px; }
+  .split, .cards, .media-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .newsletter { padding: 28px 22px; }
   .book, .person { grid-template-columns: 1fr; gap: 28px; }
   .book-cover { max-width: 240px; }
   .person-photo { max-width: 240px; }

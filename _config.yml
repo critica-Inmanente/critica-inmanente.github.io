@@ -18,6 +18,10 @@ kramdown:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-feed
+
+feed:
+  path: feed.xml
 
 collections:
   libros:

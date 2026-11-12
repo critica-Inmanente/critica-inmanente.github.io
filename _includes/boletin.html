@@ -1,0 +1,16 @@
+{% assign u = site.data.contacto.boletin_usuario | strip %}
+<section class="newsletter{% if include.compacto %} newsletter-compact{% endif %}" id="boletin">
+  <h2>{% include t.html k="boletin_titulo" %}</h2>
+  <p>{% include t.html k="boletin_texto" %}</p>
+  {% if u != "" %}
+  <form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ u }}" method="post" target="_blank">
+    <label class="visually-hidden" for="bd-email{{ include.id }}"><span class="l-es">{{ site.data.textos.boletin_campo.es }}</span><span class="l-en">{{ site.data.textos.boletin_campo.en }}</span></label>
+    <input type="email" name="email" id="bd-email{{ include.id }}" required autocomplete="email" placeholder="{{ site.data.textos.boletin_campo.es }}" data-ph-en="{{ site.data.textos.boletin_campo.en }}" data-ph-es="{{ site.data.textos.boletin_campo.es }}">
+    <input type="hidden" name="embed" value="1">
+    <button class="btn" type="submit">{% include t.html k="boletin_boton" %}</button>
+  </form>
+  <p class="newsletter-note">{% include t.html k="boletin_nota" %}</p>
+  {% else %}
+  <p class="empty">{% include t.html k="boletin_pronto" %}</p>
+  {% endif %}
+</section>

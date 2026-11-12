@@ -193,6 +193,7 @@ content:
       - { name: instagram, label: "Instagram (enlace completo)", type: string }
       - { name: youtube, label: "YouTube (enlace completo)", type: string }
       - { name: facebook, label: "Facebook (enlace completo)", type: string }
+      - { name: boletin_usuario, label: "Boletín: nombre de usuario de Buttondown (vacío = «próximamente»)", type: string }
 
   - name: menu
     label: Menú
@@ -431,6 +432,54 @@ content:
         fields:
           - { name: es, label: "Español", type: string }
           - { name: en, label: "Inglés", type: string }
+      - name: contacto_intro
+        label: "Contacto · presentación"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: boletin_titulo
+        label: "Boletín · título"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
+      - name: boletin_texto
+        label: "Boletín · texto"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: boletin_campo
+        label: "Boletín · texto dentro del campo de correo"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
+      - name: boletin_boton
+        label: "Boletín · botón"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
+      - name: boletin_nota
+        label: "Boletín · nota bajo el formulario"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: boletin_pronto
+        label: "Boletín · aviso mientras no esté activo"
+        type: object
+        fields:
+          - { name: es, label: Español, type: text }
+          - { name: en, label: Inglés, type: text }
+      - name: contacto_general_titulo
+        label: "Contacto · título del bloque de contacto general"
+        type: object
+        fields:
+          - { name: es, label: Español, type: string }
+          - { name: en, label: Inglés, type: string }
       - name: contacto_vacio
         label: "Contacto · aviso si no hay datos"
         type: object

@@ -5,13 +5,17 @@ clave: contacto
 permalink: /contacto/
 ---
 {% assign c = site.data.contacto %}
-<div class="contact">
-  <p class="lead">{% include t.html es=c.texto en=c.texto_en %}</p>
-  <ul class="contact-list">
-    {% if c.correo and c.correo != "" %}<li><span>{% include t.html k="contacto_correo" %}</span><a href="mailto:{{ c.correo }}">{{ c.correo }}</a></li>{% endif %}
-    {% if c.instagram and c.instagram != "" %}<li><span>Instagram</span><a href="{{ c.instagram }}" target="_blank" rel="noopener">{{ c.instagram | remove: "https://" | remove: "www." }}</a></li>{% endif %}
-    {% if c.youtube and c.youtube != "" %}<li><span>YouTube</span><a href="{{ c.youtube }}" target="_blank" rel="noopener">{{ c.youtube | remove: "https://" | remove: "www." }}</a></li>{% endif %}
-    {% if c.facebook and c.facebook != "" %}<li><span>Facebook</span><a href="{{ c.facebook }}" target="_blank" rel="noopener">{{ c.facebook | remove: "https://" | remove: "www." }}</a></li>{% endif %}
-  </ul>
-  {% unless c.correo != "" or c.instagram != "" or c.youtube != "" or c.facebook != "" %}<p class="empty">{% include t.html k="contacto_vacio" %}</p>{% endunless %}
+<div class="contact-grid">
+  {% include boletin.html id="1" %}
+  <section class="contact">
+    <h2>{% include t.html k="contacto_general_titulo" %}</h2>
+    <p>{% include t.html es=c.texto en=c.texto_en %}</p>
+    <ul class="contact-list">
+      {% if c.correo and c.correo != "" %}<li><span>{% include t.html k="contacto_correo" %}</span><a href="mailto:{{ c.correo }}">{{ c.correo }}</a></li>{% endif %}
+      {% if c.instagram and c.instagram != "" %}<li><span>Instagram</span><a href="{{ c.instagram }}" target="_blank" rel="noopener">{{ c.instagram | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+      {% if c.youtube and c.youtube != "" %}<li><span>YouTube</span><a href="{{ c.youtube }}" target="_blank" rel="noopener">{{ c.youtube | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+      {% if c.facebook and c.facebook != "" %}<li><span>Facebook</span><a href="{{ c.facebook }}" target="_blank" rel="noopener">{{ c.facebook | remove: "https://" | remove: "www." }}</a></li>{% endif %}
+    </ul>
+    {% unless c.correo != "" or c.instagram != "" or c.youtube != "" or c.facebook != "" %}<p class="empty">{% include t.html k="contacto_vacio" %}</p>{% endunless %}
+  </section>
 </div>

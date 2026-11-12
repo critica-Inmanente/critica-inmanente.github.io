@@ -125,6 +125,30 @@ contacto_titulo:
 contacto_correo:
   es: Correo
   en: Email
+contacto_intro:
+  es: Suscríbete para recibir nuestras novedades o escríbenos directamente.
+  en: Subscribe to receive our news or write to us directly.
+boletin_titulo:
+  es: Suscríbete al boletín
+  en: Subscribe to our newsletter
+boletin_texto:
+  es: Recibe en tu correo nuestros nuevos textos, publicaciones y eventos. Sin publicidad; puedes darte de baja cuando quieras.
+  en: Get our new texts, publications and events in your inbox. No advertising; you can unsubscribe at any time.
+boletin_campo:
+  es: Tu correo electrónico
+  en: Your email address
+boletin_boton:
+  es: Suscribirme
+  en: Subscribe
+boletin_nota:
+  es: Te enviaremos un correo para confirmar la suscripción.
+  en: We will send you an email to confirm your subscription.
+boletin_pronto:
+  es: La suscripción estará disponible muy pronto.
+  en: Subscriptions will open very soon.
+contacto_general_titulo:
+  es: Contacto general
+  en: General contact
 contacto_vacio:
   es: Muy pronto publicaremos aquí nuestro correo de contacto.
   en: Our contact email will be published here soon.
