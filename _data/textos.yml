@@ -1,0 +1,141 @@
+# Textos fijos del sitio (títulos, presentaciones, botones y avisos), en español (es) e inglés (en).
+# Si un texto en inglés queda vacío, el sitio muestra el español.
+
+lema:
+  es: Teoría crítica de la sociedad
+  en: Critical theory of society
+
+# Inicio
+inicio_acerca_titulo:
+  es: Acerca de
+  en: About
+inicio_acerca_enlace:
+  es: Conoce el proyecto
+  en: Learn about the project
+inicio_eventos_etiqueta:
+  es: Próximos eventos
+  en: Upcoming events
+inicio_eventos_titulo:
+  es: Foros, coloquios y conversatorios
+  en: Forums, colloquia and conversations
+inicio_eventos_boton:
+  es: Ver eventos
+  en: See events
+inicio_publicaciones_titulo:
+  es: Publicaciones recientes
+  en: Recent publications
+inicio_publicaciones_enlace:
+  es: Todas las investigaciones
+  en: All research
+inicio_entradas_titulo:
+  es: Últimas entradas
+  en: Latest posts
+inicio_entradas_enlace:
+  es: Todas las entradas
+  en: All posts
+
+# Investigaciones
+investigaciones_titulo:
+  es: Investigaciones
+  en: Research
+investigaciones_intro:
+  es: Artículos, entrevistas y capítulos de los integrantes del grupo.
+  en: Articles, interviews and book chapters by members of the group.
+investigaciones_vacio:
+  es: Pronto publicaremos aquí nuestras investigaciones.
+  en: Our research will be published here soon.
+leer:
+  es: Leer
+  en: Read
+
+# Entradas
+entradas_titulo:
+  es: Entradas
+  en: Posts
+entradas_intro:
+  es: "Textos escritos por los integrantes de Crítica Inmanente en torno a la coyuntura local y mundial: análisis, desde la teoría crítica de la sociedad, de los acontecimientos más relevantes de nuestro presente."
+  en: "Texts written by the members of Crítica Inmanente on the local and global conjuncture: analyses, from the standpoint of the critical theory of society, of the most relevant events of our present."
+entradas_vacio:
+  es: Muy pronto publicaremos aquí nuestros primeros textos.
+  en: Our first texts will be published here very soon.
+entradas_volver:
+  es: Todas las entradas
+  en: All posts
+
+# Libros
+libros_titulo:
+  es: Libros
+  en: Books
+libros_intro:
+  es: ""
+  en: ""
+libros_descargar:
+  es: Descargar PDF
+  en: Download PDF
+libros_editorial:
+  es: Ver en la editorial
+  en: Publisher's page
+
+# Integrantes
+integrantes_titulo:
+  es: Integrantes
+  en: Members
+integrantes_intro:
+  es: El núcleo de Crítica Inmanente está conformado por un colectivo de académicos e investigadores comprometidos con la actualización de la teoría crítica, el análisis de la totalidad social y los procesos de emancipación.
+  en: The core of Crítica Inmanente is a collective of scholars and researchers committed to renewing critical theory, to the analysis of the social totality and to processes of emancipation.
+
+# Difusión
+difusion_titulo:
+  es: Difusión
+  en: Outreach
+difusion_intro:
+  es: Compartimos el material audiovisual, sonoro y ensayístico generado por el grupo de investigación. Un espacio de divulgación y análisis crítico en torno a la teoría, la cultura y la praxis social.
+  en: Audiovisual, audio and essay material produced by the research group. A space for outreach and critical analysis of theory, culture and social praxis.
+difusion_vacio:
+  es: Muy pronto compartiremos aquí podcasts, videos y otros materiales.
+  en: Podcasts, videos and other materials will be shared here very soon.
+difusion_ver:
+  es: Ver o escuchar
+  en: Watch or listen
+
+# Eventos
+eventos_titulo:
+  es: Eventos
+  en: Events
+eventos_intro:
+  es: Foros, coloquios y conversatorios organizados o acompañados por Crítica Inmanente.
+  en: Forums, colloquia and conversations organized or supported by Crítica Inmanente.
+eventos_proximos:
+  es: Próximos
+  en: Upcoming
+eventos_realizados:
+  es: Realizados
+  en: Past
+eventos_vacio:
+  es: Por ahora no hay eventos programados. Vuelve pronto.
+  en: There are no scheduled events at the moment. Check back soon.
+eventos_mas_info:
+  es: Más información
+  en: More information
+
+# Contacto
+contacto_titulo:
+  es: Contáctanos
+  en: Contact
+contacto_correo:
+  es: Correo
+  en: Email
+contacto_vacio:
+  es: Muy pronto publicaremos aquí nuestro correo de contacto.
+  en: Our contact email will be published here soon.
+
+# Página no encontrada
+error_titulo:
+  es: Página no encontrada
+  en: Page not found
+error_texto:
+  es: La página que buscas no existe o cambió de lugar.
+  en: The page you are looking for does not exist or has moved.
+error_boton:
+  es: Volver al inicio
+  en: Back to home

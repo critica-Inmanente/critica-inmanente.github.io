@@ -11,6 +11,10 @@ Sitio del grupo de investigación **Crítica Inmanente** (teoría crítica de la
 
 Imágenes y PDF se suben desde los propios campos del formulario (quedan en `assets/uploads/`).
 
+## Español e inglés
+
+El botón **EN / ES** del encabezado cambia todo el sitio de idioma (la elección se recuerda en el navegador). Cada formulario de Pages CMS tiene campos «(inglés)»: si se dejan vacíos, se muestra el texto en español. Los títulos, presentaciones, botones y avisos fijos se editan en **Textos del sitio**.
+
 ## Estructura
 
 | Carpeta / archivo | Contenido |

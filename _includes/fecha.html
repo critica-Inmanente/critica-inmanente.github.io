@@ -1,0 +1,4 @@
+{%- assign _d = include.d -%}{%- assign _m = _d | date: '%-m' | minus: 1 -%}
+{%- capture _fes -%}{{ _d | date: '%-d' }} de {{ site.data.meses.es[_m] }} de {{ _d | date: '%Y' }}{%- endcapture -%}
+{%- capture _fen -%}{{ site.data.meses.en[_m] }} {{ _d | date: '%-d' }}, {{ _d | date: '%Y' }}{%- endcapture -%}
+{%- include t.html es=_fes en=_fen -%}

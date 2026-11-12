@@ -7,4 +7,6 @@ datos: "Benemérita Universidad Autónoma de Puebla, Instituto de Ciencias Socia
 portada: /assets/uploads/portada-revuelta-capital-y-praxis-social.jpg
 pdf: /assets/uploads/revuelta-capital-y-praxis-social.pdf
 enlace: ""
+subtitulo_en: A theoretical and historical assessment of the limits and potential for radical social transformation, based on a critical study of the social revolt in Chile (2019-2020)
+datos_en: "Benemérita Universidad Autónoma de Puebla, Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego”. First edition, 2026. ISBN 978-968-9744-74-0. Award for the best graduate thesis, BUAP Graduate School 2025."
 ---

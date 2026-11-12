@@ -3,8 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.clave -%}
+    {%- assign _kt = page.clave | append: '_titulo' -%}{%- assign _tt = site.data.textos[_kt] -%}
+    {%- assign titulo_es = _tt.es | default: page.title -%}{%- assign titulo_en = _tt.en | default: titulo_es -%}
+  {%- else -%}
+    {%- assign titulo_es = page.title -%}{%- assign titulo_en = page.title_en | default: page.title -%}
+  {%- endif -%}
+  {%- if page.url == '/' -%}
+    {%- capture doc_es -%}{{ site.title }} · {{ site.data.textos.lema.es }}{%- endcapture -%}
+    {%- capture doc_en -%}{{ site.title }} · {{ site.data.textos.lema.en }}{%- endcapture -%}
+  {%- else -%}
+    {%- capture doc_es -%}{{ titulo_es }} | {{ site.title }}{%- endcapture -%}
+    {%- capture doc_en -%}{{ titulo_en }} | {{ site.title }}{%- endcapture -%}
+  {%- endif %}
+  <title>{{ doc_es }}</title>
   {% seo title=false %}
-  <title>{% if page.url == '/' %}{{ site.title }} · Teoría crítica de la sociedad{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      try { l = localStorage.getItem('ci-lang'); } catch (e) {}
+      d.setAttribute('data-title-es', {{ doc_es | jsonify }});
+      d.setAttribute('data-title-en', {{ doc_en | jsonify }});
+      if (l === 'en') { d.setAttribute('data-lang', 'en'); d.lang = 'en'; document.title = {{ doc_en | jsonify }}; }
+    })();
+  </script>
   <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,12 +35,26 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <a class="skip" href="#contenido"><span class="l-es">Saltar al contenido</span><span class="l-en">Skip to content</span></a>
   {% include header.html %}
   <main id="contenido">
     {{ content }}
   </main>
   {% include footer.html %}
+  <script>
+    (function () {
+      var d = document.documentElement;
+      document.querySelectorAll('.lang-toggle').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var en = d.getAttribute('data-lang') !== 'en';
+          if (en) { d.setAttribute('data-lang', 'en'); } else { d.removeAttribute('data-lang'); }
+          d.lang = en ? 'en' : 'es';
+          document.title = d.getAttribute(en ? 'data-title-en' : 'data-title-es');
+          try { localStorage.setItem('ci-lang', en ? 'en' : 'es'); } catch (e) {}
+        });
+      });
+    })();
+  </script>
   {% if site.goatcounter and jekyll.environment == "production" %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>{% endif %}
 </body>
 </html>

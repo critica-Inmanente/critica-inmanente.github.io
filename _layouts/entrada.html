@@ -3,13 +3,13 @@ layout: default
 ---
 <article class="post">
   <header class="post-head wrap narrow">
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d' }} de {% assign m = page.date | date: '%-m' | minus: 1 %}{{ site.data.meses[m] }} de {{ page.date | date: '%Y' }}</time>{% if page.autor and page.autor != "" %} · {{ page.autor }}{% endif %}</p>
-    <h1>{{ page.title }}</h1>
-    {% if page.resumen and page.resumen != "" %}<p class="lead">{{ page.resumen }}</p>{% endif %}
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html d=page.date %}</time>{% if page.autor and page.autor != "" %} · {{ page.autor }}{% endif %}</p>
+    <h1>{% include t.html es=page.title en=page.title_en %}</h1>
+    {% if page.resumen and page.resumen != "" %}<p class="lead">{% include t.html es=page.resumen en=page.resumen_en %}</p>{% endif %}
   </header>
   {% if page.imagen and page.imagen != "" %}<figure class="post-image wrap"><img src="{{ page.imagen | relative_url }}" alt=""></figure>{% endif %}
   <div class="post-body wrap narrow prose">
-    {{ content }}
+    {% include tb.html es=content en=page.body_en %}
   </div>
-  <nav class="post-nav wrap narrow"><a href="{{ '/entradas/' | relative_url }}">← Todas las entradas</a></nav>
+  <nav class="post-nav wrap narrow"><a href="{{ '/entradas/' | relative_url }}">← {% include t.html k="entradas_volver" %}</a></nav>
 </article>

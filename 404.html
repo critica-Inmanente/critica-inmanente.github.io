@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Página no encontrada
+clave: error
 permalink: /404.html
 ---
-<p class="lead">La página que buscas no existe o cambió de lugar.</p>
-<p><a class="btn" href="{{ '/' | relative_url }}">Volver al inicio</a></p>
+<p class="lead">{% include t.html k="error_texto" %}</p>
+<p><a class="btn" href="{{ '/' | relative_url }}">{% include t.html k="error_boton" %}</a></p>

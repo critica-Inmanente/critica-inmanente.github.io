@@ -5,20 +5,20 @@ title: Inicio
 {% assign ini = site.data.inicio %}
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">{{ ini.etiqueta }}</p>
+    <p class="eyebrow">{% include t.html es=ini.etiqueta en=ini.etiqueta_en %}</p>
     <blockquote class="hero-quote">
-      <p>“{{ ini.cita }}”</p>
-      <footer>{{ ini.cita_autor }}{% if ini.cita_obra != "" %} · <cite>{{ ini.cita_obra }}</cite>{% endif %}</footer>
+      <p>“{% include t.html es=ini.cita en=ini.cita_en %}”</p>
+      <footer>{{ ini.cita_autor }}{% if ini.cita_obra and ini.cita_obra != "" %} · <cite>{% include t.html es=ini.cita_obra en=ini.cita_obra_en %}</cite>{% endif %}</footer>
     </blockquote>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap split">
-    <h2 class="section-title">Acerca de</h2>
+    <h2 class="section-title">{% include t.html k="inicio_acerca_titulo" %}</h2>
     <div class="prose">
-      <p class="lead">{{ ini.presentacion }}</p>
-      <p><a class="link-arrow" href="{{ '/acerca-de/' | relative_url }}">Conoce el proyecto</a></p>
+      <p class="lead">{% include t.html es=ini.presentacion en=ini.presentacion_en %}</p>
+      <p><a class="link-arrow" href="{{ '/acerca-de/' | relative_url }}">{% include t.html k="inicio_acerca_enlace" %}</a></p>
     </div>
   </div>
 </section>
@@ -28,14 +28,14 @@ title: Inicio
 <section class="band">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Próximos eventos</p>
-      <h2 class="section-title">Foros, coloquios y conversatorios</h2>
+      <p class="eyebrow">{% include t.html k="inicio_eventos_etiqueta" %}</p>
+      <h2 class="section-title">{% include t.html k="inicio_eventos_titulo" %}</h2>
     </div>
     <div>
       {% assign hay = 0 %}
       {% for e in proximos %}{% assign f = e.fecha | date: '%Y-%m-%d' %}{% if f >= hoy and hay < 3 %}{% assign hay = hay | plus: 1 %}{% include evento.html item=e %}{% endif %}{% endfor %}
-      {% if hay == 0 %}<p class="band-text">{{ ini.eventos_texto }}</p>{% endif %}
-      <a class="btn btn-light" href="{{ '/eventos/' | relative_url }}">Ver eventos</a>
+      {% if hay == 0 %}<p class="band-text">{% include t.html es=ini.eventos_texto en=ini.eventos_texto_en %}</p>{% endif %}
+      <a class="btn btn-light" href="{{ '/eventos/' | relative_url }}">{% include t.html k="inicio_eventos_boton" %}</a>
     </div>
   </div>
 </section>
@@ -43,8 +43,8 @@ title: Inicio
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="section-title">Publicaciones recientes</h2>
-      <a class="link-arrow" href="{{ '/investigaciones/' | relative_url }}">Todas las investigaciones</a>
+      <h2 class="section-title">{% include t.html k="inicio_publicaciones_titulo" %}</h2>
+      <a class="link-arrow" href="{{ '/investigaciones/' | relative_url }}">{% include t.html k="inicio_publicaciones_enlace" %}</a>
     </div>
     {% assign refs = site.investigaciones | sort: "anio" | reverse %}
     <div class="refs">
@@ -57,15 +57,16 @@ title: Inicio
 <section class="section section-alt">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="section-title">Últimas entradas</h2>
-      <a class="link-arrow" href="{{ '/entradas/' | relative_url }}">Todas las entradas</a>
+      <h2 class="section-title">{% include t.html k="inicio_entradas_titulo" %}</h2>
+      <a class="link-arrow" href="{{ '/entradas/' | relative_url }}">{% include t.html k="inicio_entradas_enlace" %}</a>
     </div>
     <div class="cards">
       {% for p in site.posts limit: 3 %}
+      {% assign res_es = p.resumen | default: p.excerpt | strip_html | truncatewords: 30 %}
       <a class="card" href="{{ p.url | relative_url }}">
         <p class="card-meta">{{ p.date | date: '%d.%m.%Y' }}{% if p.autor and p.autor != "" %} · {{ p.autor }}{% endif %}</p>
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.resumen | default: p.excerpt | strip_html | truncatewords: 30 }}</p>
+        <h3>{% include t.html es=p.title en=p.title_en %}</h3>
+        <p>{% include t.html es=res_es en=p.resumen_en %}</p>
       </a>
       {% endfor %}
     </div>

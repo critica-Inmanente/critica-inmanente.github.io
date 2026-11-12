@@ -1,0 +1,2 @@
+{%- if include.k -%}{%- assign _o = site.data.textos[include.k] -%}{%- assign _es = _o.es -%}{%- assign _en = _o.en -%}{%- else -%}{%- assign _es = include.es -%}{%- assign _en = include.en -%}{%- endif -%}
+{%- if _en and _en != "" and _en != _es -%}<span class="l-es">{{ _es }}</span><span class="l-en" lang="en">{{ _en }}</span>{%- else -%}{{ _es }}{%- endif -%}

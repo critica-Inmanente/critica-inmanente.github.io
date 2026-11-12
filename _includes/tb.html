@@ -1,0 +1,2 @@
+{%- assign _en = include.en | strip -%}
+{%- if _en != "" -%}<div class="l-es">{{ include.es | markdownify }}</div><div class="l-en" lang="en">{{ include.en | markdownify }}</div>{%- else -%}{{ include.es | markdownify }}{%- endif -%}

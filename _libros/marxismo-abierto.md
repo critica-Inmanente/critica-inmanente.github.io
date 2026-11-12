@@ -7,4 +7,6 @@ datos: "Ediciones Herramienta (Buenos Aires) y Benemérita Universidad Autónoma
 portada: /assets/uploads/portada-marxismo-abierto.jpg
 pdf: /assets/uploads/marxismo-abierto.pdf
 enlace: ""
+autores_en: "Edited by Ana Cecilia Dinerstein, Alfonso García Vela, Edith González and John Holloway. Preface by Werner Bonefeld."
+datos_en: "Ediciones Herramienta (Buenos Aires) and Benemérita Universidad Autónoma de Puebla, Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego”. First edition, 2023. ISBN 978-987-1505-81-4 (Herramienta) and 978-607-8957-46-0 (BUAP)."
 ---

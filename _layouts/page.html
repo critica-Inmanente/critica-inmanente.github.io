@@ -1,16 +1,24 @@
 ---
 layout: default
 ---
+{%- if page.clave -%}
+  {%- assign _kt = page.clave | append: '_titulo' -%}{%- assign _ki = page.clave | append: '_intro' -%}
+  {%- assign h_es = site.data.textos[_kt].es -%}{%- assign h_en = site.data.textos[_kt].en -%}
+  {%- assign i_es = site.data.textos[_ki].es -%}{%- assign i_en = site.data.textos[_ki].en -%}
+{%- else -%}
+  {%- assign h_es = page.encabezado | default: page.title -%}{%- assign h_en = page.encabezado_en | default: page.title_en -%}
+  {%- assign i_es = page.intro -%}{%- assign i_en = page.intro_en -%}
+{%- endif -%}
 <section class="page-head">
   <div class="wrap">
     <div class="page-head-inner">
-      <h1>{{ page.encabezado | default: page.title }}</h1>
-      {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+      <h1>{% include t.html es=h_es en=h_en %}</h1>
+      {% if i_es and i_es != "" %}<p class="lead">{% include t.html es=i_es en=i_en %}</p>{% endif %}
     </div>
   </div>
 </section>
 <section class="page-body">
   <div class="wrap {% if page.path contains '.md' %}narrow{% endif %}">
-    {{ content }}
+    {% if page.path contains '.md' %}{% include tb.html es=content en=page.body_en %}{% else %}{{ content }}{% endif %}
   </div>
 </section>

@@ -1,18 +1,26 @@
 # Menú principal (el orden de esta lista es el orden del menú)
 items:
   - titulo: Acerca de
+    titulo_en: About
     url: /acerca-de/
   - titulo: Investigaciones
+    titulo_en: Research
     url: /investigaciones/
   - titulo: Entradas
+    titulo_en: Posts
     url: /entradas/
   - titulo: Libros
+    titulo_en: Books
     url: /libros/
   - titulo: Integrantes
+    titulo_en: Members
     url: /integrantes/
   - titulo: Difusión
+    titulo_en: Outreach
     url: /difusion/
   - titulo: Eventos
+    titulo_en: Events
     url: /eventos/
   - titulo: Contáctanos
+    titulo_en: Contact
     url: /contacto/

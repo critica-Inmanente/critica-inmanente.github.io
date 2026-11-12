@@ -1,10 +1,14 @@
 ---
 layout: page
 title: Investigaciones
+clave: investigaciones
 permalink: /investigaciones/
-intro: Artículos, entrevistas y capítulos de los integrantes del grupo.
 ---
 {% assign refs = site.investigaciones | sort: "anio" | reverse %}
+{% if refs.size > 0 %}
 <div class="refs">
   {% for r in refs %}{% include referencia.html item=r %}{% endfor %}
 </div>
+{% else %}
+<p class="empty">{% include t.html k="investigaciones_vacio" %}</p>
+{% endif %}

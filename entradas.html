@@ -1,19 +1,20 @@
 ---
 layout: page
 title: Entradas
+clave: entradas
 permalink: /entradas/
-intro: "Textos escritos por los integrantes de Crítica Inmanente en torno a la coyuntura local y mundial: análisis, desde la teoría crítica de la sociedad, de los acontecimientos más relevantes de nuestro presente."
 ---
 {% if site.posts.size > 0 %}
 <div class="post-list">
   {% for p in site.posts %}
+  {% assign res_es = p.resumen | default: p.excerpt | strip_html | truncatewords: 40 %}
   <a class="post-item" href="{{ p.url | relative_url }}">
     <p class="card-meta">{{ p.date | date: '%d.%m.%Y' }}{% if p.autor and p.autor != "" %} · {{ p.autor }}{% endif %}</p>
-    <h2>{{ p.title }}</h2>
-    <p>{{ p.resumen | default: p.excerpt | strip_html | truncatewords: 40 }}</p>
+    <h2>{% include t.html es=p.title en=p.title_en %}</h2>
+    <p>{% include t.html es=res_es en=p.resumen_en %}</p>
   </a>
   {% endfor %}
 </div>
 {% else %}
-<p class="empty">Muy pronto publicaremos aquí nuestros primeros textos.</p>
+<p class="empty">{% include t.html k="entradas_vacio" %}</p>
 {% endif %}

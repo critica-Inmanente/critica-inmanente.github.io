@@ -1,0 +1,14 @@
+# Traducción al inglés de los tipos usados en Investigaciones, Difusión y Eventos
+items:
+  - { es: Artículo, en: Article }
+  - { es: Capítulo de libro, en: Book chapter }
+  - { es: Entrevista, en: Interview }
+  - { es: Reseña, en: Review }
+  - { es: Traducción, en: Translation }
+  - { es: Ponencia, en: Conference paper }
+  - { es: Podcast, en: Podcast }
+  - { es: Video, en: Video }
+  - { es: Ensayo, en: Essay }
+  - { es: Presencial, en: In person }
+  - { es: En línea, en: Online }
+  - { es: Híbrida, en: Hybrid }

@@ -1,0 +1,1 @@
+{%- assign _tes = include.v -%}{%- assign _ten = "" -%}{%- for _x in site.data.tipos.items -%}{%- if _x.es == include.v -%}{%- assign _ten = _x.en -%}{%- endif -%}{%- endfor -%}{%- include t.html es=_tes en=_ten -%}
