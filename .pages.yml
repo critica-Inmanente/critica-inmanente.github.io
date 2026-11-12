@@ -18,15 +18,15 @@ content:
         sort: date
         order: desc
     fields:
-      - { name: title, label: Título, type: string, required: true }
-      - { name: title_en, label: Título (inglés), type: string }
-      - { name: date, label: Fecha, type: date, required: true }
-      - { name: autor, label: Autor o autora, type: string }
-      - { name: resumen, label: Resumen (aparece en los listados), type: text }
-      - { name: resumen_en, label: Resumen (inglés), type: text }
-      - { name: imagen, label: Imagen principal (opcional), type: image }
-      - { name: body, label: Texto, type: rich-text }
-      - { name: body_en, label: Texto (inglés, opcional), type: rich-text }
+      - { name: title, label: "Título", type: string, required: true }
+      - { name: title_en, label: "Título (inglés)", type: string }
+      - { name: date, label: "Fecha", type: date, required: true }
+      - { name: autor, label: "Autor o autora", type: string }
+      - { name: resumen, label: "Resumen (aparece en los listados)", type: text }
+      - { name: resumen_en, label: "Resumen (inglés)", type: text }
+      - { name: imagen, label: "Imagen principal (opcional)", type: image }
+      - { name: body, label: "Texto", type: rich-text }
+      - { name: body_en, label: "Texto (inglés, opcional)", type: rich-text }
 
   - name: investigaciones
     label: Investigaciones
@@ -39,18 +39,18 @@ content:
         sort: anio
         order: desc
     fields:
-      - { name: title, label: Título del trabajo (en su idioma original; sin comillas), type: string, required: true }
-      - { name: autores, label: Autores (como deben aparecer), type: string, required: true }
-      - { name: anio, label: Año, type: number, required: true }
+      - { name: title, label: "Título del trabajo (en su idioma original; sin comillas)", type: string, required: true }
+      - { name: autores, label: "Autores (como deben aparecer)", type: string, required: true }
+      - { name: anio, label: "Año", type: number, required: true }
       - name: tipo
         label: Tipo (se traduce solo al inglés)
         type: select
         options:
           values: [ Artículo, Capítulo de libro, Entrevista, Reseña, Traducción, Ponencia ]
-      - { name: publicacion, label: Revista, libro o medio, type: string }
+      - { name: publicacion, label: "Revista, libro o medio", type: string }
       - { name: detalles, label: "Volumen, número y páginas (ej. «año 7, núm. 14, pp. 388-407»)", type: string }
-      - { name: enlace, label: Enlace (DOI o página de la revista), type: string }
-      - { name: pdf, label: PDF propio (opcional), type: file }
+      - { name: enlace, label: "Enlace (DOI o página de la revista)", type: string }
+      - { name: pdf, label: "PDF propio (opcional)", type: file }
 
   - name: libros
     label: Libros
@@ -63,20 +63,20 @@ content:
         sort: anio
         order: desc
     fields:
-      - { name: title, label: Título, type: string, required: true }
-      - { name: title_en, label: Título (inglés, solo si el libro tiene versión en inglés), type: string }
-      - { name: anio, label: Año, type: number, required: true }
-      - { name: autores, label: Autor(es) o coordinadores, type: string }
-      - { name: autores_en, label: Autor(es) o coordinadores (inglés), type: string }
-      - { name: subtitulo, label: Subtítulo o descripción breve, type: text }
-      - { name: subtitulo_en, label: Subtítulo o descripción breve (inglés), type: text }
-      - { name: datos, label: Datos de edición (editorial, edición, ISBN), type: text }
-      - { name: datos_en, label: Datos de edición (inglés), type: text }
-      - { name: portada, label: Portada, type: image }
-      - { name: pdf, label: PDF para descargar, type: file }
-      - { name: enlace, label: Enlace a la editorial (opcional), type: string }
-      - { name: body, label: Presentación (opcional), type: rich-text }
-      - { name: body_en, label: Presentación (inglés, opcional), type: rich-text }
+      - { name: title, label: "Título", type: string, required: true }
+      - { name: title_en, label: "Título (inglés, solo si el libro tiene versión en inglés)", type: string }
+      - { name: anio, label: "Año", type: number, required: true }
+      - { name: autores, label: "Autor(es) o coordinadores", type: string }
+      - { name: autores_en, label: "Autor(es) o coordinadores (inglés)", type: string }
+      - { name: subtitulo, label: "Subtítulo o descripción breve", type: text }
+      - { name: subtitulo_en, label: "Subtítulo o descripción breve (inglés)", type: text }
+      - { name: datos, label: "Datos de edición (editorial, edición, ISBN)", type: text }
+      - { name: datos_en, label: "Datos de edición (inglés)", type: text }
+      - { name: portada, label: "Portada", type: image }
+      - { name: pdf, label: "PDF para descargar", type: file }
+      - { name: enlace, label: "Enlace a la editorial (opcional)", type: string }
+      - { name: body, label: "Presentación (opcional)", type: rich-text }
+      - { name: body_en, label: "Presentación (inglés, opcional)", type: rich-text }
 
   - name: integrantes
     label: Integrantes
@@ -91,12 +91,12 @@ content:
     fields:
       - { name: title, label: "Nombre con grado (ej. «Dr. Nombre Apellido»)", type: string, required: true }
       - { name: title_en, label: "Nombre con grado en inglés (opcional, ej. «Dr. Nombre Apellido»)", type: string }
-      - { name: orden, label: Orden en la página (1, 2, 3…), type: number, required: true }
-      - { name: grado, label: Grado o línea breve bajo el nombre, type: string }
-      - { name: grado_en, label: Grado o línea breve (inglés), type: string }
-      - { name: foto, label: Fotografía (vertical; se muestra en blanco y negro), type: image }
-      - { name: body, label: Biografía, type: rich-text }
-      - { name: body_en, label: Biografía (inglés), type: rich-text }
+      - { name: orden, label: "Orden en la página (1, 2, 3…)", type: number, required: true }
+      - { name: grado, label: "Grado o línea breve bajo el nombre", type: string }
+      - { name: grado_en, label: "Grado o línea breve (inglés)", type: string }
+      - { name: foto, label: "Fotografía (vertical; se muestra en blanco y negro)", type: image }
+      - { name: body, label: "Biografía", type: rich-text }
+      - { name: body_en, label: "Biografía (inglés)", type: rich-text }
 
   - name: eventos
     label: Eventos
@@ -110,20 +110,20 @@ content:
         sort: fecha
         order: desc
     fields:
-      - { name: title, label: Nombre del evento, type: string, required: true }
-      - { name: title_en, label: Nombre del evento (inglés), type: string }
-      - { name: fecha, label: Fecha, type: date, required: true }
+      - { name: title, label: "Nombre del evento", type: string, required: true }
+      - { name: title_en, label: "Nombre del evento (inglés)", type: string }
+      - { name: fecha, label: "Fecha", type: date, required: true }
       - { name: hora, label: "Hora (ej. «17:00 h, hora de México»)", type: string }
       - name: modalidad
         label: Modalidad
         type: select
         options:
           values: [ Presencial, En línea, Híbrida ]
-      - { name: lugar, label: Lugar, type: string }
-      - { name: enlace, label: Enlace de registro o transmisión, type: string }
-      - { name: imagen, label: Cartel o imagen (opcional), type: image }
-      - { name: body, label: Descripción, type: rich-text }
-      - { name: body_en, label: Descripción (inglés), type: rich-text }
+      - { name: lugar, label: "Lugar", type: string }
+      - { name: enlace, label: "Enlace de registro o transmisión", type: string }
+      - { name: imagen, label: "Cartel o imagen (opcional)", type: image }
+      - { name: body, label: "Descripción", type: rich-text }
+      - { name: body_en, label: "Descripción (inglés)", type: rich-text }
 
   - name: difusion
     label: Difusión
@@ -137,17 +137,17 @@ content:
         sort: fecha
         order: desc
     fields:
-      - { name: title, label: Título, type: string, required: true }
-      - { name: title_en, label: Título (inglés), type: string }
+      - { name: title, label: "Título", type: string, required: true }
+      - { name: title_en, label: "Título (inglés)", type: string }
       - name: tipo
         label: Tipo
         type: select
         options:
           values: [ Podcast, Video, Ensayo, Entrevista ]
-      - { name: fecha, label: Fecha, type: date, required: true }
-      - { name: enlace, label: Enlace de YouTube o Spotify (se inserta solo) u otro sitio, type: string }
-      - { name: body, label: Descripción, type: rich-text }
-      - { name: body_en, label: Descripción (inglés), type: rich-text }
+      - { name: fecha, label: "Fecha", type: date, required: true }
+      - { name: enlace, label: "Enlace de YouTube o Spotify (se inserta solo) u otro sitio", type: string }
+      - { name: body, label: "Descripción", type: rich-text }
+      - { name: body_en, label: "Descripción (inglés)", type: rich-text }
 
   - name: inicio
     label: Página de inicio
@@ -155,17 +155,17 @@ content:
     path: _data/inicio.yml
     format: yaml
     fields:
-      - { name: etiqueta, label: Etiqueta superior, type: string }
-      - { name: etiqueta_en, label: Etiqueta superior (inglés), type: string }
-      - { name: cita, label: Cita principal (sin comillas), type: text }
-      - { name: cita_en, label: Cita principal (inglés), type: text }
-      - { name: cita_autor, label: Autor de la cita, type: string }
-      - { name: cita_obra, label: Obra de la cita, type: string }
-      - { name: cita_obra_en, label: Obra de la cita (inglés), type: string }
-      - { name: presentacion, label: Presentación breve (sección «Acerca de» del inicio), type: text }
-      - { name: presentacion_en, label: Presentación breve (inglés), type: text }
-      - { name: eventos_texto, label: Texto de la franja de eventos cuando no hay eventos próximos, type: text }
-      - { name: eventos_texto_en, label: Texto de la franja de eventos (inglés), type: text }
+      - { name: etiqueta, label: "Etiqueta superior", type: string }
+      - { name: etiqueta_en, label: "Etiqueta superior (inglés)", type: string }
+      - { name: cita, label: "Cita principal (sin comillas)", type: text }
+      - { name: cita_en, label: "Cita principal (inglés)", type: text }
+      - { name: cita_autor, label: "Autor de la cita", type: string }
+      - { name: cita_obra, label: "Obra de la cita", type: string }
+      - { name: cita_obra_en, label: "Obra de la cita (inglés)", type: string }
+      - { name: presentacion, label: "Presentación breve (sección «Acerca de» del inicio)", type: text }
+      - { name: presentacion_en, label: "Presentación breve (inglés)", type: text }
+      - { name: eventos_texto, label: "Texto de la franja de eventos cuando no hay eventos próximos", type: text }
+      - { name: eventos_texto_en, label: "Texto de la franja de eventos (inglés)", type: text }
 
   - name: acerca
     label: Acerca de
@@ -174,12 +174,12 @@ content:
     fields:
       - { name: layout, type: string, hidden: true, default: page }
       - { name: permalink, type: string, hidden: true, default: /acerca-de/ }
-      - { name: title, label: Nombre en la pestaña del navegador, type: string }
-      - { name: title_en, label: Nombre en la pestaña (inglés), type: string }
-      - { name: encabezado, label: Título visible, type: string }
-      - { name: encabezado_en, label: Título visible (inglés), type: string }
-      - { name: body, label: Texto, type: rich-text }
-      - { name: body_en, label: Texto (inglés), type: rich-text }
+      - { name: title, label: "Nombre en la pestaña del navegador", type: string }
+      - { name: title_en, label: "Nombre en la pestaña (inglés)", type: string }
+      - { name: encabezado, label: "Título visible", type: string }
+      - { name: encabezado_en, label: "Título visible (inglés)", type: string }
+      - { name: body, label: "Texto", type: rich-text }
+      - { name: body_en, label: "Texto (inglés)", type: rich-text }
 
   - name: contacto
     label: Contacto
@@ -187,12 +187,12 @@ content:
     path: _data/contacto.yml
     format: yaml
     fields:
-      - { name: texto, label: Texto de la página, type: text }
-      - { name: texto_en, label: Texto de la página (inglés), type: text }
-      - { name: correo, label: Correo del grupo, type: string }
-      - { name: instagram, label: Instagram (enlace completo), type: string }
-      - { name: youtube, label: YouTube (enlace completo), type: string }
-      - { name: facebook, label: Facebook (enlace completo), type: string }
+      - { name: texto, label: "Texto de la página", type: text }
+      - { name: texto_en, label: "Texto de la página (inglés)", type: text }
+      - { name: correo, label: "Correo del grupo", type: string }
+      - { name: instagram, label: "Instagram (enlace completo)", type: string }
+      - { name: youtube, label: "YouTube (enlace completo)", type: string }
+      - { name: facebook, label: "Facebook (enlace completo)", type: string }
 
   - name: menu
     label: Menú
@@ -205,8 +205,8 @@ content:
         type: object
         list: true
         fields:
-          - { name: titulo, label: Texto, type: string }
-          - { name: titulo_en, label: Texto (inglés), type: string }
+          - { name: titulo, label: "Texto", type: string }
+          - { name: titulo_en, label: "Texto (inglés)", type: string }
           - { name: url, label: "Dirección (ej. /libros/)", type: string }
 
   - name: textos
@@ -219,242 +219,242 @@ content:
         label: "Lema (pie de página)"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_acerca_titulo
         label: "Inicio · título «Acerca de»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_acerca_enlace
         label: "Inicio · enlace a Acerca de"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_eventos_etiqueta
         label: "Inicio · etiqueta de eventos"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_eventos_titulo
         label: "Inicio · título de eventos"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_eventos_boton
         label: "Inicio · botón de eventos"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_publicaciones_titulo
         label: "Inicio · título de publicaciones"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_publicaciones_enlace
         label: "Inicio · enlace a investigaciones"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_entradas_titulo
         label: "Inicio · título de últimas entradas"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: inicio_entradas_enlace
         label: "Inicio · enlace a entradas"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: investigaciones_titulo
         label: "Investigaciones · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: investigaciones_intro
         label: "Investigaciones · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: investigaciones_vacio
         label: "Investigaciones · aviso si está vacía"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: leer
         label: "Botón «Leer»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: entradas_titulo
         label: "Entradas · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: entradas_intro
         label: "Entradas · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: entradas_vacio
         label: "Entradas · aviso si está vacía"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: entradas_volver
         label: "Entradas · enlace para volver"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: libros_titulo
         label: "Libros · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: libros_intro
         label: "Libros · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: libros_descargar
         label: "Libros · botón de descarga"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: libros_editorial
         label: "Libros · botón a la editorial"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: integrantes_titulo
         label: "Integrantes · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: integrantes_intro
         label: "Integrantes · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: difusion_titulo
         label: "Difusión · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: difusion_intro
         label: "Difusión · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: difusion_vacio
         label: "Difusión · aviso si está vacía"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: difusion_ver
         label: "Difusión · enlace «Ver o escuchar»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: eventos_titulo
         label: "Eventos · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: eventos_intro
         label: "Eventos · presentación"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: eventos_proximos
         label: "Eventos · subtítulo «Próximos»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: eventos_realizados
         label: "Eventos · subtítulo «Realizados»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: eventos_vacio
         label: "Eventos · aviso si no hay"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: eventos_mas_info
         label: "Eventos · botón «Más información»"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: contacto_titulo
         label: "Contacto · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: contacto_correo
         label: "Contacto · rótulo del correo"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: contacto_vacio
         label: "Contacto · aviso si no hay datos"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: error_titulo
         label: "Página no encontrada · título"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
       - name: error_texto
         label: "Página no encontrada · texto"
         type: object
         fields:
-          - { name: es, label: Español, type: text }
-          - { name: en, label: Inglés, type: text }
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: error_boton
         label: "Página no encontrada · botón"
         type: object
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
 
   - name: tipos
     label: Traducción de tipos y modalidades
@@ -467,5 +467,5 @@ content:
         type: object
         list: true
         fields:
-          - { name: es, label: Español, type: string }
-          - { name: en, label: Inglés, type: string }
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
