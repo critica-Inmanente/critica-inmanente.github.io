@@ -1,3 +1,3 @@
 {%- comment -%} Texto breve en el idioma de la página: inglés en /en/ (si existe), español en el resto. {%- endcomment -%}
-{%- if include.k -%}{%- assign _o = site.data.textos[include.k] -%}{%- assign _es = _o.es -%}{%- assign _en = _o.en -%}{%- else -%}{%- assign _es = include.es -%}{%- assign _en = include.en -%}{%- endif -%}
+{%- if include.k -%}{%- assign _tko = site.data.textos[include.k] -%}{%- assign _es = _tko.es -%}{%- assign _en = _tko.en -%}{%- else -%}{%- assign _es = include.es -%}{%- assign _en = include.en -%}{%- endif -%}
 {%- if page.lang == "en" and _en and _en != "" -%}{{ _en }}{%- else -%}{{ _es }}{%- endif -%}

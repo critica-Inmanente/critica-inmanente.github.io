@@ -2,39 +2,39 @@
   Etiquetas para buscadores y redes: descripción, URL canónica, versiones de idioma (hreflang),
   robots y Open Graph. Recibe «titulo» (título de la pestaña) desde el layout default.
 {%- endcomment -%}
-{%- assign _en = false -%}{%- if page.lang == "en" -%}{%- assign _en = true -%}{%- endif -%}
+{%- assign _seo_en = false -%}{%- if page.lang == "en" -%}{%- assign _seo_en = true -%}{%- endif -%}
 {%- assign _base = page.es_url | default: page.url -%}
 {%- assign _desc = "" -%}
 {%- if page.collection == "integrantes" -%}
-  {%- if _en and page.body_en -%}{%- assign _desc = page.body_en | markdownify -%}{%- else -%}{%- assign _desc = page.content -%}{%- endif -%}
+  {%- if _seo_en and page.body_en -%}{%- assign _desc = page.body_en | markdownify -%}{%- else -%}{%- assign _desc = page.content -%}{%- endif -%}
   {%- assign _desc = page.descripcion | default: _desc | strip_html | strip_newlines | truncate: 160 -%}
 {%- elsif page.collection == "libros" or page.collection == "investigaciones" -%}
-  {%- capture _resp -%}{% if _en %}{% include nombres-cita.html item=page lang="en" %}{% else %}{% include nombres-cita.html item=page lang="es" %}{% endif %}{%- endcapture -%}
+  {%- capture _resp -%}{% if _seo_en %}{% include nombres-cita.html item=page lang="en" %}{% else %}{% include nombres-cita.html item=page lang="es" %}{% endif %}{%- endcapture -%}
   {%- assign _resp = _resp | strip_html | strip -%}
   {%- if page.collection == "libros" -%}{%- assign _tipo = "Libro" -%}{%- else -%}{%- assign _tipo = page.tipo -%}{%- endif -%}
   {%- capture _auto -%}{% include tipo.html v=_tipo %} ({{ page.anio }}){% if _resp != "" %}. {{ _resp }}{% endif %}{% if page.publicacion and page.publicacion != "" %}. {{ page.publicacion }}{% endif %}{% if page.editorial and page.editorial != "" %}. {{ page.editorial }}{% endif %}.{%- endcapture -%}
-  {%- if _en and page.resumen_en and page.resumen_en != "" -%}{%- assign _res = page.resumen_en -%}{%- else -%}{%- assign _res = page.resumen -%}{%- endif -%}
+  {%- if _seo_en and page.resumen_en and page.resumen_en != "" -%}{%- assign _res = page.resumen_en -%}{%- else -%}{%- assign _res = page.resumen -%}{%- endif -%}
   {%- assign _desc = _res | default: _auto | strip_html | strip_newlines | truncate: 160 -%}
 {%- elsif page.collection == "posts" -%}
-  {%- if _en -%}{%- assign _desc = page.resumen_en | default: page.resumen -%}{%- else -%}{%- assign _desc = page.resumen | default: page.excerpt -%}{%- endif -%}
+  {%- if _seo_en -%}{%- assign _desc = page.resumen_en | default: page.resumen -%}{%- else -%}{%- assign _desc = page.resumen | default: page.excerpt -%}{%- endif -%}
   {%- assign _desc = _desc | strip_html | strip_newlines | truncate: 160 -%}
 {%- elsif page.clave -%}
   {%- assign _ki = page.clave | append: '_intro' -%}
-  {%- if _en -%}{%- assign _desc = site.data.textos[_ki].en | default: site.data.textos[_ki].es -%}{%- else -%}{%- assign _desc = site.data.textos[_ki].es -%}{%- endif -%}
+  {%- if _seo_en -%}{%- assign _desc = site.data.textos[_ki].en | default: site.data.textos[_ki].es -%}{%- else -%}{%- assign _desc = site.data.textos[_ki].es -%}{%- endif -%}
 {%- elsif _base == "/" -%}
-  {%- if _en -%}{%- assign _desc = site.data.inicio.presentacion_en | default: site.data.inicio.presentacion -%}{%- else -%}{%- assign _desc = site.data.inicio.presentacion -%}{%- endif -%}
+  {%- if _seo_en -%}{%- assign _desc = site.data.inicio.presentacion_en | default: site.data.inicio.presentacion -%}{%- else -%}{%- assign _desc = site.data.inicio.presentacion -%}{%- endif -%}
   {%- assign _desc = _desc | strip_html | strip_newlines | truncate: 160 -%}
 {%- else -%}
-  {%- if _en and page.body_en -%}{%- assign _desc = page.body_en | markdownify -%}{%- else -%}{%- assign _desc = page.description | default: page.content -%}{%- endif -%}
+  {%- if _seo_en and page.body_en -%}{%- assign _desc = page.body_en | markdownify -%}{%- else -%}{%- assign _desc = page.description | default: page.content -%}{%- endif -%}
   {%- assign _desc = _desc | strip_html | strip_newlines | truncate: 160 -%}
 {%- endif -%}
-{%- if _en -%}{%- assign _desc = _desc | default: site.description_en | default: site.description | strip -%}{%- else -%}{%- assign _desc = _desc | default: site.description | strip -%}{%- endif -%}
+{%- if _seo_en -%}{%- assign _desc = _desc | default: site.description_en | default: site.description | strip -%}{%- else -%}{%- assign _desc = _desc | default: site.description | strip -%}{%- endif -%}
 {%- assign _canon = page.url | replace: "/index.html", "/" | prepend: site.url -%}
 {%- assign _img = "/assets/img/apple-touch-icon.png" -%}
 {%- if page.portada and page.portada != "" -%}{%- assign _img = page.portada -%}{%- elsif page.foto and page.foto != "" -%}{%- assign _img = page.foto -%}{%- elsif page.imagen and page.imagen != "" -%}{%- assign _img = page.imagen -%}{%- endif -%}
   <meta name="description" content="{{ _desc | escape }}">
   <link rel="canonical" href="{{ _canon }}">
-  {%- assign _url_en = page.en_url -%}{%- if _en -%}{%- assign _url_en = page.url -%}{%- endif -%}
+  {%- assign _url_en = page.en_url -%}{%- if _seo_en -%}{%- assign _url_en = page.url -%}{%- endif -%}
   {%- if _url_en and page.noindex != true %}
   <link rel="alternate" hreflang="es" href="{{ site.url }}{{ _base }}">
   <link rel="alternate" hreflang="en" href="{{ site.url }}{{ _url_en }}">
@@ -46,7 +46,7 @@
   <meta property="og:description" content="{{ _desc | escape }}">
   <meta property="og:url" content="{{ _canon }}">
   <meta property="og:type" content="{% if page.collection == 'integrantes' %}profile{% elsif page.collection == 'posts' %}article{% elsif page.collection == 'libros' %}book{% else %}website{% endif %}">
-  <meta property="og:locale" content="{% if _en %}en_US{% else %}es_MX{% endif %}">
-  {% if _url_en %}<meta property="og:locale:alternate" content="{% if _en %}es_MX{% else %}en_US{% endif %}">{% endif %}
+  <meta property="og:locale" content="{% if _seo_en %}en_US{% else %}es_MX{% endif %}">
+  {% if _url_en %}<meta property="og:locale:alternate" content="{% if _seo_en %}es_MX{% else %}en_US{% endif %}">{% endif %}
   <meta property="og:image" content="{{ _img | prepend: site.url }}">
   <meta name="twitter:card" content="summary">
