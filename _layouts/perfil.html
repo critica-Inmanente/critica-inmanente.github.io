@@ -35,7 +35,7 @@ layout: default
         <div class="prose">{% include tb.html es=content en=p.body_en %}</div>
         {% if p.lineas and p.lineas.size > 0 %}
         <h2 class="perfil-h2">{% include t.html k="perfil_lineas" %}</h2>
-        <ul class="lineas">{% for l in p.lineas %}<li>{% include t.html es=l en=p.lineas_en[forloop.index0] %}</li>{% endfor %}</ul>
+        <ul class="lineas">{% for l in p.lineas %}{% assign l_en = p.lineas_en[forloop.index0] %}<li>{% include t.html es=l en=l_en %}</li>{% endfor %}</ul>
         {% endif %}
         <h2 class="perfil-h2">{% include t.html k="perfil_publicaciones" %}</h2>
         {% include obras-de.html slug=p.slug %}
