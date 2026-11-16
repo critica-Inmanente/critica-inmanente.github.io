@@ -9,8 +9,8 @@ body_en: |
 slug: roberto-giordano-longoni-martinez
 nombre: Roberto Giordano Longoni Martínez
 variantes: []
-adscripcion: Universidad Iberoamericana Puebla
-adscripcion_en: Universidad Iberoamericana Puebla
+adscripcion: Área de Humanidades, Universidad Iberoamericana Puebla
+adscripcion_en: Humanities Area, Universidad Iberoamericana Puebla
 lineas:
   - Nuevas lecturas de Marx
   - Memoria histórica

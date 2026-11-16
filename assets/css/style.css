@@ -58,11 +58,10 @@ p { margin: 0 0 1em; }
   order: 2; font-family: var(--sans); font-size: .74rem; font-weight: 600; letter-spacing: .12em;
   background: transparent; color: var(--negro); border: 1px solid var(--negro); padding: 6px 9px; cursor: pointer; line-height: 1;
 }
+.lang-toggle { text-decoration: none; display: inline-block; }
 .lang-toggle:hover { background: var(--negro); color: var(--marfil); }
 
 /* Idioma: se muestra solo el bloque del idioma activo */
-html[data-lang="en"] .l-es { display: none !important; }
-html:not([data-lang="en"]) .l-en { display: none !important; }
 
 /* Botones y enlaces */
 .btn {

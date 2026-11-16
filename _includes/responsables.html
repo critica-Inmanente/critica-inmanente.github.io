@@ -14,7 +14,7 @@
 {%- for _rr in _rg -%}
 {%- if forloop.index > 1 -%}{%- if forloop.last -%}{% include t.html es=" y " en=" and " %}{%- else -%}, {% endif -%}{%- endif -%}
 {%- assign _rm = nil -%}{%- if _rr.integrante and _rr.integrante != "" -%}{%- assign _rm = site.integrantes | where: "slug", _rr.integrante | first -%}{%- endif -%}
-{%- if _rm and _sinenlace != false -%}<a href="{{ _rm.url | relative_url }}">{{ _rr.nombre }}</a>{%- else -%}{{ _rr.nombre }}{%- endif -%}
+{%- if _rm and _sinenlace != false -%}<a href="{{ _rm.url | lurl }}">{{ _rr.nombre }}</a>{%- else -%}{{ _rr.nombre }}{%- endif -%}
 {%- endfor -%}</span>
 {%- endif -%}
 {%- endfor -%}

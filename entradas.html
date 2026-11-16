@@ -8,7 +8,7 @@ permalink: /entradas/
 <div class="post-list">
   {% for p in site.posts %}
   {% assign res_es = p.resumen | default: p.excerpt | strip_html | truncatewords: 40 %}
-  <a class="post-item" href="{{ p.url | relative_url }}">
+  <a class="post-item" href="{{ p.url | lurl }}">
     <p class="card-meta">{{ p.date | date: '%d.%m.%Y' }}{% if p.autor and p.autor != "" %} · {{ p.autor }}{% endif %}</p>
     <h2>{% include t.html es=p.title en=p.title_en %}</h2>
     <p>{% include t.html es=res_es en=p.resumen_en %}</p>

@@ -68,6 +68,14 @@ content:
         options:
           values: [ Artículo, Capítulo de libro, Entrevista, Reseña, Traducción, Ponencia ]
       - { name: publicacion, label: "Revista, libro o medio", type: string }
+      - name: libro
+        label: "Si es un capítulo de un libro del catálogo, elige el libro (enlaza ambas fichas)"
+        type: reference
+        options:
+          collection: libros
+          search: "title"
+          value: "{fields.slug}"
+          label: "{primary}"
       - { name: detalles, label: "Volumen, número y páginas (ej. «año 7, núm. 14, pp. 388-407»)", type: string }
       - { name: detalles_en, label: "Volumen, número y páginas (inglés, solo si cambia)", type: string }
       - { name: enlace, label: "Enlace (DOI o página de la revista)", type: string }
@@ -721,6 +729,12 @@ content:
           - { name: en, label: "Inglés", type: string }
       - name: ficha_volver_investigaciones
         label: "Ficha · enlace a Investigaciones"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_capitulos
+        label: "Ficha de libro · título «Capítulos de integrantes»"
         type: object
         fields:
           - { name: es, label: "Español", type: string }

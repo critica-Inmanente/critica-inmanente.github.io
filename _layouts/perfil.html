@@ -7,7 +7,7 @@ layout: default
   <section class="page-head">
     <div class="wrap">
       <div class="page-head-inner">
-        <p class="eyebrow"><a href="{{ '/integrantes/' | relative_url }}">{% include t.html k="integrantes_titulo" %}</a></p>
+        <p class="eyebrow"><a href="{{ '/integrantes/' | lurl }}">{% include t.html k="integrantes_titulo" %}</a></p>
         <h1>{% include t.html es=p.title en=p.title_en %}</h1>
         {% if p.grado and p.grado != "" %}<p class="lead">{% include t.html es=p.grado en=p.grado_en %}</p>{% endif %}
       </div>
@@ -16,7 +16,7 @@ layout: default
   <section class="page-body">
     <div class="wrap perfil-grid">
       <aside class="perfil-aside">
-        {% if p.foto and p.foto != "" %}<img class="person-photo" src="{{ p.foto | relative_url }}" alt="{{ p.nombre | default: p.title }}">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | relative_url }}" alt=""></div>{% endif %}
+        {% if p.foto and p.foto != "" %}<img class="person-photo" src="{{ p.foto | lurl }}" alt="{{ p.nombre | default: p.title }}">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | lurl }}" alt=""></div>{% endif %}
         {% if p.adscripcion and p.adscripcion != "" %}
         <h2 class="aside-title">{% include t.html k="perfil_adscripcion" %}</h2>
         <p class="aside-text">{% include t.html es=p.adscripcion en=p.adscripcion_en %}</p>
@@ -39,7 +39,7 @@ layout: default
         {% endif %}
         <h2 class="perfil-h2">{% include t.html k="perfil_publicaciones" %}</h2>
         {% include obras-de.html slug=p.slug %}
-        <nav class="post-nav"><a href="{{ '/integrantes/' | relative_url }}">← {% include t.html k="perfil_volver" %}</a></nav>
+        <nav class="post-nav"><a href="{{ '/integrantes/' | lurl }}">← {% include t.html k="perfil_volver" %}</a></nav>
       </div>
     </div>
   </section>

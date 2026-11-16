@@ -2,15 +2,15 @@
 title: Dr. Rogelio Regalado Mujica
 orden: 2
 grado: Doctor en Sociología.
-foto: ""
+foto: /assets/uploads/foto-rogelio-regalado-mujica.jpg
 grado_en: Doctor of Sociology.
 body_en: |
   Doctor of Sociology from the Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego” of the Benemérita Universidad Autónoma de Puebla, with the dissertation *Elementos hacia una teoría crítica del fascismo en el siglo XXI*. His research focuses on Critical Theory, real abstraction and contemporary forms of fascism.
 slug: rogelio-regalado-mujica
 nombre: Rogelio Regalado Mujica
 variantes: []
-adscripcion: ""
-adscripcion_en: ""
+adscripcion: Licenciatura en Relaciones Internacionales, Benemérita Universidad Autónoma de Puebla
+adscripcion_en: International Relations Program, Benemérita Universidad Autónoma de Puebla
 lineas:
   - Teoría Crítica
   - Abstracción real
@@ -19,7 +19,7 @@ lineas_en:
   - Critical Theory
   - Real abstraction
   - Contemporary forms of fascism
-orcid: ""
+orcid: https://orcid.org/0000-0003-0784-8808
 scholar: ""
 institucional: ""
 ---

@@ -2,11 +2,11 @@
 <article class="ref">
   <span class="ref-year">{{ r.anio }}</span>
   <div class="ref-body">
-    <p class="ref-text">{% capture resp %}{% include responsables.html item=r %}{% endcapture %}{% if resp != "" %}{{ resp }}, {% endif %}«<a class="ref-title" href="{{ r.url | relative_url }}">{{ r.title }}</a>»{% if r.publicacion and r.publicacion != "" %}, <em>{{ r.publicacion }}</em>{% endif %}{% if r.detalles and r.detalles != "" %}, {% assign det_en = r.detalles_en | default: r.detalles %}{% include t.html es=r.detalles en=det_en %}{% endif %}.</p>
+    <p class="ref-text">{% capture resp %}{% include responsables.html item=r %}{% endcapture %}{% if resp != "" %}{{ resp }}, {% endif %}«<a class="ref-title" href="{{ r.url | lurl }}">{{ r.title }}</a>»{% if r.publicacion and r.publicacion != "" %}, <em>{{ r.publicacion }}</em>{% endif %}{% if r.detalles and r.detalles != "" %}, {% assign det_en = r.detalles_en | default: r.detalles %}{% include t.html es=r.detalles en=det_en %}{% endif %}.</p>
     {% if r.tipo and r.tipo != "" %}<span class="ref-type">{% include tipo.html v=r.tipo %}</span>{% endif %}
   </div>
   <div class="ref-links">
     {% if r.enlace and r.enlace != "" %}<a href="{{ r.enlace }}" target="_blank" rel="noopener">{% include t.html k="leer" %}</a>{% endif %}
-    {% if r.pdf and r.pdf != "" %}<a href="{{ r.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+    {% if r.pdf and r.pdf != "" %}<a href="{{ r.pdf | lurl }}" target="_blank" rel="noopener">PDF</a>{% endif %}
   </div>
 </article>

@@ -239,3 +239,6 @@ ficha_volver_investigaciones:
 ficha_ver:
   es: Ficha
   en: Details
+ficha_capitulos:
+  es: Capítulos de integrantes en este libro
+  en: Chapters by members in this book

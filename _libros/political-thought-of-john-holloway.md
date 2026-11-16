@@ -20,6 +20,6 @@ pdf: ""
 enlace: https://link.springer.com/book/10.1007/978-3-031-34571-5
 acceso: ""
 ambito: Producción de integrantes
-resumen: ""
-resumen_en: ""
+resumen: "Volumen colectivo que discute la obra de John Holloway, de «Cambiar el mundo sin tomar el poder» a «Agrietar el capitalismo» y «Hope in Hopeless Times» (2022), desde el marxismo abierto, la teoría crítica y la teoría política. Reúne once capítulos de autores de Europa y América Latina en torno a la revolución, la negatividad y las grietas del capitalismo."
+resumen_en: "Edited volume discussing John Holloway's work, from “Change the World without Taking Power” to “Crack Capitalism” and “Hope in Hopeless Times”, from the standpoint of Open Marxism, critical theory and political theory. Its eleven chapters, by authors from Europe and Latin America, address revolution, negativity and the cracks in capitalism."
 ---

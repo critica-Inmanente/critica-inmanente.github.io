@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="es">
+<html lang="{{ page.lang | default: site.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign _base = page.es_url | default: page.url -%}
   {%- if page.collection == "integrantes" -%}
     {%- assign _pn = page.nombre | default: page.title -%}
     {%- capture titulo_es -%}{{ _pn }} | {{ site.data.textos.perfil_sufijo.es }}{%- endcapture -%}
@@ -13,60 +14,32 @@
   {%- else -%}
     {%- assign titulo_es = page.title -%}{%- assign titulo_en = page.title_en | default: page.title -%}
   {%- endif -%}
-  {%- if page.url == '/' -%}
+  {%- if _base == '/' -%}
     {%- capture doc_es -%}{{ site.title }} · {{ site.data.textos.lema.es }}{%- endcapture -%}
     {%- capture doc_en -%}{{ site.title }} · {{ site.data.textos.lema.en }}{%- endcapture -%}
   {%- else -%}
     {%- capture doc_es -%}{{ titulo_es }} | {{ site.title }}{%- endcapture -%}
     {%- capture doc_en -%}{{ titulo_en }} | {{ site.title }}{%- endcapture -%}
-  {%- endif %}
-  <title>{{ doc_es }}</title>
-{% include seo.html titulo=doc_es %}
+  {%- endif -%}
+  {%- if page.lang == "en" -%}{%- assign doc_titulo = doc_en -%}{%- else -%}{%- assign doc_titulo = doc_es -%}{%- endif %}
+  <title>{{ doc_titulo }}</title>
+{% include seo.html titulo=doc_titulo %}
   {% include jsonld.html %}
   {% feed_meta %}
-  <script>
-    (function () {
-      var d = document.documentElement, l = null;
-      try { l = localStorage.getItem('ci-lang'); } catch (e) {}
-      d.setAttribute('data-title-es', {{ doc_es | jsonify }});
-      d.setAttribute('data-title-en', {{ doc_en | jsonify }});
-      if (l === 'en') { d.setAttribute('data-lang', 'en'); d.lang = 'en'; document.title = {{ doc_en | jsonify }}; }
-    })();
-    document.addEventListener('DOMContentLoaded', function () {
-      if (document.documentElement.getAttribute('data-lang') === 'en') {
-        document.querySelectorAll('[data-ph-en]').forEach(function (i) { i.placeholder = i.getAttribute('data-ph-en'); });
-      }
-    });
-  </script>
-  <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
-  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | lurl }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | lurl }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | lurl }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-  <a class="skip" href="#contenido"><span class="l-es">Saltar al contenido</span><span class="l-en">Skip to content</span></a>
+  <a class="skip" href="#contenido">{% include t.html es="Saltar al contenido" en="Skip to content" %}</a>
   {% include header.html %}
   <main id="contenido">
     {{ content }}
   </main>
   {% include footer.html %}
-  <script>
-    (function () {
-      var d = document.documentElement;
-      document.querySelectorAll('.lang-toggle').forEach(function (b) {
-        b.addEventListener('click', function () {
-          var en = d.getAttribute('data-lang') !== 'en';
-          if (en) { d.setAttribute('data-lang', 'en'); } else { d.removeAttribute('data-lang'); }
-          d.lang = en ? 'en' : 'es';
-          document.title = d.getAttribute(en ? 'data-title-en' : 'data-title-es');
-          document.querySelectorAll('[data-ph-en]').forEach(function (i) { i.placeholder = i.getAttribute(en ? 'data-ph-en' : 'data-ph-es'); });
-          try { localStorage.setItem('ci-lang', en ? 'en' : 'es'); } catch (e) {}
-        });
-      });
-    })();
-  </script>
   {% if site.goatcounter and jekyll.environment == "production" %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>{% endif %}
 </body>
 </html>

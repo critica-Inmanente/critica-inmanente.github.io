@@ -1,6 +1,7 @@
 # Configuración general del sitio Crítica Inmanente
 title: Crítica Inmanente
 description: "Grupo de investigación en teoría crítica de la sociedad: Escuela de Frankfurt, nuevas lecturas de Marx y crítica del capitalismo contemporáneo."
+description_en: "Research group on the critical theory of society: the Frankfurt School, new readings of Marx and the critique of contemporary capitalism."
 lang: es
 timezone: America/Mexico_City
 
@@ -67,6 +68,9 @@ defaults:
 
 exclude:
   - README.md
+  - vendor
+  - .bundle
+  - .github
   - .pages.yml
   - docs
   - Gemfile
