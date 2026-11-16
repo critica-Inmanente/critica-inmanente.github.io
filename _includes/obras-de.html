@@ -1,0 +1,27 @@
+{%- comment -%}
+  Publicaciones de un integrante (slug), agrupadas por tipo y ordenadas por año.
+  Se calculan desde el campo «responsables» de Libros e Investigaciones: no hay listas copiadas a mano.
+{%- endcomment -%}
+{%- assign _slug = include.slug -%}
+{%- assign _libros = site.libros | sort: "anio" | reverse -%}
+{%- assign _invs = site.investigaciones | sort: "anio" | reverse -%}
+{%- assign _hay = false -%}
+{%- assign _secs = "Autoría|perfil_libros_autoria;Coordinación,Edición académica|perfil_libros_coordinados;Traducción,Prefacio,Introducción|perfil_libros_otros" | split: ";" -%}
+{%- for _s in _secs -%}
+{%- assign _sp = _s | split: "|" -%}{%- assign _roles = _sp[0] | split: "," -%}{%- assign _sk = _sp[1] -%}
+{%- capture _items -%}{%- for _o in _libros -%}{%- for _r in _o.responsables -%}{%- if _r.integrante == _slug and _roles contains _r.papel -%}{% include obra-item.html o=_o rol=_r.papel %}{%- break -%}{%- endif -%}{%- endfor -%}{%- endfor -%}{%- endcapture -%}
+{%- assign _items = _items | strip -%}
+{%- if _items != "" -%}{%- assign _hay = true -%}
+<h3 class="obras-sec">{% include t.html k=_sk %}</h3>
+<ul class="obras">{{ _items }}</ul>
+{%- endif -%}
+{%- endfor -%}
+{%- for _sec in site.data.secciones.items -%}
+{%- capture _items -%}{%- for _o in _invs -%}{%- if _o.tipo == _sec.tipo -%}{%- for _r in _o.responsables -%}{%- if _r.integrante == _slug -%}{% include obra-item.html o=_o rol=_r.papel %}{%- break -%}{%- endif -%}{%- endfor -%}{%- endif -%}{%- endfor -%}{%- endcapture -%}
+{%- assign _items = _items | strip -%}
+{%- if _items != "" -%}{%- assign _hay = true -%}
+<h3 class="obras-sec">{% include t.html es=_sec.es en=_sec.en %}</h3>
+<ul class="obras">{{ _items }}</ul>
+{%- endif -%}
+{%- endfor -%}
+{%- unless _hay -%}<p class="empty">{% include t.html k="perfil_sin_publicaciones" %}</p>{%- endunless -%}

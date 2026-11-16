@@ -1,0 +1,1 @@
+{%- assign _pv = include.v -%}{%- assign _pen = "" -%}{%- for _x in site.data.papeles.items -%}{%- if _x.es == _pv -%}{%- assign _pen = _x.en -%}{%- endif -%}{%- endfor -%}{%- include t.html es=_pv en=_pen -%}

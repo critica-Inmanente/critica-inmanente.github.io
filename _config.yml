@@ -16,26 +16,48 @@ kramdown:
   input: GFM
   smart_quotes: ["apos", "apos", "quot", "quot"]
 
+# jekyll-sitemap genera /sitemap.xml y /robots.txt. Las etiquetas de buscadores y los
+# datos estructurados (JSON-LD) se generan en _includes/seo.html y _includes/jsonld.html.
 plugins:
-  - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
 
 feed:
   path: feed.xml
 
 collections:
+  # Una página por obra: /publicaciones/<slug>/
   libros:
-    output: false
+    output: true
+    permalink: /publicaciones/:slug/
   investigaciones:
-    output: false
+    output: true
+    permalink: /publicaciones/:slug/
+  # Una página por integrante: /investigadores/<slug>/
   integrantes:
-    output: false
+    output: true
+    permalink: /investigadores/:slug/
   eventos:
     output: false
   difusion:
     output: false
 
 defaults:
+  - scope:
+      path: ""
+      type: libros
+    values:
+      layout: publicacion
+  - scope:
+      path: ""
+      type: investigaciones
+    values:
+      layout: publicacion
+  - scope:
+      path: ""
+      type: integrantes
+    values:
+      layout: perfil
   - scope:
       path: ""
       type: posts
@@ -46,5 +68,6 @@ defaults:
 exclude:
   - README.md
   - .pages.yml
+  - docs
   - Gemfile
   - Gemfile.lock

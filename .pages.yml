@@ -40,8 +40,28 @@ content:
         order: desc
     fields:
       - { name: title, label: "Título del trabajo (en su idioma original; sin comillas)", type: string, required: true }
-      - { name: autores, label: "Autores (como deben aparecer)", type: string, required: true }
+      - { name: slug, label: "Dirección de la ficha: /publicaciones/ESTO/ (minúsculas, sin acentos, palabras con guiones; no cambiarla una vez publicada)", type: string, required: true }
       - { name: anio, label: "Año", type: number, required: true }
+      - name: responsables
+        label: "Personas responsables (en el orden de la fuente editorial; arrastra para reordenar)"
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: "Nombre como aparece en la publicación", type: string, required: true }
+          - name: papel
+            label: Papel
+            type: select
+            options:
+              values: [ Autoría, Coordinación, Edición académica, Traducción, Prefacio, Introducción ]
+          - name: integrante
+            label: "Si es integrante del grupo, elígelo aquí (enlaza la obra con su perfil)"
+            type: reference
+            options:
+              collection: integrantes
+              search: "title,nombre"
+              value: "{fields.slug}"
+              label: "{primary}"
+      - { name: autores, label: "Autores en texto libre (solo si no se llena la lista anterior)", type: string }
       - name: tipo
         label: Tipo (se traduce solo al inglés)
         type: select
@@ -49,8 +69,24 @@ content:
           values: [ Artículo, Capítulo de libro, Entrevista, Reseña, Traducción, Ponencia ]
       - { name: publicacion, label: "Revista, libro o medio", type: string }
       - { name: detalles, label: "Volumen, número y páginas (ej. «año 7, núm. 14, pp. 388-407»)", type: string }
+      - { name: detalles_en, label: "Volumen, número y páginas (inglés, solo si cambia)", type: string }
       - { name: enlace, label: "Enlace (DOI o página de la revista)", type: string }
-      - { name: pdf, label: "PDF propio (opcional)", type: file }
+      - { name: pdf, label: "PDF propio (opcional; solo versiones de acceso legal)", type: file }
+      - { name: idioma, label: "Idioma de la obra (código: es, en, pt, de…)", type: string, default: es }
+      - { name: doi, label: "DOI (solo el número, ej. 10.1007/978-3-031-34571-5; no inventar)", type: string }
+      - name: acceso
+        label: Tipo de acceso
+        type: select
+        options:
+          values: [ Texto completo, Vista previa, Suscripción o compra, Manuscrito aceptado ]
+      - name: ambito
+        label: "Ámbito (no atribuir al grupo obras anteriores o individuales)"
+        type: select
+        default: Producción de integrantes
+        options:
+          values: [ Producción de integrantes, Resultado del grupo ]
+      - { name: resumen, label: "Resumen breve (también sirve para buscadores)", type: text }
+      - { name: resumen_en, label: "Resumen breve (inglés)", type: text }
 
   - name: libros
     label: Libros
@@ -65,16 +101,53 @@ content:
     fields:
       - { name: title, label: "Título", type: string, required: true }
       - { name: title_en, label: "Título (inglés, solo si el libro tiene versión en inglés)", type: string }
+      - { name: slug, label: "Dirección de la ficha: /publicaciones/ESTO/ (minúsculas, sin acentos, palabras con guiones; no cambiarla una vez publicada)", type: string, required: true }
       - { name: anio, label: "Año", type: number, required: true }
-      - { name: autores, label: "Autor(es) o coordinadores", type: string }
-      - { name: autores_en, label: "Autor(es) o coordinadores (inglés)", type: string }
+      - name: responsables
+        label: "Personas responsables (en el orden de la fuente editorial; arrastra para reordenar)"
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: "Nombre como aparece en la publicación", type: string, required: true }
+          - name: papel
+            label: Papel
+            type: select
+            options:
+              values: [ Autoría, Coordinación, Edición académica, Traducción, Prefacio, Introducción ]
+          - name: integrante
+            label: "Si es integrante del grupo, elígelo aquí (enlaza la obra con su perfil)"
+            type: reference
+            options:
+              collection: integrantes
+              search: "title,nombre"
+              value: "{fields.slug}"
+              label: "{primary}"
+      - { name: autores, label: "Autor(es) en texto libre (solo si no se llena la lista anterior)", type: string }
+      - { name: autores_en, label: "Autor(es) en texto libre (inglés)", type: string }
       - { name: subtitulo, label: "Subtítulo o descripción breve", type: text }
       - { name: subtitulo_en, label: "Subtítulo o descripción breve (inglés)", type: text }
       - { name: datos, label: "Datos de edición (editorial, edición, ISBN)", type: text }
       - { name: datos_en, label: "Datos de edición (inglés)", type: text }
+      - { name: editorial, label: "Editorial (para datos estructurados; ej. «Palgrave Macmillan»)", type: string }
+      - { name: isbn, label: "ISBN (uno por línea; solo de la edición descrita)", type: string, list: true }
       - { name: portada, label: "Portada", type: image }
       - { name: pdf, label: "PDF para descargar", type: file }
       - { name: enlace, label: "Enlace a la editorial (opcional)", type: string }
+      - { name: idioma, label: "Idioma de la obra (código: es, en, pt, de…)", type: string, default: es }
+      - { name: doi, label: "DOI (solo el número, ej. 10.1007/978-3-031-34571-5; no inventar)", type: string }
+      - name: acceso
+        label: Tipo de acceso
+        type: select
+        options:
+          values: [ Texto completo, Vista previa, Suscripción o compra, Manuscrito aceptado ]
+      - name: ambito
+        label: "Ámbito (no atribuir al grupo obras anteriores o individuales)"
+        type: select
+        default: Producción de integrantes
+        options:
+          values: [ Producción de integrantes, Resultado del grupo ]
+      - { name: resumen, label: "Resumen breve (también sirve para buscadores)", type: text }
+      - { name: resumen_en, label: "Resumen breve (inglés)", type: text }
       - { name: body, label: "Presentación (opcional)", type: rich-text }
       - { name: body_en, label: "Presentación (inglés, opcional)", type: rich-text }
 
@@ -91,12 +164,22 @@ content:
     fields:
       - { name: title, label: "Nombre con grado (ej. «Dr. Nombre Apellido»)", type: string, required: true }
       - { name: title_en, label: "Nombre con grado en inglés (opcional, ej. «Dr. Nombre Apellido»)", type: string }
+      - { name: nombre, label: "Nombre académico preferente, sin grado (ej. «Alfonso García Vela»)", type: string, required: true }
+      - { name: slug, label: "Dirección del perfil: /investigadores/ESTO/ (minúsculas, sin acentos, con guiones; no cambiarla una vez publicada)", type: string, required: true }
       - { name: orden, label: "Orden en la página (1, 2, 3…)", type: number, required: true }
       - { name: grado, label: "Grado o línea breve bajo el nombre", type: string }
       - { name: grado_en, label: "Grado o línea breve (inglés)", type: string }
       - { name: foto, label: "Fotografía (vertical; se muestra en blanco y negro)", type: image }
       - { name: body, label: "Biografía", type: rich-text }
       - { name: body_en, label: "Biografía (inglés)", type: rich-text }
+      - { name: variantes, label: "Variantes del nombre confirmadas (ej. con segundo nombre)", type: string, list: true }
+      - { name: adscripcion, label: "Adscripción vigente", type: string }
+      - { name: adscripcion_en, label: "Adscripción vigente (inglés)", type: string }
+      - { name: lineas, label: "Líneas de investigación (una por línea)", type: string, list: true }
+      - { name: lineas_en, label: "Líneas de investigación en inglés (mismo orden)", type: string, list: true }
+      - { name: orcid, label: "ORCID (enlace completo, ej. https://orcid.org/0000-0000-0000-0000)", type: string }
+      - { name: scholar, label: "Google Scholar (enlace completo, solo si su titular lo confirma)", type: string }
+      - { name: institucional, label: "Página institucional (enlace completo)", type: string }
 
   - name: eventos
     label: Eventos
@@ -530,6 +613,120 @@ content:
           - { name: en, label: "Inglés", type: text }
       - name: error_boton
         label: "Página no encontrada · botón"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: integrantes_perfil
+        label: "Integrantes · enlace al perfil"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_sufijo
+        label: "Perfil · texto de la pestaña tras el nombre"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_adscripcion
+        label: "Perfil · rótulo «Adscripción»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_lineas
+        label: "Perfil · título «Líneas de investigación»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_publicaciones
+        label: "Perfil · título «Publicaciones»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_identificadores
+        label: "Perfil · rótulo «Perfiles académicos»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_sin_publicaciones
+        label: "Perfil · aviso sin publicaciones"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
+      - name: perfil_volver
+        label: "Perfil · enlace para volver"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_libros_autoria
+        label: "Perfil · sección «Libros»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_libros_coordinados
+        label: "Perfil · sección «Libros coordinados»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_libros_otros
+        label: "Perfil · sección «Otras contribuciones»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_datos
+        label: "Ficha · título «Datos de la publicación»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_publicado_en
+        label: "Ficha · rótulo «Publicado en»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_acceso
+        label: "Ficha · rótulo «Acceso»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_citar
+        label: "Ficha · título «Cómo citar»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_fuente
+        label: "Ficha · botón «Ver en la fuente»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_volver_libros
+        label: "Ficha · enlace a Libros"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_volver_investigaciones
+        label: "Ficha · enlace a Investigaciones"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: ficha_ver
+        label: "Libros · botón «Ficha»"
         type: object
         fields:
           - { name: es, label: "Español", type: string }

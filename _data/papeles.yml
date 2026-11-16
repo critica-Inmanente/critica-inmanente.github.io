@@ -1,0 +1,10 @@
+# Papeles de las personas responsables de una obra (campo «responsables» de Libros e Investigaciones).
+# es: valor que se elige en Pages CMS · en: rótulo en inglés · schema: propiedad de schema.org
+# cita_es / cita_en: abreviatura en la referencia bibliográfica (vacía = sin abreviatura).
+items:
+  - { es: Autoría, en: Authors, schema: author, cita_es: "", cita_en: "" }
+  - { es: Coordinación, en: Editors, schema: editor, cita_es: "coords.", cita_en: "eds." }
+  - { es: Edición académica, en: Editors, schema: editor, cita_es: "eds.", cita_en: "eds." }
+  - { es: Traducción, en: Translation, schema: translator, cita_es: "", cita_en: "" }
+  - { es: Prefacio, en: Preface, schema: contributor, cita_es: "", cita_en: "" }
+  - { es: Introducción, en: Introduction, schema: contributor, cita_es: "", cita_en: "" }

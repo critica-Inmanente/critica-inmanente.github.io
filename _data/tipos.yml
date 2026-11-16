@@ -12,3 +12,10 @@ items:
   - { es: Presencial, en: In person }
   - { es: En línea, en: Online }
   - { es: Híbrida, en: Hybrid }
+  - { es: Libro, en: Book }
+  - { es: Texto completo, en: Full text }
+  - { es: Vista previa, en: Preview }
+  - { es: Suscripción o compra, en: Subscription or purchase }
+  - { es: Manuscrito aceptado, en: Accepted manuscript }
+  - { es: Resultado del grupo, en: Group output }
+  - { es: Producción de integrantes, en: Members' work }

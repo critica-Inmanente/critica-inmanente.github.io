@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{%- comment -%} Perfil individual de un integrante: /investigadores/<slug>/ {%- endcomment -%}
+{%- assign p = page -%}
+<article class="perfil">
+  <section class="page-head">
+    <div class="wrap">
+      <div class="page-head-inner">
+        <p class="eyebrow"><a href="{{ '/integrantes/' | relative_url }}">{% include t.html k="integrantes_titulo" %}</a></p>
+        <h1>{% include t.html es=p.title en=p.title_en %}</h1>
+        {% if p.grado and p.grado != "" %}<p class="lead">{% include t.html es=p.grado en=p.grado_en %}</p>{% endif %}
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap perfil-grid">
+      <aside class="perfil-aside">
+        {% if p.foto and p.foto != "" %}<img class="person-photo" src="{{ p.foto | relative_url }}" alt="{{ p.nombre | default: p.title }}">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | relative_url }}" alt=""></div>{% endif %}
+        {% if p.adscripcion and p.adscripcion != "" %}
+        <h2 class="aside-title">{% include t.html k="perfil_adscripcion" %}</h2>
+        <p class="aside-text">{% include t.html es=p.adscripcion en=p.adscripcion_en %}</p>
+        {% endif %}
+        {% capture ids %}{{ p.orcid }}{{ p.scholar }}{{ p.institucional }}{% endcapture %}
+        {% if ids != "" %}
+        <h2 class="aside-title">{% include t.html k="perfil_identificadores" %}</h2>
+        <ul class="ids">
+          {% if p.orcid and p.orcid != "" %}<li><a href="{{ p.orcid }}" rel="me noopener" target="_blank">ORCID <span class="id-val">{{ p.orcid | remove: "https://orcid.org/" }}</span></a></li>{% endif %}
+          {% if p.scholar and p.scholar != "" %}<li><a href="{{ p.scholar }}" rel="me noopener" target="_blank">Google Scholar</a></li>{% endif %}
+          {% if p.institucional and p.institucional != "" %}<li><a href="{{ p.institucional }}" rel="me noopener" target="_blank">{% include t.html es="Página institucional" en="Institutional page" %}</a></li>{% endif %}
+        </ul>
+        {% endif %}
+      </aside>
+      <div class="perfil-main">
+        <div class="prose">{% include tb.html es=content en=p.body_en %}</div>
+        {% if p.lineas and p.lineas.size > 0 %}
+        <h2 class="perfil-h2">{% include t.html k="perfil_lineas" %}</h2>
+        <ul class="lineas">{% for l in p.lineas %}<li>{% include t.html es=l en=p.lineas_en[forloop.index0] %}</li>{% endfor %}</ul>
+        {% endif %}
+        <h2 class="perfil-h2">{% include t.html k="perfil_publicaciones" %}</h2>
+        {% include obras-de.html slug=p.slug %}
+        <nav class="post-nav"><a href="{{ '/integrantes/' | relative_url }}">← {% include t.html k="perfil_volver" %}</a></nav>
+      </div>
+    </div>
+  </section>
+</article>

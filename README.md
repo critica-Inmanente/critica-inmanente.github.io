@@ -20,13 +20,21 @@ El botón **EN / ES** del encabezado cambia todo el sitio de idioma (la elecció
 | Carpeta / archivo | Contenido |
 |---|---|
 | `_posts/` | Entradas del blog (`AAAA-MM-DD-titulo.md`) |
-| `_investigaciones/` | Una ficha por artículo, entrevista o capítulo |
-| `_libros/` | Una ficha por libro (portada y PDF) |
-| `_integrantes/` | Una ficha por integrante (campo `orden`) |
+| `_investigaciones/` | Una ficha por artículo, entrevista o capítulo → `/publicaciones/<slug>/` |
+| `_libros/` | Una ficha por libro (portada y PDF) → `/publicaciones/<slug>/` |
+| `_integrantes/` | Un perfil por integrante (campo `orden`) → `/investigadores/<slug>/` |
+| `_layouts/perfil.html`, `_layouts/publicacion.html` | Plantillas de perfil y de ficha |
+| `_includes/seo.html`, `_includes/jsonld.html` | Metadatos y datos estructurados (schema.org) |
+| `_data/papeles.yml`, `_data/secciones.yml` | Papeles (autoría, coordinación…) y secciones de los perfiles |
+| `docs/guia-actualizacion.md` | Cómo agregar obras y perfiles, y calendario de revisión |
 | `_eventos/`, `_difusion/` | Eventos y material audiovisual |
 | `_data/` | Inicio, contacto y menú |
 | `assets/css/style.css` | Diseño (marfil, negro, rojo; EB Garamond e Inter Tight) |
 | `.pages.yml` | Formularios del editor Pages CMS |
+
+## Perfiles, publicaciones y buscadores
+
+Cada integrante tiene un perfil y cada obra una ficha. Las obras se vinculan con los perfiles desde la lista «Personas responsables» de cada ficha, de modo que una sola actualización alimenta ambas páginas. El sitio genera `sitemap.xml`, `robots.txt`, URL canónicas y datos estructurados (JSON-LD). El procedimiento completo está en [docs/guia-actualizacion.md](docs/guia-actualizacion.md).
 
 ## Dominio propio
 

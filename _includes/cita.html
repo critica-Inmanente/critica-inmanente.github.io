@@ -1,0 +1,7 @@
+{%- comment -%} Referencia bibliográfica copiable de una obra, en español y en inglés. {%- endcomment -%}
+{%- assign _c = include.item -%}
+{%- if _c.doi and _c.doi != "" -%}{%- capture _curl -%}https://doi.org/{{ _c.doi }}{%- endcapture -%}{%- elsif _c.enlace and _c.enlace != "" -%}{%- assign _curl = _c.enlace -%}{%- else -%}{%- assign _curl = site.url | append: _c.url -%}{%- endif -%}
+{%- assign _ctit = _c.title -%}{%- if _c.collection == "libros" and _c.subtitulo and _c.subtitulo != "" and _c.subtitulo.size < 90 -%}{%- assign _ctit = _ctit | append: ": " | append: _c.subtitulo -%}{%- endif -%}
+{%- capture _ces -%}{% include nombres-cita.html item=_c lang="es" %} ({{ _c.anio }}). {% if _c.collection == "libros" %}<em>{{ _ctit }}</em>. {{ _c.editorial }}.{% else %}{{ _ctit }}. <em>{{ _c.publicacion }}</em>{% if _c.detalles and _c.detalles != "" %}, {{ _c.detalles }}{% endif %}.{% endif %} {{ _curl }}{%- endcapture -%}
+{%- capture _cen -%}{% include nombres-cita.html item=_c lang="en" %} ({{ _c.anio }}). {% if _c.collection == "libros" %}<em>{{ _ctit }}</em>. {{ _c.editorial }}.{% else %}{{ _ctit }}. <em>{{ _c.publicacion }}</em>{% assign _cdet = _c.detalles_en | default: _c.detalles %}{% if _cdet and _cdet != "" %}, {{ _cdet }}{% endif %}.{% endif %} {{ _curl }}{%- endcapture -%}
+{%- include t.html es=_ces en=_cen -%}

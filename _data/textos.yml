@@ -178,3 +178,64 @@ boletin_confirmado_intro:
 boletin_seguir:
   es: Leer las entradas
   en: Read the posts
+
+# Perfiles de integrantes (/investigadores/…/)
+integrantes_perfil:
+  es: Perfil y publicaciones
+  en: Profile and publications
+perfil_sufijo:
+  es: Publicaciones e investigación
+  en: Publications and research
+perfil_adscripcion:
+  es: Adscripción
+  en: Affiliation
+perfil_lineas:
+  es: Líneas de investigación
+  en: Research interests
+perfil_publicaciones:
+  es: Publicaciones
+  en: Publications
+perfil_identificadores:
+  es: Perfiles académicos
+  en: Academic profiles
+perfil_sin_publicaciones:
+  es: Aún no hay publicaciones registradas en el sitio.
+  en: No publications have been listed on the site yet.
+perfil_volver:
+  es: Todos los integrantes
+  en: All members
+perfil_libros_autoria:
+  es: Libros
+  en: Books
+perfil_libros_coordinados:
+  es: Libros coordinados o editados
+  en: Edited books
+perfil_libros_otros:
+  es: Otras contribuciones a libros
+  en: Other contributions to books
+
+# Fichas de publicaciones (/publicaciones/…/)
+ficha_datos:
+  es: Datos de la publicación
+  en: Publication details
+ficha_publicado_en:
+  es: Publicado en
+  en: Published in
+ficha_acceso:
+  es: Acceso
+  en: Access
+ficha_citar:
+  es: Cómo citar
+  en: How to cite
+ficha_fuente:
+  es: Ver en la fuente
+  en: View at source
+ficha_volver_libros:
+  es: Todos los libros
+  en: All books
+ficha_volver_investigaciones:
+  es: Todas las investigaciones
+  en: All research
+ficha_ver:
+  es: Ficha
+  en: Details

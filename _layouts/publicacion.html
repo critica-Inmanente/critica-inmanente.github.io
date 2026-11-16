@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{%- comment -%} Ficha de una obra (libro, artículo, capítulo, entrevista…): /publicaciones/<slug>/ {%- endcomment -%}
+{%- assign o = page -%}
+{%- if o.collection == "libros" -%}{%- assign tipo_obra = "Libro" -%}{%- assign volver_url = "/libros/" -%}{%- assign volver_k = "ficha_volver_libros" -%}{%- assign seccion_k = "libros_titulo" -%}
+{%- else -%}{%- assign tipo_obra = o.tipo -%}{%- assign volver_url = "/investigaciones/" -%}{%- assign volver_k = "ficha_volver_investigaciones" -%}{%- assign seccion_k = "investigaciones_titulo" -%}{%- endif -%}
+{%- if o.doi and o.doi != "" -%}{%- capture doi_url -%}https://doi.org/{{ o.doi }}{%- endcapture -%}{%- else -%}{%- assign doi_url = "" -%}{%- endif -%}
+<article class="ficha">
+  <section class="page-head">
+    <div class="wrap">
+      <div class="page-head-inner">
+        <p class="eyebrow"><a href="{{ volver_url | relative_url }}">{% include t.html k=seccion_k %}</a> · {% include tipo.html v=tipo_obra %}{% if o.ambito == "Resultado del grupo" %} · {% include tipo.html v=o.ambito %}{% endif %}</p>
+        <h1{% if o.idioma and o.idioma != "es" %} lang="{{ o.idioma }}"{% endif %}>{{ o.title }}</h1>
+        {% if o.subtitulo and o.subtitulo != "" %}<p class="lead"{% if o.idioma and o.idioma != "es" and o.subtitulo_en == nil %} lang="{{ o.idioma }}"{% endif %}>{% include t.html es=o.subtitulo en=o.subtitulo_en %}</p>{% endif %}
+        {% if o.title_en and o.title_en != "" and o.title_en != o.title %}<p class="ficha-trad l-en" lang="en">{{ o.title_en }}</p>{% endif %}
+        <p class="ficha-resp">{% include responsables.html item=o %}</p>
+      </div>
+    </div>
+  </section>
+  <section class="page-body">
+    {%- assign con_aside = false -%}{%- if o.collection == "libros" or o.portada and o.portada != "" -%}{%- assign con_aside = true -%}{%- endif %}
+    <div class="wrap{% if con_aside %} ficha-grid{% endif %}">
+      {% if con_aside %}<div class="ficha-aside">
+        {% if o.portada and o.portada != "" %}<img class="book-cover" src="{{ o.portada | relative_url }}" alt="Portada de {{ o.title | escape }}">{% else %}<div class="book-cover book-cover-empty" aria-hidden="true"></div>{% endif %}
+      </div>{% endif %}
+      <div class="ficha-main">
+        {% assign res = o.resumen | strip %}{% assign cuerpo = o.content | strip %}
+        {% if res != "" %}<div class="prose"><p class="lead">{% include t.html es=o.resumen en=o.resumen_en %}</p></div>{% endif %}
+        {% if cuerpo != "" %}<div class="prose">{% include tb.html es=o.content en=o.body_en %}</div>{% endif %}
+
+        <h2 class="perfil-h2">{% include t.html k="ficha_datos" %}</h2>
+        <dl class="ficha-datos">
+          {% if o.collection == "libros" %}
+            {% if o.datos and o.datos != "" %}<dt>{% include t.html es="Edición" en="Edition" %}</dt><dd>{% include t.html es=o.datos en=o.datos_en %}</dd>{% endif %}
+            {% if o.isbn and o.isbn.size > 0 %}<dt>ISBN</dt><dd>{{ o.isbn | join: " · " }}</dd>{% endif %}
+          {% else %}
+            <dt>{% include t.html k="ficha_publicado_en" %}</dt><dd><em>{{ o.publicacion }}</em>{% assign det_en = o.detalles_en | default: o.detalles %}{% if o.detalles and o.detalles != "" %}, {% include t.html es=o.detalles en=det_en %}{% endif %}</dd>
+          {% endif %}
+          <dt>{% include t.html es="Año" en="Year" %}</dt><dd>{{ o.anio }}</dd>
+          {% if doi_url != "" %}<dt>DOI</dt><dd><a href="{{ doi_url }}" target="_blank" rel="noopener">{{ o.doi }}</a></dd>{% endif %}
+          {% if o.acceso and o.acceso != "" %}<dt>{% include t.html k="ficha_acceso" %}</dt><dd>{% include tipo.html v=o.acceso %}</dd>{% endif %}
+        </dl>
+
+        <div class="book-actions">
+          {% if o.pdf and o.pdf != "" %}<a class="btn" href="{{ o.pdf | relative_url }}" download>{% include t.html k="libros_descargar" %}</a>{% endif %}
+          {% if o.enlace and o.enlace != "" %}<a class="btn btn-ghost" href="{{ o.enlace }}" target="_blank" rel="noopener">{% include t.html k="ficha_fuente" %}</a>{% elsif doi_url != "" %}<a class="btn btn-ghost" href="{{ doi_url }}" target="_blank" rel="noopener">{% include t.html k="ficha_fuente" %}</a>{% endif %}
+        </div>
+
+        <h2 class="perfil-h2">{% include t.html k="ficha_citar" %}</h2>
+        <p class="cita">{% include cita.html item=o %}</p>
+
+        <nav class="post-nav"><a href="{{ volver_url | relative_url }}">← {% include t.html k=volver_k %}</a></nav>
+      </div>
+    </div>
+  </section>
+</article>

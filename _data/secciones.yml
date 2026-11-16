@@ -1,0 +1,9 @@
+# Encabezados (en plural) de las secciones de publicaciones en los perfiles de integrantes,
+# según el «Tipo» de cada ficha de Investigaciones. El orden de esta lista es el orden de las secciones.
+items:
+  - { tipo: Artículo, es: Artículos, en: Articles }
+  - { tipo: Capítulo de libro, es: Capítulos de libro, en: Book chapters }
+  - { tipo: Entrevista, es: Entrevistas, en: Interviews }
+  - { tipo: Reseña, es: Reseñas, en: Reviews }
+  - { tipo: Traducción, es: Traducciones, en: Translations }
+  - { tipo: Ponencia, es: Ponencias, en: Conference papers }

@@ -1,0 +1,2 @@
+{%- assign _lr = include.r -%}{%- assign _lm = nil -%}{%- if _lr.integrante and _lr.integrante != "" -%}{%- assign _lm = site.integrantes | where: "slug", _lr.integrante | first -%}{%- endif -%}
+{"@type":"Person",{% if _lm %}"@id":{{ site.url | append: _lm.url | append: "#person" | jsonify }},"url":{{ site.url | append: _lm.url | jsonify }},{% endif %}"name":{{ _lr.nombre | jsonify }}}

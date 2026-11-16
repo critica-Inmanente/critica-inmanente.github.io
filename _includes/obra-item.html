@@ -1,0 +1,8 @@
+{%- assign _oi = include.o -%}
+<li class="obra">
+  <span class="ref-year">{{ _oi.anio }}</span>
+  <div class="obra-body">
+    <a class="obra-titulo" href="{{ _oi.url | relative_url }}">{% include t.html es=_oi.title en=_oi.title_en %}</a>
+    <span class="obra-meta">{% if _oi.collection == "libros" %}{{ _oi.editorial }}{% else %}<em>{{ _oi.publicacion }}</em>{% endif %}{% if include.rol and include.rol != "Autoría" %} · {% include papel.html v=include.rol %}{% endif %}{% if _oi.ambito == "Resultado del grupo" %} · {% include tipo.html v=_oi.ambito %}{% endif %}</span>
+  </div>
+</li>

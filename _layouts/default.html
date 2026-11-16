@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- if page.clave -%}
+  {%- if page.collection == "integrantes" -%}
+    {%- assign _pn = page.nombre | default: page.title -%}
+    {%- capture titulo_es -%}{{ _pn }} | {{ site.data.textos.perfil_sufijo.es }}{%- endcapture -%}
+    {%- capture titulo_en -%}{{ _pn }} | {{ site.data.textos.perfil_sufijo.en }}{%- endcapture -%}
+  {%- elsif page.clave -%}
     {%- assign _kt = page.clave | append: '_titulo' -%}{%- assign _tt = site.data.textos[_kt] -%}
     {%- assign titulo_es = _tt.es | default: page.title -%}{%- assign titulo_en = _tt.en | default: titulo_es -%}
   {%- else -%}
@@ -17,7 +21,8 @@
     {%- capture doc_en -%}{{ titulo_en }} | {{ site.title }}{%- endcapture -%}
   {%- endif %}
   <title>{{ doc_es }}</title>
-  {% seo title=false %}
+{% include seo.html titulo=doc_es %}
+  {% include jsonld.html %}
   {% feed_meta %}
   <script>
     (function () {

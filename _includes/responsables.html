@@ -1,0 +1,21 @@
+{%- comment -%}
+  Personas responsables de una obra, agrupadas por papel (Autoría, Coordinación, Prefacio…).
+  Los nombres de integrantes enlazan a su perfil. Parámetros: item (obra), enlaces=false (sin enlaces).
+  Si la obra no tiene «responsables», muestra el campo de texto libre «autores».
+{%- endcomment -%}
+{%- assign _ri = include.item -%}{%- assign _sinenlace = include.enlaces -%}
+{%- if _ri.responsables and _ri.responsables.size > 0 -%}
+{%- assign _rprim = true -%}
+{%- for _rp in site.data.papeles.items -%}
+{%- assign _rg = _ri.responsables | where: "papel", _rp.es -%}
+{%- if _rg.size > 0 -%}
+{%- unless _rprim %}<span class="resp-sep"> · </span>{% endunless -%}{%- assign _rprim = false -%}
+<span class="resp">{%- if _rp.es != "Autoría" -%}<span class="resp-rol">{% include t.html es=_rp.es en=_rp.en %}:</span> {% endif -%}
+{%- for _rr in _rg -%}
+{%- if forloop.index > 1 -%}{%- if forloop.last -%}{% include t.html es=" y " en=" and " %}{%- else -%}, {% endif -%}{%- endif -%}
+{%- assign _rm = nil -%}{%- if _rr.integrante and _rr.integrante != "" -%}{%- assign _rm = site.integrantes | where: "slug", _rr.integrante | first -%}{%- endif -%}
+{%- if _rm and _sinenlace != false -%}<a href="{{ _rm.url | relative_url }}">{{ _rr.nombre }}</a>{%- else -%}{{ _rr.nombre }}{%- endif -%}
+{%- endfor -%}</span>
+{%- endif -%}
+{%- endfor -%}
+{%- elsif _ri.autores and _ri.autores != "" -%}{% include t.html es=_ri.autores en=_ri.autores_en %}{%- endif -%}

@@ -1,10 +1,20 @@
 ---
 title: "El giro normativo de Jürgen Habermas como fundamentación ontológica de la Teoría Crítica"
+slug: giro-normativo-habermas
 anio: 2020
-autores: Alfonso García Vela y Roberto Giordano Longoni Martínez
+responsables:
+  - { nombre: Alfonso García Vela, papel: Autoría, integrante: alfonso-garcia-vela }
+  - { nombre: Roberto Giordano Longoni Martínez, papel: Autoría, integrante: roberto-giordano-longoni-martinez }
+autores: ""
 tipo: Artículo
 publicacion: Sociológica
 detalles: "35 (101), pp. 9-33"
+idioma: es
+doi: ""
 enlace: ""
 pdf: ""
+acceso: ""
+ambito: Producción de integrantes
+resumen: ""
+resumen_en: ""
 ---

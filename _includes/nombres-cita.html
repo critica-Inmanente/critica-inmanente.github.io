@@ -1,0 +1,9 @@
+{%- comment -%} Nombres para la referencia bibliográfica en un idioma (lang=es|en): autoría o, si no hay, coordinación/edición con su abreviatura. {%- endcomment -%}
+{%- assign _ni = include.item -%}{%- assign _nl = include.lang -%}
+{%- assign _na = _ni.responsables | where: "papel", "Autoría" -%}{%- assign _nabr = "" -%}
+{%- if _na.size == 0 -%}
+  {%- for _np in site.data.papeles.items -%}{%- if _np.schema == "editor" and _na.size == 0 -%}{%- assign _na = _ni.responsables | where: "papel", _np.es -%}{%- if _nl == "en" -%}{%- assign _nabr = _np.cita_en -%}{%- else -%}{%- assign _nabr = _np.cita_es -%}{%- endif -%}{%- endif -%}{%- endfor -%}
+{%- endif -%}
+{%- for _nr in _na -%}{%- if forloop.index > 1 -%}{%- if forloop.last -%}{%- if _nl == "en" %} and {% else %} y {% endif -%}{%- else -%}, {% endif -%}{%- endif -%}{{ _nr.nombre }}{%- endfor -%}
+{%- if _na.size == 0 and _ni.autores -%}{{ _ni.autores }}{%- endif -%}
+{%- if _nabr != "" %} ({{ _nabr }}){% endif -%}

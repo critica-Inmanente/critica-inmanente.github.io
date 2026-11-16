@@ -221,6 +221,40 @@ html:not([data-lang="en"]) .l-en { display: none !important; }
 .footer-text a { color: var(--marfil); }
 
 /* Móvil */
+/* Perfiles de integrantes y fichas de publicaciones */
+.page-head .eyebrow a { text-decoration: none; }
+.page-head .eyebrow a:hover { text-decoration: underline; }
+.perfil-grid, .ficha-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; padding-top: 40px; }
+.ficha-grid { grid-template-columns: 260px minmax(0, 1fr); }
+.perfil-main, .ficha-main { max-width: var(--texto); }
+.aside-title { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gris); margin: 28px 0 8px; }
+.aside-text { font-size: 1rem; margin: 0; }
+.ids { list-style: none; padding: 0; margin: 0; font-family: var(--sans); font-size: .9rem; }
+.ids li { padding: 6px 0; border-bottom: 1px solid var(--piedra); }
+.ids a { text-decoration: none; font-weight: 600; }
+.ids .id-val { display: block; font-weight: 400; color: var(--gris); font-size: .82rem; }
+.perfil-h2 { font-size: 1.05rem; letter-spacing: .14em; text-transform: uppercase; color: var(--rojo); margin: 2.4em 0 1em; padding-top: 1.2em; border-top: 1px solid var(--piedra); }
+.lineas { padding-left: 1.1em; margin: 0; }
+.lineas li { margin-bottom: .3em; }
+.obras-sec { font-size: .95rem; margin: 1.6em 0 .4em; color: var(--negro); }
+.obras { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--piedra); }
+.obra { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--piedra); align-items: baseline; }
+.obra-titulo { display: block; text-decoration: none; font-size: 1.1rem; line-height: 1.35; }
+.obra-titulo:hover { color: var(--rojo); text-decoration: underline; }
+.obra-meta { display: block; font-size: .95rem; color: var(--gris); margin-top: 4px; }
+.ficha-resp { font-size: 1.15rem; margin: .8em 0 0; }
+.ficha-trad { color: var(--gris); font-style: italic; }
+.resp-rol { font-family: var(--sans); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); }
+.resp-sep { color: var(--piedra); }
+.ficha-datos { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 10px 20px; margin: 0; }
+.ficha-datos dt { font-family: var(--sans); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); padding-top: .25em; }
+.ficha-datos dd { margin: 0; }
+.ficha-datos a { color: var(--rojo); word-break: break-all; }
+.cita { background: var(--marfil-2); padding: 18px 22px; border-left: 2px solid var(--rojo); font-size: 1.02rem; overflow-wrap: anywhere; user-select: all; }
+.ficha .post-nav, .perfil .post-nav { padding-top: 40px; }
+.book h2 a, .person-body h2 a, .ref-title { text-decoration: none; }
+.book h2 a:hover, .person-body h2 a:hover, .ref-title:hover { color: var(--rojo); text-decoration: underline; }
+
 @media (max-width: 960px) {
   .header-inner { min-height: 72px; }
   .brand img { width: 140px; }
@@ -238,7 +272,10 @@ html:not([data-lang="en"]) .l-en { display: none !important; }
   .site-nav a { display: block; padding: 14px 0; font-size: 1.15rem; border: 0; }
   .split, .cards, .media-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
   .newsletter { padding: 28px 22px; }
-  .book, .person { grid-template-columns: 1fr; gap: 28px; }
+  .book, .person, .perfil-grid, .ficha-grid { grid-template-columns: 1fr; gap: 28px; }
+  .perfil-aside .person-photo, .ficha-aside .book-cover { max-width: 200px; }
+  .ficha-datos { grid-template-columns: 1fr; gap: 2px; }
+  .ficha-datos dd { margin-bottom: 10px; }
   .book-cover { max-width: 240px; }
   .person-photo { max-width: 240px; }
   .ref { grid-template-columns: 60px minmax(0, 1fr); }

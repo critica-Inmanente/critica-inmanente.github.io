@@ -1,0 +1,37 @@
+{%- comment -%}
+  Etiquetas para buscadores y redes: descripción, URL canónica, robots y Open Graph.
+  Recibe doc_es (título de la pestaña) desde el layout default.
+{%- endcomment -%}
+{%- assign _desc = "" -%}
+{%- if page.collection == "integrantes" -%}
+  {%- assign _desc = page.descripcion | default: page.content | strip_html | strip_newlines | truncate: 160 -%}
+{%- elsif page.collection == "libros" or page.collection == "investigaciones" -%}
+  {%- capture _resp -%}{% include nombres-cita.html item=page lang="es" %}{%- endcapture -%}
+  {%- assign _resp = _resp | strip_html | strip -%}
+  {%- if page.collection == "libros" -%}{%- assign _tipo = "Libro" -%}{%- else -%}{%- assign _tipo = page.tipo -%}{%- endif -%}
+  {%- capture _auto -%}{{ _tipo }} ({{ page.anio }}){% if _resp != "" %}. {{ _resp }}{% endif %}{% if page.publicacion and page.publicacion != "" %}. {{ page.publicacion }}{% endif %}{% if page.editorial and page.editorial != "" %}. {{ page.editorial }}{% endif %}.{%- endcapture -%}
+  {%- assign _desc = page.resumen | default: _auto | strip_html | strip_newlines | truncate: 160 -%}
+{%- elsif page.collection == "posts" -%}
+  {%- assign _desc = page.resumen | default: page.excerpt | strip_html | strip_newlines | truncate: 160 -%}
+{%- elsif page.clave -%}
+  {%- assign _ki = page.clave | append: '_intro' -%}{%- assign _desc = site.data.textos[_ki].es | default: page.description | default: site.description -%}
+{%- elsif page.url == "/" -%}
+  {%- assign _desc = site.data.inicio.presentacion | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
+{%- else -%}
+  {%- assign _desc = page.description | default: page.content | strip_html | strip_newlines | truncate: 160 -%}
+{%- endif -%}
+{%- assign _desc = _desc | default: site.description | strip -%}
+{%- assign _canon = page.url | replace: "/index.html", "/" | prepend: site.url -%}
+{%- assign _img = "/assets/img/apple-touch-icon.png" -%}
+{%- if page.portada and page.portada != "" -%}{%- assign _img = page.portada -%}{%- elsif page.foto and page.foto != "" -%}{%- assign _img = page.foto -%}{%- elsif page.imagen and page.imagen != "" -%}{%- assign _img = page.imagen -%}{%- endif -%}
+  <meta name="description" content="{{ _desc | escape }}">
+  <link rel="canonical" href="{{ _canon }}">
+  {% if page.noindex or page.url == "/404.html" %}<meta name="robots" content="noindex">{% endif %}
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ include.titulo | escape }}">
+  <meta property="og:description" content="{{ _desc | escape }}">
+  <meta property="og:url" content="{{ _canon }}">
+  <meta property="og:type" content="{% if page.collection == 'integrantes' %}profile{% elsif page.collection == 'posts' %}article{% elsif page.collection == 'libros' %}book{% else %}website{% endif %}">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:image" content="{{ _img | prepend: site.url }}">
+  <meta name="twitter:card" content="summary">

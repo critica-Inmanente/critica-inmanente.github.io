@@ -9,12 +9,13 @@ permalink: /integrantes/
   {% for i in gente %}
   <article class="person">
     <div class="person-card">
-      {% if i.foto and i.foto != "" %}<img class="person-photo" src="{{ i.foto | relative_url }}" alt="{{ i.title }}" loading="lazy">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | relative_url }}" alt=""></div>{% endif %}
+      {% if i.foto and i.foto != "" %}<img class="person-photo" src="{{ i.foto | relative_url }}" alt="{{ i.nombre | default: i.title }}" loading="lazy">{% else %}<div class="person-photo person-photo-empty" aria-hidden="true"><img src="{{ '/assets/img/favicon.png' | relative_url }}" alt=""></div>{% endif %}
     </div>
     <div class="person-body">
-      <h2>{% include t.html es=i.title en=i.title_en %}</h2>
+      <h2><a href="{{ i.url | relative_url }}">{% include t.html es=i.title en=i.title_en %}</a></h2>
       {% if i.grado and i.grado != "" %}<p class="person-degree">{% include t.html es=i.grado en=i.grado_en %}</p>{% endif %}
       <div class="prose">{% include tb.html es=i.content en=i.body_en %}</div>
+      <p><a class="link-arrow" href="{{ i.url | relative_url }}">{% include t.html k="integrantes_perfil" %}</a></p>
     </div>
   </article>
   {% endfor %}
