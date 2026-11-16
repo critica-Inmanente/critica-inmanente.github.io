@@ -11,6 +11,20 @@ Esta guía explica cómo mantener el catálogo académico del sitio. Todo se hac
   - No hay listas copiadas a mano en varias páginas.
 - **Datos para buscadores:** los datos estructurados (schema.org: ProfilePage, Person, Book, ScholarlyArticle, Chapter, Organization), la descripción, la URL canónica y el sitemap (`/sitemap.xml`) se generan solos a partir de esos mismos campos.
 
+## Versión en inglés
+
+- Cada página tiene su equivalente en `/en/` (por ejemplo, `/en/investigadores/alfonso-garcia-vela/`), generado automáticamente a partir de los campos «(inglés)» de Pages CMS.
+- Si un campo en inglés queda vacío, la versión `/en/` muestra el texto en español. Antes de considerar terminada una ficha o un perfil, hay que llenar los campos en inglés (biografía, adscripción, líneas, resumen).
+- Los títulos de las obras se mantienen en su idioma original. «Título (inglés)» es solo una traducción informativa.
+- Las entradas del blog solo tienen versión en inglés si tienen texto en inglés.
+- Los encabezados `hreflang` y el botón EN/ES enlazan automáticamente las dos versiones.
+
+## Capítulos de libro
+
+- Un capítulo se registra en Investigaciones con tipo «Capítulo de libro».
+- Si el libro está en el catálogo, se elige en el campo «libro». Así la ficha del capítulo enlaza al libro y la del libro lista sus capítulos.
+- Va el DOI del capítulo, no el del libro.
+
 ## Agregar una obra nueva
 
 1. **El integrante envía la ficha de datos:**
@@ -49,6 +63,6 @@ Esta guía explica cómo mantener el catálogo académico del sitio. Todo se hac
 
 | Función | Persona |
 |---|---|
-| Contenidos (verificar datos, aprobar semblanzas) | _por definir_ |
+| Contenidos (verificar datos, aprobar semblanzas) | Pablo Ignacio Jiménez Cea |
 | Mantenimiento técnico (publicar, validar, Search Console) | Pablo Ignacio Jiménez Cea |
-| Revisión editorial | _por definir_ |
+| Revisión editorial | Pablo Ignacio Jiménez Cea |

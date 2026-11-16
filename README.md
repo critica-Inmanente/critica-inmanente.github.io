@@ -13,7 +13,9 @@ Imágenes y PDF se suben desde los propios campos del formulario (quedan en `ass
 
 ## Español e inglés
 
-El botón **EN / ES** del encabezado cambia todo el sitio de idioma (la elección se recuerda en el navegador). Cada formulario de Pages CMS tiene campos «(inglés)»: si se dejan vacíos, se muestra el texto en español. Los títulos, presentaciones, botones y avisos fijos se editan en **Textos del sitio**.
+Cada página tiene una versión en inglés con dirección propia bajo `/en/`, generada por `_plugins/version_en.rb`. El botón **EN / ES** lleva a la página equivalente y las etiquetas `hreflang` informan a Google de ambas versiones.
+
+El sitio se compila con GitHub Actions (`.github/workflows/pages.yml`), porque la compilación clásica de GitHub Pages no ejecuta plugins propios. En Settings → Pages, el «Source» debe ser «GitHub Actions». Cada formulario de Pages CMS tiene campos «(inglés)»: si se dejan vacíos, se muestra el texto en español. Los títulos, presentaciones, botones y avisos fijos se editan en **Textos del sitio**.
 
 ## Estructura
 
