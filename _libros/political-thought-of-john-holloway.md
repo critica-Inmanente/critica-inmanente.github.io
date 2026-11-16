@@ -15,7 +15,7 @@ isbn:
 doi: 10.1007/978-3-031-34571-5
 datos: "Palgrave Macmillan (Springer Nature), 2023. Colección Marx, Engels, and Marxisms. ISBN 978-3-031-34570-8 (impreso) y 978-3-031-34571-5 (electrónico). DOI: 10.1007/978-3-031-34571-5."
 datos_en: "Palgrave Macmillan (Springer Nature), 2023. Marx, Engels, and Marxisms series. ISBN 978-3-031-34570-8 (print) and 978-3-031-34571-5 (electronic). DOI: 10.1007/978-3-031-34571-5."
-portada: ""
+portada: /assets/uploads/portada-political-thought-of-john-holloway.jpg
 pdf: ""
 enlace: https://link.springer.com/book/10.1007/978-3-031-34571-5
 acceso: ""

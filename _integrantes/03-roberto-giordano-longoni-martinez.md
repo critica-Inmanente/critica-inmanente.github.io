@@ -2,7 +2,7 @@
 title: Dr. Roberto Giordano Longoni Martínez
 orden: 3
 grado: Licenciado en Literatura y Filosofía, Maestro y Doctor en Sociología.
-foto: ""
+foto: /assets/uploads/foto-roberto-giordano-longoni-martinez.jpg
 grado_en: BA in Literature and Philosophy, MA and PhD in Sociology.
 body_en: |
   Roberto Giordano Longoni Martínez was born in Pachuca, Hidalgo, on 27 October 1991. He holds a BA in Literature and Philosophy from the Universidad Iberoamericana Puebla, and an MA and PhD in Sociology from the Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego” of the Benemérita Universidad Autónoma de Puebla. He currently teaches in the humanities, psychology and university reflection programs at the Universidad Iberoamericana Puebla. His interests and passions include the new readings of Marx, historical memory, the political philosophy of popular insurrections, Latin American literature (especially Chilean) and the Critical Theory of the Frankfurt School.
@@ -23,7 +23,7 @@ lineas_en:
   - Political philosophy of popular insurrections
   - Latin American literature
   - Critical Theory of the Frankfurt School
-orcid: ""
+orcid: https://orcid.org/0000-0001-8015-1965
 scholar: ""
 institucional: ""
 ---

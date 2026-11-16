@@ -26,5 +26,6 @@ lineas_en:
 orcid: https://orcid.org/0000-0002-6977-9134
 scholar: ""
 institucional: ""
+foto: /assets/uploads/foto-pablo-ignacio-jimenez-cea.jpg
 ---
 Licenciado y profesor en Historia y Ciencias Sociales por la Universidad Academia de Humanismo Cristiano (Chile) y Maestro en Sociología por el Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego” de la BUAP, donde actualmente cursa el doctorado en Sociología. Es autor de *Revuelta, capital y praxis social* (BUAP, 2026). Sus temas de investigación son las lecturas contemporáneas de Marx, la crítica de la economía política y las transformaciones actuales del capitalismo mundial.

@@ -14,7 +14,7 @@ isbn:
 doi: ""
 datos: "CLACSO (Ciudad Autónoma de Buenos Aires) y Benemérita Universidad Autónoma de Puebla. Primera edición, 2022. Libro digital, PDF. ISBN 978-987-813-395-9."
 datos_en: "CLACSO (Buenos Aires) and Benemérita Universidad Autónoma de Puebla. First edition, 2022. Digital book, PDF. ISBN 978-987-813-395-9."
-portada: ""
+portada: /assets/uploads/portada-cinco-estudios-nacionalismos-contemporaneos.jpg
 pdf: ""
 enlace: ""
 acceso: ""
