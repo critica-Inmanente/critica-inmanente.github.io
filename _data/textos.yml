@@ -254,3 +254,12 @@ difusion_filtrar:
 difusion_todos:
   es: Todos
   en: All
+sitios_titulo:
+  es: Sitios de interés
+  en: Links
+sitios_intro:
+  es: Revistas, proyectos y archivos afines al trabajo del grupo.
+  en: Journals, projects and archives related to the group's work.
+sitios_vacio:
+  es: Pronto agregaremos sitios de interés.
+  en: Links will be added soon.

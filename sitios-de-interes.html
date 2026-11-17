@@ -1,0 +1,22 @@
+---
+layout: page
+title: Sitios de interés
+title_en: Links
+clave: sitios
+permalink: /sitios-de-interes/
+---
+{%- comment -%} Lista editable en Pages CMS → «Sitios de interés» (_data/sitios.yml). {%- endcomment -%}
+{% assign sitios = site.data.sitios.items %}
+{% if sitios and sitios.size > 0 %}
+<ul class="sitios">
+  {% for s in sitios %}{% if s.url and s.url != "" %}
+  <li class="sitio">
+    <h2><a href="{{ s.url }}" target="_blank" rel="noopener">{% include t.html es=s.nombre en=s.nombre_en %}</a></h2>
+    {% if s.descripcion and s.descripcion != "" %}<p>{% include t.html es=s.descripcion en=s.descripcion_en %}</p>{% endif %}
+    <a class="link-arrow" href="{{ s.url }}" target="_blank" rel="noopener">{{ s.url | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a>
+  </li>
+  {% endif %}{% endfor %}
+</ul>
+{% else %}
+<p class="empty">{% include t.html k="sitios_vacio" %}</p>
+{% endif %}

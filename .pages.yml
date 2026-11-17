@@ -316,6 +316,23 @@ content:
       - { name: facebook, label: "Facebook (enlace completo)", type: string }
       - { name: boletin_usuario, label: "Boletín: nombre de usuario de Buttondown (vacío = «próximamente»)", type: string }
 
+  - name: sitios
+    label: Sitios de interés
+    type: file
+    path: _data/sitios.yml
+    format: yaml
+    fields:
+      - name: items
+        label: "Sitios (arrastra para reordenar)"
+        type: object
+        list: true
+        fields:
+          - { name: nombre, label: "Nombre", type: string, required: true }
+          - { name: nombre_en, label: "Nombre (inglés)", type: string }
+          - { name: url, label: "Dirección (enlace completo, con https://)", type: string, required: true }
+          - { name: descripcion, label: "Descripción breve", type: text }
+          - { name: descripcion_en, label: "Descripción breve (inglés)", type: text }
+
   - name: menu
     label: Menú
     type: file
@@ -781,6 +798,24 @@ content:
         fields:
           - { name: es, label: "Español", type: string }
           - { name: en, label: "Inglés", type: string }
+      - name: sitios_titulo
+        label: "Sitios de interés · título"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: sitios_intro
+        label: "Sitios de interés · presentación"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
+      - name: sitios_vacio
+        label: "Sitios de interés · aviso sin sitios"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: perfil_conferencias
         label: "Perfil · título «Conferencias y materiales audiovisuales»"
         type: object

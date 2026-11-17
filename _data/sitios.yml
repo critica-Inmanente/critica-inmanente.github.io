@@ -1,0 +1,12 @@
+# Sitios de interés (editable en Pages CMS → «Sitios de interés»). El orden de la lista es el orden en la página.
+items:
+  - nombre: "Bajo el Volcán. Revista del Posgrado de Sociología de la BUAP"
+    nombre_en: "Bajo el Volcán. Journal of the Graduate Program in Sociology, BUAP"
+    url: https://bajoelvolcanx.buap.mx/index.php/bajovolc
+    descripcion: "Revista semestral de acceso abierto del Posgrado en Sociología del Instituto de Ciencias Sociales y Humanidades «Alfonso Vélez Pliego» de la Benemérita Universidad Autónoma de Puebla. Publica artículos, dosieres, entrevistas y reseñas de ciencias sociales y humanidades."
+    descripcion_en: "Biannual open-access journal of the Graduate Program in Sociology at the Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego”, Benemérita Universidad Autónoma de Puebla. It publishes articles, dossiers, interviews and reviews in the social sciences and humanities."
+  - nombre: "Moishe Postone Legacy Project"
+    nombre_en: "Moishe Postone Legacy Project"
+    url: https://moishepostone.org/
+    descripcion: "Proyecto impulsado por familiares, amigos y antiguos estudiantes de Moishe Postone (1942-2018) para preservar su obra y ponerla al alcance de todos: bibliografía, archivo (en la Universidad de Chicago), grabaciones, documentos y actividades en torno a su pensamiento."
+    descripcion_en: "Project launched by Moishe Postone's (1942-2018) family, friends and former students to preserve his work and make it available to all: bibliography, archive (at the University of Chicago), recordings, documents and activities around his thought."

@@ -265,6 +265,14 @@ p { margin: 0 0 1em; }
 .book h2 a, .person-body h2 a, .ref-title { text-decoration: none; }
 .book h2 a:hover, .person-body h2 a:hover, .ref-title:hover { color: var(--rojo); text-decoration: underline; }
 
+/* Sitios de interés */
+.sitios { list-style: none; padding: 0; margin: 0; max-width: var(--texto); border-top: 1px solid var(--piedra); }
+.sitio { padding: 26px 0; border-bottom: 1px solid var(--piedra); }
+.sitio h2 { font-size: 1.35rem; margin: 0 0 8px; }
+.sitio h2 a { text-decoration: none; }
+.sitio h2 a:hover { color: var(--rojo); text-decoration: underline; }
+.sitio p { margin: 0 0 10px; }
+
 @media (max-width: 960px) {
   .header-inner { min-height: 72px; }
   .brand img { width: 140px; }

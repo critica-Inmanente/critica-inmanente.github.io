@@ -21,6 +21,9 @@ items:
   - titulo: Eventos
     titulo_en: Events
     url: /eventos/
+  - titulo: Sitios de interés
+    titulo_en: Links
+    url: /sitios-de-interes/
   - titulo: Contáctanos
     titulo_en: Contact
     url: /contacto/
