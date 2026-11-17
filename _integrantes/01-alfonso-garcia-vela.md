@@ -25,7 +25,7 @@ lineas_en:
   - "New readings of Marx: value theory, social form and the dialectic of transformation and reconstitution"
   - "The social constitution of subjectivity: Marx, Freud and Adorno"
 orcid: https://orcid.org/0000-0002-9750-7005
-scholar: ""
+scholar: https://scholar.google.com/citations?user=xQLaC5oAAAAJ&hl=es
 academia: https://buap-mx.academia.edu/AlfonsoGalileoGarciaVela
 institucional: ""
 enlaces:

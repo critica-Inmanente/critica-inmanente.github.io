@@ -30,3 +30,33 @@ items:
     url: https://www.historicalmaterialism.org/
     descripcion: "Revista trimestral de teoría marxista crítica con sede en Londres (Brill). Organiza además una colección de libros y conferencias anuales en distintas ciudades."
     descripcion_en: "Quarterly journal of critical Marxist theory based in London (Brill). It also runs a book series and annual conferences in several cities."
+  - nombre: "Institut für Sozialforschung (Frankfurt)"
+    nombre_en: "Institut für Sozialforschung (Frankfurt)"
+    url: https://www.ifs.uni-frankfurt.de/
+    descripcion: "Instituto de Investigación Social de Fráncfort, fundado en 1923 y sede histórica de la Escuela de Frankfurt y de la teoría crítica de la sociedad. Hoy está vinculado a la Universidad Goethe."
+    descripcion_en: "Frankfurt's Institute for Social Research, founded in 1923, the historical home of the Frankfurt School and the critical theory of society. It is now affiliated with Goethe University."
+  - nombre: "Zeitschrift für kritische Theorie"
+    nombre_en: "Zeitschrift für kritische Theorie"
+    url: https://zuklampen.de/reihe/zeitschrift-fuer-kritische-theorie/ueber-die-zeitschrift
+    descripcion: "Revista alemana publicada desde 1995 por la editorial zu Klampen. Es un foro para aplicar la teoría crítica a problemas actuales y para el diálogo entre sus distintas corrientes."
+    descripcion_en: "German journal published since 1995 by zu Klampen. A forum for applying critical theory to current problems and for dialogue among its different currents."
+  - nombre: "Marx-Engels-Gesamtausgabe (MEGA²)"
+    nombre_en: "Marx-Engels-Gesamtausgabe (MEGA²)"
+    url: https://mega.bbaw.de/de
+    descripcion: "Edición histórico-crítica de todas las obras, manuscritos, extractos y cartas de Marx y Engels, a cargo de la Fundación Internacional Marx-Engels y la Academia de Ciencias de Berlín-Brandeburgo."
+    descripcion_en: "Historical-critical edition of all the works, manuscripts, excerpts and letters of Marx and Engels, edited by the International Marx-Engels Foundation and the Berlin-Brandenburg Academy of Sciences."
+  - nombre: "Marxists Internet Archive (sección en español)"
+    nombre_en: "Marxists Internet Archive (Spanish section)"
+    url: https://www.marxists.org/espanol/
+    descripcion: "Biblioteca digital de acceso libre con textos de Marx, Engels y de la tradición marxista en español, incluida la colección completa de los Cuadernos de Pasado y Presente."
+    descripcion_en: "Free digital library with texts by Marx, Engels and the Marxist tradition in Spanish, including the complete Cuadernos de Pasado y Presente series."
+  - nombre: "Endnotes"
+    nombre_en: "Endnotes"
+    url: https://endnotes.org.uk/
+    descripcion: "Revista y colección editada por un grupo de discusión con base en Alemania, Reino Unido y Estados Unidos. Trabaja sobre la superación comunista del modo de producción capitalista, la teoría de la forma-valor y la dialéctica sistemática."
+    descripcion_en: "Journal and book series published by a discussion group based in Germany, the UK and the US. It addresses the communist overcoming of the capitalist mode of production, value-form theory and systematic dialectics."
+  - nombre: "Conference of Socialist Economists"
+    nombre_en: "Conference of Socialist Economists"
+    url: https://cseweb.org.uk/
+    descripcion: "Organización internacional y democrática, fundada en 1970, dedicada a la crítica materialista del capitalismo. Organiza encuentros y publica la revista Capital & Class."
+    descripcion_en: "International, democratic membership organisation founded in 1970 and devoted to the materialist critique of capitalism. It organises events and publishes the journal Capital & Class."
