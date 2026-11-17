@@ -3,8 +3,8 @@ title: "La teoría crítica de Moishe Postone"
 slug: teoria-critica-de-moishe-postone
 anio: 2023
 responsables:
-  - { nombre: Alberto Bonnet, papel: Edición académica, integrante: "" }
   - { nombre: Alfonso García Vela, papel: Edición académica, integrante: alfonso-garcia-vela }
+  - { nombre: Alberto Bonnet, papel: Edición académica, integrante: "" }
 autores: ""
 subtitulo: ""
 subtitulo_en: ""
@@ -13,9 +13,9 @@ idioma: es
 isbn:
   - 978-987-8267-44-9
 doi: 10.2307/jj.38778209
-datos: "Prometeo Libros, Buenos Aires, 2023. Compilación de Alberto Bonnet y Alfonso García Vela. ISBN 978-987-8267-44-9."
-datos_en: "Prometeo Libros, Buenos Aires, 2023. Compiled by Alberto Bonnet and Alfonso García Vela. ISBN 978-987-8267-44-9."
-portada: ""
+datos: "Prometeo Libros, Buenos Aires, 2023. Edición de Alfonso García Vela y Alberto Bonnet. ISBN 978-987-8267-44-9."
+datos_en: "Prometeo Libros, Buenos Aires, 2023. Edited by Alfonso García Vela and Alberto Bonnet. ISBN 978-987-8267-44-9."
+portada: /assets/uploads/portada-teoria-critica-de-moishe-postone.jpg
 pdf: ""
 enlace: https://prometeoeditorial.com/productos/la-teoria-critica-de-moishe-postone-compilacion-de-alberto-bonnet-y-alfonso-garcia-vela/
 acceso: ""

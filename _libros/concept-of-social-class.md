@@ -16,7 +16,7 @@ isbn:
 doi: ""
 datos: "ibidem, Stuttgart, 2022. ISBN 978-3-8382-1607-2. Distribuido por Columbia University Press."
 datos_en: "ibidem, Stuttgart, 2022. ISBN 978-3-8382-1607-2. Distributed by Columbia University Press."
-portada: ""
+portada: /assets/uploads/portada-concept-of-social-class.jpg
 pdf: ""
 enlace: https://cup.columbia.edu/book/the-concept-of-social-class-in-contemporary-marxist-theory/9783838216072/
 acceso: ""

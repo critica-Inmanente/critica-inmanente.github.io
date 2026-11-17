@@ -1,0 +1,3 @@
+{%- comment -%} Fecha de un material de Difusión: texto libre (rangos, «marzo de 2024») o la fecha exacta. {%- endcomment -%}
+{%- assign _df = include.d -%}
+{%- if _df.fecha_texto and _df.fecha_texto != "" -%}{% include t.html es=_df.fecha_texto en=_df.fecha_texto_en %}{%- else -%}{% include fecha.html d=_df.fecha %}{%- endif -%}

@@ -4,6 +4,7 @@ slug: revuelta-capital-y-praxis-social
 anio: 2026
 responsables:
   - { nombre: Pablo Ignacio Jiménez Cea, papel: Autoría, integrante: pablo-ignacio-jimenez-cea }
+  - { nombre: Alfonso García Vela, papel: Prólogo, integrante: alfonso-garcia-vela }
 autores: ""
 subtitulo: Balance teórico-histórico sobre los límites y potencialidades para la transformación social radical a partir del estudio crítico de la revuelta social en Chile (2019-2020)
 subtitulo_en: A theoretical and historical assessment of the limits and potential for radical social transformation, based on a critical study of the social revolt in Chile (2019-2020)

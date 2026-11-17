@@ -1,0 +1,5 @@
+{%- comment -%} Integrantes que participan en un material de Difusión, enlazados a su perfil. {%- endcomment -%}
+{%- assign _di = include.d -%}
+{%- if _di.integrantes and _di.integrantes.size > 0 -%}
+<p class="media-con"><span class="media-con-rot">{% include t.html k="difusion_con" %}</span> {% for _ds in _di.integrantes %}{% assign _dm = site.integrantes | where: "slug", _ds | first %}{% if _dm %}{% unless forloop.first %}{% if forloop.last %}{% include t.html es=" y " en=" and " %}{% else %}, {% endif %}{% endunless %}<a href="{{ _dm.url | lurl }}">{{ _dm.nombre | default: _dm.title }}</a>{% endif %}{% endfor %}</p>
+{%- endif -%}

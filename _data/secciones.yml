@@ -3,6 +3,7 @@
 items:
   - { tipo: Artículo, es: Artículos, en: Articles }
   - { tipo: Capítulo de libro, es: Capítulos de libro, en: Book chapters }
+  - { tipo: Prólogo, es: Prólogos, en: Forewords }
   - { tipo: Presentación de dosier, es: Presentaciones de dosier, en: Dossier introductions }
   - { tipo: Entrevista, es: Entrevistas, en: Interviews }
   - { tipo: Reseña, es: Reseñas, en: Reviews }

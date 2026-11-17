@@ -6,5 +6,6 @@ items:
   - { es: Coordinación, en: Editors, schema: editor, cita_es: "coords.", cita_en: "eds." }
   - { es: Edición académica, en: Editors, schema: editor, cita_es: "eds.", cita_en: "eds." }
   - { es: Traducción, en: Translation, schema: translator, cita_es: "", cita_en: "" }
+  - { es: Prólogo, en: Foreword, schema: contributor, cita_es: "", cita_en: "" }
   - { es: Prefacio, en: Preface, schema: contributor, cita_es: "", cita_en: "" }
   - { es: Introducción, en: Introduction, schema: contributor, cita_es: "", cita_en: "" }

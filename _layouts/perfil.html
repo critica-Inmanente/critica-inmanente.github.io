@@ -42,7 +42,7 @@ layout: default
         <h2 class="perfil-h2">{% include t.html k="perfil_publicaciones" %}</h2>
         {% include obras-de.html slug=p.slug %}
         {% assign difs = site.difusion | sort: "fecha" | reverse %}
-        {% capture confs_html %}{% for d in difs %}{% if d.integrantes contains p.slug %}<li class="obra"><span class="ref-year">{{ d.fecha | date: "%Y" }}</span><div class="obra-body"><a class="obra-titulo" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html es=d.title en=d.title_en %}</a><span class="obra-meta">{% include tipo.html v=d.tipo %} · {% include fecha.html d=d.fecha %}{% if d.lugar and d.lugar != "" %} · {% include t.html es=d.lugar en=d.lugar_en %}{% endif %}{% if d.enlace contains "youtu" %} · YouTube{% endif %}</span></div></li>{% endif %}{% endfor %}{% endcapture %}
+        {% capture confs_html %}{% for d in difs %}{% if d.integrantes contains p.slug %}<li class="obra"><span class="ref-year">{{ d.fecha | date: "%Y" }}</span><div class="obra-body"><a class="obra-titulo" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html es=d.title en=d.title_en %}</a><span class="obra-meta">{% include tipo.html v=d.tipo %} · {% include difusion-fecha.html d=d %}{% if d.lugar and d.lugar != "" %} · {% include t.html es=d.lugar en=d.lugar_en %}{% endif %}{% if d.enlace contains "youtu" %} · YouTube{% endif %}</span></div></li>{% endif %}{% endfor %}{% endcapture %}
         {% assign confs_html = confs_html | strip %}
         {% if confs_html != "" %}
         <h2 class="perfil-h2">{% include t.html k="perfil_conferencias" %}</h2>

@@ -52,7 +52,7 @@ content:
             label: Papel
             type: select
             options:
-              values: [ Autoría, Coordinación, Edición académica, Traducción, Prefacio, Introducción ]
+              values: [ Autoría, Coordinación, Edición académica, Traducción, Prólogo, Prefacio, Introducción ]
           - name: integrante
             label: "Si es integrante del grupo, elígelo aquí (enlaza la obra con su perfil)"
             type: reference
@@ -66,7 +66,7 @@ content:
         label: Tipo (se traduce solo al inglés)
         type: select
         options:
-          values: [ Artículo, Capítulo de libro, Presentación de dosier, Entrevista, Reseña, Traducción, Ponencia ]
+          values: [ Artículo, Capítulo de libro, Prólogo, Presentación de dosier, Entrevista, Reseña, Traducción, Ponencia ]
       - { name: publicacion, label: "Revista, libro o medio", type: string }
       - name: libro
         label: "Si es un capítulo de un libro del catálogo, elige el libro (enlaza ambas fichas)"
@@ -121,7 +121,7 @@ content:
             label: Papel
             type: select
             options:
-              values: [ Autoría, Coordinación, Edición académica, Traducción, Prefacio, Introducción ]
+              values: [ Autoría, Coordinación, Edición académica, Traducción, Prólogo, Prefacio, Introducción ]
           - name: integrante
             label: "Si es integrante del grupo, elígelo aquí (enlaza la obra con su perfil)"
             type: reference
@@ -243,9 +243,19 @@ content:
         label: Tipo
         type: select
         options:
-          values: [ Conferencia, Podcast, Video, Ensayo, Entrevista ]
-      - { name: fecha, label: "Fecha", type: date, required: true }
+          values: [ Conferencia, Charla, Ponencia, Seminario, Presentación de libro, Podcast, Video, Ensayo, Entrevista ]
+      - { name: fecha, label: "Fecha (para ordenar; si es un rango, el primer día)", type: date, required: true }
+      - { name: fecha_texto, label: "Fecha como debe mostrarse, si no es un solo día (ej. «1 al 5 de diciembre de 2025»)", type: string }
+      - { name: fecha_texto_en, label: "Fecha como debe mostrarse (inglés)", type: string }
       - { name: enlace, label: "Enlace de YouTube o Spotify (se inserta solo) u otro sitio", type: string }
+      - name: enlaces
+        label: "Enlaces adicionales (ej. una clase por video)"
+        type: object
+        list: true
+        fields:
+          - { name: etiqueta, label: "Texto del enlace", type: string, required: true }
+          - { name: etiqueta_en, label: "Texto del enlace (inglés)", type: string }
+          - { name: url, label: "Dirección", type: string, required: true }
       - { name: lugar, label: "Lugar o institución (ej. «Instituto de Investigaciones Sociológicas de la UABJO, Oaxaca»)", type: string }
       - { name: lugar_en, label: "Lugar o institución (inglés)", type: string }
       - name: integrantes
@@ -749,6 +759,24 @@ content:
           - { name: en, label: "Inglés", type: string }
       - name: ficha_volver_investigaciones
         label: "Ficha · enlace a Investigaciones"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_con
+        label: "Difusión · rótulo «Con» (integrantes)"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_filtrar
+        label: "Difusión · rótulo «Ver materiales de»"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_todos
+        label: "Difusión · botón «Todos»"
         type: object
         fields:
           - { name: es, label: "Español", type: string }

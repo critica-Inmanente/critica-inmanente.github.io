@@ -6,7 +6,7 @@
 {%- assign _libros = site.libros | sort: "anio" | reverse -%}
 {%- assign _invs = site.investigaciones | sort: "anio" | reverse -%}
 {%- assign _hay = false -%}
-{%- assign _secs = "Autoría|perfil_libros_autoria;Coordinación,Edición académica|perfil_libros_coordinados;Traducción,Prefacio,Introducción|perfil_libros_otros" | split: ";" -%}
+{%- assign _secs = "Autoría|perfil_libros_autoria;Coordinación,Edición académica|perfil_libros_coordinados;Traducción,Introducción|perfil_libros_otros" | split: ";" -%}
 {%- for _s in _secs -%}
 {%- assign _sp = _s | split: "|" -%}{%- assign _roles = _sp[0] | split: "," -%}{%- assign _sk = _sp[1] -%}
 {%- capture _items -%}{%- for _o in _libros -%}{%- for _r in _o.responsables -%}{%- if _r.integrante == _slug and _roles contains _r.papel -%}{% include obra-item.html o=_o rol=_r.papel %}{%- break -%}{%- endif -%}{%- endfor -%}{%- endfor -%}{%- endcapture -%}

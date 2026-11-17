@@ -21,3 +21,7 @@ items:
   - { es: Producción de integrantes, en: Members' work }
   - { es: Presentación de dosier, en: Dossier introduction }
   - { es: Conferencia, en: Lecture }
+  - { es: Prólogo, en: Foreword }
+  - { es: Charla, en: Talk }
+  - { es: Seminario, en: Seminar }
+  - { es: Presentación de libro, en: Book launch }

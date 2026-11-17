@@ -18,7 +18,7 @@ isbn:
 doi: 10.2307/j.ctvs09qng
 datos: "Pluto Press, Londres, 2020. ISBN 978-0-7453-4024-1 (impreso) y 978-1-78680-541-6 (electrónico). Versión en español: «Marxismo abierto. Contra un mundo que se cierra» (2023)."
 datos_en: "Pluto Press, London, 2020. ISBN 978-0-7453-4024-1 (print) and 978-1-78680-541-6 (electronic). Spanish edition: “Marxismo abierto. Contra un mundo que se cierra” (2023)."
-portada: ""
+portada: /assets/uploads/portada-open-marxism-4.jpg
 pdf: ""
 enlace: https://www.plutobooks.com/product/open-marxism-4/
 acceso: ""

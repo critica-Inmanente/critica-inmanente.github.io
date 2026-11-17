@@ -4,28 +4,54 @@ title: Difusión
 clave: difusion
 permalink: /difusion/
 ---
+{%- comment -%}
+  Todos los materiales juntos, del más reciente al más antiguo. Cada uno destaca a los integrantes
+  que participan (campo «integrantes»), y los botones permiten ver solo los de una persona.
+{%- endcomment -%}
 {% assign items = site.difusion | sort: "fecha" | reverse %}
 {% if items.size > 0 %}
+{% assign gente = site.integrantes | sort: "orden" %}
+<nav class="media-filtro" aria-label="{% include t.html k='difusion_filtrar' %}" hidden>
+  <span class="media-filtro-rot">{% include t.html k="difusion_filtrar" %}</span>
+  <button type="button" class="chip is-active" data-filtro="">{% include t.html k="difusion_todos" %}</button>
+  {% for g in gente %}{% capture tiene %}{% for d in items %}{% if d.integrantes contains g.slug %}x{% endif %}{% endfor %}{% endcapture %}{% if tiene != "" %}<button type="button" class="chip" data-filtro="{{ g.slug }}">{{ g.nombre | default: g.title }}</button>{% endif %}{% endfor %}
+</nav>
 <div class="media-grid">
   {% for d in items %}
-  <article class="media">
-    {% assign emb = "" %}
-    {% if d.enlace contains "youtube.com/watch" %}{% assign vid = d.enlace | split: "v=" | last | split: "&" | first %}{% capture emb %}https://www.youtube-nocookie.com/embed/{{ vid }}{% endcapture %}
+  <article class="media" data-integrantes="{{ d.integrantes | join: ' ' }}">
+    {% assign emb = "" %}{% assign ini = "" %}
+    {% if d.enlace contains "youtube.com/watch" %}{% assign vid = d.enlace | split: "v=" | last | split: "&" | first %}{% if d.enlace contains "&t=" %}{% assign ini = d.enlace | split: "&t=" | last | remove: "s" | prepend: "?start=" %}{% endif %}{% capture emb %}https://www.youtube-nocookie.com/embed/{{ vid }}{{ ini }}{% endcapture %}
     {% elsif d.enlace contains "youtu.be/" %}{% assign vid = d.enlace | split: "youtu.be/" | last | split: "?" | first %}{% capture emb %}https://www.youtube-nocookie.com/embed/{{ vid }}{% endcapture %}
     {% elsif d.enlace contains "open.spotify.com/" %}{% assign emb = d.enlace | replace: "open.spotify.com/", "open.spotify.com/embed/" | split: "?" | first %}{% endif %}
     {% if emb != "" %}
     <div class="media-embed{% if emb contains 'spotify' %} media-audio{% endif %}"><iframe src="{{ emb }}" title="{{ d.title }}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
     {% endif %}
     <div class="media-body">
-      <p class="card-meta">{% if d.tipo %}{% include tipo.html v=d.tipo %}{% endif %}{% if d.fecha %} · {{ d.fecha | date: '%d.%m.%Y' }}{% endif %}</p>
+      {% include difusion-integrantes.html d=d %}
+      <p class="card-meta">{% if d.tipo %}{% include tipo.html v=d.tipo %} · {% endif %}{% include difusion-fecha.html d=d %}</p>
       <h2>{% include t.html es=d.title en=d.title_en %}</h2>
-      {% if d.lugar and d.lugar != "" %}<p class="card-meta">{% include t.html es=d.lugar en=d.lugar_en %}</p>{% endif %}
+      {% if d.lugar and d.lugar != "" %}<p class="media-lugar">{% include t.html es=d.lugar en=d.lugar_en %}</p>{% endif %}
       <div class="prose">{% include tb.html es=d.content en=d.body_en %}</div>
-      {% if d.enlace and d.enlace != "" and emb == "" %}<a class="link-arrow" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html k="difusion_ver" %}</a>{% endif %}
+      {% if d.enlaces and d.enlaces.size > 0 %}<p class="media-enlaces">{% for e in d.enlaces %}<a href="{{ e.url }}" target="_blank" rel="noopener">{% include t.html es=e.etiqueta en=e.etiqueta_en %}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+      {% elsif d.enlace and d.enlace != "" and emb == "" %}<a class="link-arrow" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html k="difusion_ver" %}</a>{% endif %}
     </div>
   </article>
   {% endfor %}
 </div>
+<script>
+  (function () {
+    var nav = document.querySelector('.media-filtro'); if (!nav) return;
+    nav.hidden = false;
+    nav.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button[data-filtro]'); if (!b) return;
+      var f = b.getAttribute('data-filtro');
+      nav.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      document.querySelectorAll('.media[data-integrantes]').forEach(function (m) {
+        m.hidden = f !== '' && (' ' + m.getAttribute('data-integrantes') + ' ').indexOf(' ' + f + ' ') < 0;
+      });
+    });
+  })();
+</script>
 {% else %}
 <p class="empty">{% include t.html k="difusion_vacio" %}</p>
 {% endif %}

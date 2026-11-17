@@ -240,8 +240,17 @@ ficha_ver:
   es: Ficha
   en: Details
 ficha_capitulos:
-  es: Capítulos de integrantes en este libro
-  en: Chapters by members in this book
+  es: Textos de integrantes en este libro
+  en: Texts by members in this book
 perfil_conferencias:
   es: Conferencias y materiales audiovisuales
   en: Lectures and audiovisual materials
+difusion_con:
+  es: Con
+  en: With
+difusion_filtrar:
+  es: Ver materiales de
+  en: Show materials by
+difusion_todos:
+  es: Todos
+  en: All
