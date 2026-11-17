@@ -15,15 +15,15 @@ variantes:
 adscripcion: Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego”, Benemérita Universidad Autónoma de Puebla
 adscripcion_en: Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego”, Benemérita Universidad Autónoma de Puebla
 lineas:
-  - Teoría crítica de la sociedad y Escuela de Frankfurt
-  - Lecturas contemporáneas de Marx y crítica
-  - Theodor W. Adorno, Moishe Postone y marxismo abierto
-  - Teoría social, subjetividad y crítica del capitalismo
+  - "Teoría crítica de la sociedad: Escuela de Frankfurt y su recepción latinoamericana"
+  - "Theodor W. Adorno: dialéctica negativa, teoría del conocimiento y crítica del sujeto"
+  - "Nuevas lecturas de Marx: teoría del valor, forma social y dialéctica de transformación y reconstitución"
+  - "Constitución social de la subjetividad: Marx, Freud y Adorno"
 lineas_en:
-  - Critical theory of society and the Frankfurt School
-  - Contemporary readings of Marx and critique
-  - Theodor W. Adorno, Moishe Postone and Open Marxism
-  - Social theory, subjectivity and the critique of capitalism
+  - "Critical theory of society: the Frankfurt School and its Latin American reception"
+  - "Theodor W. Adorno: negative dialectics, theory of knowledge and critique of the subject"
+  - "New readings of Marx: value theory, social form and the dialectic of transformation and reconstitution"
+  - "The social constitution of subjectivity: Marx, Freud and Adorno"
 orcid: https://orcid.org/0000-0002-9750-7005
 scholar: ""
 academia: https://buap-mx.academia.edu/AlfonsoGalileoGarciaVela

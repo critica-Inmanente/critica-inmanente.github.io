@@ -10,3 +10,23 @@ items:
     url: https://moishepostone.org/
     descripcion: "Proyecto impulsado por familiares, amigos y antiguos estudiantes de Moishe Postone (1942-2018) para preservar su obra y ponerla al alcance de todos: bibliografía, archivo (en la Universidad de Chicago), grabaciones, documentos y actividades en torno a su pensamiento."
     descripcion_en: "Project launched by Moishe Postone's (1942-2018) family, friends and former students to preserve his work and make it available to all: bibliography, archive (at the University of Chicago), recordings, documents and activities around his thought."
+  - nombre: "Constelaciones. Revista de Teoría Crítica"
+    nombre_en: "Constelaciones. Revista de Teoría Crítica"
+    url: https://constelaciones-rtc.net/
+    descripcion: "Revista anual de la Sociedad de Estudios de Teoría Crítica (España), publicada desde 2009. Reúne trabajos que analizan la sociedad y la cultura actuales desde la tradición de Horkheimer, Adorno, Marcuse y Benjamin."
+    descripcion_en: "Annual journal of the Sociedad de Estudios de Teoría Crítica (Spain), published since 2009. It gathers work analysing present-day society and culture from the tradition of Horkheimer, Adorno, Marcuse and Benjamin."
+  - nombre: "Journal of Adorno Studies"
+    nombre_en: "Journal of Adorno Studies"
+    url: https://mimesisjournals.com/ojs/index.php/jas
+    descripcion: "Revista anual, con evaluación por pares y en acceso abierto (Mimesis), dedicada a la obra de Theodor W. Adorno y a su potencial intelectual, cultural y político en el presente."
+    descripcion_en: "Annual, peer-reviewed, open-access journal (Mimesis) devoted to Theodor W. Adorno's work and its present-day intellectual, cultural and political potential."
+  - nombre: "Capital & Class"
+    nombre_en: "Capital & Class"
+    url: https://uk.sagepub.com/en-gb/eur/journal/capital-class
+    descripcion: "Revista fundada en 1977 y publicada por SAGE en asociación con la Conference of Socialist Economists. Es una referencia para la crítica marxista del capitalismo global, con debates sobre teoría del valor, trabajo y Estado."
+    descripcion_en: "Journal founded in 1977 and published by SAGE in association with the Conference of Socialist Economists. A reference for the Marxist critique of global capitalism, with debates on value theory, labour and the state."
+  - nombre: "Historical Materialism"
+    nombre_en: "Historical Materialism"
+    url: https://www.historicalmaterialism.org/
+    descripcion: "Revista trimestral de teoría marxista crítica con sede en Londres (Brill). Organiza además una colección de libros y conferencias anuales en distintas ciudades."
+    descripcion_en: "Quarterly journal of critical Marxist theory based in London (Brill). It also runs a book series and annual conferences in several cities."
