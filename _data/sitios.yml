@@ -1,5 +1,10 @@
 # Sitios de interés (editable en Pages CMS → «Sitios de interés»). El orden de la lista es el orden en la página.
 items:
+  - nombre: "Marx-Engels-Gesamtausgabe (MEGA²)"
+    nombre_en: "Marx-Engels-Gesamtausgabe (MEGA²)"
+    url: https://mega.bbaw.de/de
+    descripcion: "Edición histórico-crítica de todas las obras, manuscritos, extractos y cartas de Marx y Engels, a cargo de la Fundación Internacional Marx-Engels y la Academia de Ciencias de Berlín-Brandeburgo."
+    descripcion_en: "Historical-critical edition of all the works, manuscripts, excerpts and letters of Marx and Engels, edited by the International Marx-Engels Foundation and the Berlin-Brandenburg Academy of Sciences."
   - nombre: "Bajo el Volcán. Revista del Posgrado de Sociología de la BUAP"
     nombre_en: "Bajo el Volcán. Journal of the Graduate Program in Sociology, BUAP"
     url: https://bajoelvolcanx.buap.mx/index.php/bajovolc
@@ -40,11 +45,6 @@ items:
     url: https://zuklampen.de/reihe/zeitschrift-fuer-kritische-theorie/ueber-die-zeitschrift
     descripcion: "Revista alemana publicada desde 1995 por la editorial zu Klampen. Es un foro para aplicar la teoría crítica a problemas actuales y para el diálogo entre sus distintas corrientes."
     descripcion_en: "German journal published since 1995 by zu Klampen. A forum for applying critical theory to current problems and for dialogue among its different currents."
-  - nombre: "Marx-Engels-Gesamtausgabe (MEGA²)"
-    nombre_en: "Marx-Engels-Gesamtausgabe (MEGA²)"
-    url: https://mega.bbaw.de/de
-    descripcion: "Edición histórico-crítica de todas las obras, manuscritos, extractos y cartas de Marx y Engels, a cargo de la Fundación Internacional Marx-Engels y la Academia de Ciencias de Berlín-Brandeburgo."
-    descripcion_en: "Historical-critical edition of all the works, manuscripts, excerpts and letters of Marx and Engels, edited by the International Marx-Engels Foundation and the Berlin-Brandenburg Academy of Sciences."
   - nombre: "Marxists Internet Archive (sección en español)"
     nombre_en: "Marxists Internet Archive (Spanish section)"
     url: https://www.marxists.org/espanol/
