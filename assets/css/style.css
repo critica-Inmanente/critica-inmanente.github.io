@@ -273,9 +273,7 @@ p { margin: 0 0 1em; }
 .sitio h2 a:hover { color: var(--rojo); text-decoration: underline; }
 .sitio p { margin: 0 0 10px; }
 
-@media (max-width: 960px) {
-  .header-inner { min-height: 72px; }
-  .brand img { width: 140px; }
+@media (max-width: 1120px) {
   .header-tools { gap: 12px; }
   .lang-toggle { order: 0; }
   .nav-button { order: 1; display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; cursor: pointer; }
@@ -288,6 +286,10 @@ p { margin: 0 0 1em; }
   .site-nav ul { flex-direction: column; padding: 8px 28px 20px; gap: 0; }
   .site-nav li { border-top: 1px solid var(--piedra); }
   .site-nav a { display: block; padding: 14px 0; font-size: 1.15rem; border: 0; }
+}
+@media (max-width: 960px) {
+  .header-inner { min-height: 72px; }
+  .brand img { width: 140px; }
   .split, .cards, .media-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
   .newsletter { padding: 28px 22px; }
   .book, .person, .perfil-grid, .ficha-grid { grid-template-columns: 1fr; gap: 28px; }
