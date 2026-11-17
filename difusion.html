@@ -19,6 +19,7 @@ permalink: /difusion/
     <div class="media-body">
       <p class="card-meta">{% if d.tipo %}{% include tipo.html v=d.tipo %}{% endif %}{% if d.fecha %} · {{ d.fecha | date: '%d.%m.%Y' }}{% endif %}</p>
       <h2>{% include t.html es=d.title en=d.title_en %}</h2>
+      {% if d.lugar and d.lugar != "" %}<p class="card-meta">{% include t.html es=d.lugar en=d.lugar_en %}</p>{% endif %}
       <div class="prose">{% include tb.html es=d.content en=d.body_en %}</div>
       {% if d.enlace and d.enlace != "" and emb == "" %}<a class="link-arrow" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html k="difusion_ver" %}</a>{% endif %}
     </div>

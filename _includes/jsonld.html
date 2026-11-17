@@ -13,7 +13,7 @@
 {"@context":"https://schema.org","@type":"Organization","@id":{{ _org_id | jsonify }},"name":{{ site.title | jsonify }},"url":{{ site.url | append: "/" | jsonify }},"logo":{{ site.url | append: "/assets/img/logo.png" | jsonify }},"description":{% if _lang == "en" %}{{ site.description_en | jsonify }}{% else %}{{ site.description | jsonify }}{% endif %}{% if site.data.contacto.correo and site.data.contacto.correo != "" %},"email":{{ site.data.contacto.correo | jsonify }}{% endif %}{% assign _ks = "instagram,youtube,facebook" | split: "," %}{% capture _redes %}{% for _k in _ks %}{% if site.data.contacto[_k] and site.data.contacto[_k] != "" %},{{ site.data.contacto[_k] | jsonify }}{% endif %}{% endfor %}{% endcapture %}{% if _redes != "" %},"sameAs":[{{ _redes | remove_first: "," }}]{% endif %},"member":[{% for _g in _gente %}{% unless forloop.first %},{% endunless %}{"@type":"Person","@id":{{ site.url | append: _g.url | append: "#person" | jsonify }},"name":{{ _g.nombre | default: _g.title | jsonify }},"url":{{ site.url | append: _g.url | jsonify }}}{% endfor %}]}
 </script>
 {%- elsif page.collection == "integrantes" -%}
-{%- assign _ks = "orcid,scholar,institucional" | split: "," -%}
+{%- assign _ks = "orcid,scholar,academia,institucional" | split: "," -%}
 {%- capture _same -%}{% for _k in _ks %}{% if page[_k] and page[_k] != "" %},{{ page[_k] | jsonify }}{% endif %}{% endfor %}{%- endcapture -%}
 {%- if _lang == "en" and page.body_en -%}{%- assign _bio = page.body_en | markdownify -%}{%- else -%}{%- assign _bio = page.content -%}{%- endif -%}
 {%- assign _bio = _bio | strip_html | strip_newlines | strip -%}

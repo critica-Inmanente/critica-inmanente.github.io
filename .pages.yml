@@ -66,7 +66,7 @@ content:
         label: Tipo (se traduce solo al inglés)
         type: select
         options:
-          values: [ Artículo, Capítulo de libro, Entrevista, Reseña, Traducción, Ponencia ]
+          values: [ Artículo, Capítulo de libro, Presentación de dosier, Entrevista, Reseña, Traducción, Ponencia ]
       - { name: publicacion, label: "Revista, libro o medio", type: string }
       - name: libro
         label: "Si es un capítulo de un libro del catálogo, elige el libro (enlaza ambas fichas)"
@@ -187,7 +187,16 @@ content:
       - { name: lineas_en, label: "Líneas de investigación en inglés (mismo orden)", type: string, list: true }
       - { name: orcid, label: "ORCID (enlace completo, ej. https://orcid.org/0000-0000-0000-0000)", type: string }
       - { name: scholar, label: "Google Scholar (enlace completo, solo si su titular lo confirma)", type: string }
+      - { name: academia, label: "Academia.edu (enlace completo)", type: string }
       - { name: institucional, label: "Página institucional (enlace completo)", type: string }
+      - name: enlaces
+        label: "Otros enlaces (perfiles o páginas institucionales)"
+        type: object
+        list: true
+        fields:
+          - { name: etiqueta, label: "Texto del enlace", type: string, required: true }
+          - { name: etiqueta_en, label: "Texto del enlace (inglés)", type: string }
+          - { name: url, label: "Dirección (enlace completo)", type: string, required: true }
 
   - name: eventos
     label: Eventos
@@ -234,9 +243,20 @@ content:
         label: Tipo
         type: select
         options:
-          values: [ Podcast, Video, Ensayo, Entrevista ]
+          values: [ Conferencia, Podcast, Video, Ensayo, Entrevista ]
       - { name: fecha, label: "Fecha", type: date, required: true }
       - { name: enlace, label: "Enlace de YouTube o Spotify (se inserta solo) u otro sitio", type: string }
+      - { name: lugar, label: "Lugar o institución (ej. «Instituto de Investigaciones Sociológicas de la UABJO, Oaxaca»)", type: string }
+      - { name: lugar_en, label: "Lugar o institución (inglés)", type: string }
+      - name: integrantes
+        label: "Integrantes que participan (aparece en su perfil)"
+        type: reference
+        list: true
+        options:
+          collection: integrantes
+          search: "title,nombre"
+          value: "{fields.slug}"
+          label: "{primary}"
       - { name: body, label: "Descripción", type: rich-text }
       - { name: body_en, label: "Descripción (inglés)", type: rich-text }
 
@@ -729,6 +749,12 @@ content:
           - { name: en, label: "Inglés", type: string }
       - name: ficha_volver_investigaciones
         label: "Ficha · enlace a Investigaciones"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: perfil_conferencias
+        label: "Perfil · título «Conferencias y materiales audiovisuales»"
         type: object
         fields:
           - { name: es, label: "Español", type: string }

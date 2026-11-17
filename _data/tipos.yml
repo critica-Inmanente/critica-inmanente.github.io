@@ -19,3 +19,5 @@ items:
   - { es: Manuscrito aceptado, en: Accepted manuscript }
   - { es: Resultado del grupo, en: Group output }
   - { es: Producción de integrantes, en: Members' work }
+  - { es: Presentación de dosier, en: Dossier introduction }
+  - { es: Conferencia, en: Lecture }

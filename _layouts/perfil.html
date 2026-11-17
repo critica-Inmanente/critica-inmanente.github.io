@@ -21,13 +21,15 @@ layout: default
         <h2 class="aside-title">{% include t.html k="perfil_adscripcion" %}</h2>
         <p class="aside-text">{% include t.html es=p.adscripcion en=p.adscripcion_en %}</p>
         {% endif %}
-        {% capture ids %}{{ p.orcid }}{{ p.scholar }}{{ p.institucional }}{% endcapture %}
+        {% capture ids %}{{ p.orcid }}{{ p.scholar }}{{ p.academia }}{{ p.institucional }}{% for e in p.enlaces %}{{ e.url }}{% endfor %}{% endcapture %}
         {% if ids != "" %}
         <h2 class="aside-title">{% include t.html k="perfil_identificadores" %}</h2>
         <ul class="ids">
           {% if p.orcid and p.orcid != "" %}<li><a href="{{ p.orcid }}" rel="me noopener" target="_blank">ORCID <span class="id-val">{{ p.orcid | remove: "https://orcid.org/" }}</span></a></li>{% endif %}
           {% if p.scholar and p.scholar != "" %}<li><a href="{{ p.scholar }}" rel="me noopener" target="_blank">Google Scholar</a></li>{% endif %}
+          {% if p.academia and p.academia != "" %}<li><a href="{{ p.academia }}" rel="me noopener" target="_blank">Academia.edu</a></li>{% endif %}
           {% if p.institucional and p.institucional != "" %}<li><a href="{{ p.institucional }}" rel="me noopener" target="_blank">{% include t.html es="Página institucional" en="Institutional page" %}</a></li>{% endif %}
+          {% for e in p.enlaces %}{% if e.url and e.url != "" %}<li><a href="{{ e.url }}" rel="noopener" target="_blank">{% include t.html es=e.etiqueta en=e.etiqueta_en %}</a></li>{% endif %}{% endfor %}
         </ul>
         {% endif %}
       </aside>
@@ -39,6 +41,11 @@ layout: default
         {% endif %}
         <h2 class="perfil-h2">{% include t.html k="perfil_publicaciones" %}</h2>
         {% include obras-de.html slug=p.slug %}
+        {% assign confs = site.difusion | where_exp: "d", "d.integrantes contains p.slug" | sort: "fecha" | reverse %}
+        {% if confs.size > 0 %}
+        <h2 class="perfil-h2">{% include t.html k="perfil_conferencias" %}</h2>
+        <ul class="obras">{% for d in confs %}<li class="obra"><span class="ref-year">{{ d.fecha | date: "%Y" }}</span><div class="obra-body"><a class="obra-titulo" href="{{ d.enlace }}" target="_blank" rel="noopener">{% include t.html es=d.title en=d.title_en %}</a><span class="obra-meta">{% include tipo.html v=d.tipo %} · {% include fecha.html d=d.fecha %}{% if d.lugar and d.lugar != "" %} · {% include t.html es=d.lugar en=d.lugar_en %}{% endif %}{% if d.enlace contains "youtu" %} · YouTube{% endif %}</span></div></li>{% endfor %}</ul>
+        {% endif %}
         <nav class="post-nav"><a href="{{ '/integrantes/' | lurl }}">← {% include t.html k="perfil_volver" %}</a></nav>
       </div>
     </div>

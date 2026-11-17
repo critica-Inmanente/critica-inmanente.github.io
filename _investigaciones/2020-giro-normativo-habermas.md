@@ -11,9 +11,9 @@ publicacion: Sociológica
 detalles: "35 (101), pp. 9-33"
 idioma: es
 doi: ""
-enlace: ""
+enlace: https://scielo.org.mx/pdf/soc/v35n101/2007-8358-soc-35-101-9.pdf
 pdf: ""
-acceso: ""
+acceso: Texto completo
 ambito: Producción de integrantes
 resumen: ""
 resumen_en: ""
