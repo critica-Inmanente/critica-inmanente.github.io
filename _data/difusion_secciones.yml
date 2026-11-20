@@ -1,0 +1,7 @@
+# Secciones de Difusión. «clave» es el valor del campo «Sección» de cada material (no cambiarla);
+# el orden de la lista es el orden de las secciones en el submenú y en la página Difusión.
+items:
+  - { clave: podcast, url: /difusion/podcast/, es: Podcast, en: Podcast }
+  - { clave: clases, url: /difusion/materiales-de-clase/, es: Materiales de clase, en: Teaching materials }
+  - { clave: ponencias, url: /difusion/ponencias/, es: Ponencias, en: Talks and lectures }
+  - { clave: divulgacion, url: /difusion/divulgacion/, es: Difusión, en: Outreach }

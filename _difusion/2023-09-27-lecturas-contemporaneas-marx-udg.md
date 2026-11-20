@@ -2,6 +2,7 @@
 title: "Lecturas contemporáneas de la obra de Marx"
 title_en: "Contemporary readings of Marx's work"
 tipo: Seminario
+seccion: clases
 fecha: 2023-09-27
 fecha_texto: "26 y 27 de septiembre de 2023"
 fecha_texto_en: "September 26-27, 2023"

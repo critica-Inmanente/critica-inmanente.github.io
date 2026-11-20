@@ -2,6 +2,7 @@
 title: "Reflexiones sobre las nuevas lecturas de Marx: la teoría crítica como un conocimiento no-identitario"
 title_en: "Reflections on the new readings of Marx: critical theory as non-identitarian knowledge"
 tipo: Ponencia
+seccion: ponencias
 fecha: 2021-06-04
 enlace: https://www.youtube.com/watch?v=q_2Z6KjWm6Y
 lugar: "Seminario «Pesquisas sobre um colapso anunciado», Universidad de São Paulo, Brasil"

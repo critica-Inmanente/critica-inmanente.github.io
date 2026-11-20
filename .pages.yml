@@ -244,6 +244,17 @@ content:
         type: select
         options:
           values: [ Conferencia, Charla, Ponencia, Seminario, Presentación de libro, Podcast, Video, Ensayo, Entrevista ]
+      - name: seccion
+        label: "Sección de Difusión"
+        type: select
+        required: true
+        default: divulgacion
+        options:
+          values:
+            - { value: podcast, label: Podcast }
+            - { value: clases, label: Materiales de clase }
+            - { value: ponencias, label: Ponencias }
+            - { value: divulgacion, label: Difusión }
       - { name: fecha, label: "Fecha (para ordenar; si es un rango, el primer día)", type: date, required: true }
       - { name: fecha_texto, label: "Fecha como debe mostrarse, si no es un solo día (ej. «1 al 5 de diciembre de 2025»)", type: string }
       - { name: fecha_texto_en, label: "Fecha como debe mostrarse (inglés)", type: string }
@@ -347,6 +358,14 @@ content:
           - { name: titulo, label: "Texto", type: string }
           - { name: titulo_en, label: "Texto (inglés)", type: string }
           - { name: url, label: "Dirección (ej. /libros/)", type: string }
+          - name: hijos
+            label: "Submenú (opcional; se despliega al pasar el cursor)"
+            type: object
+            list: true
+            fields:
+              - { name: titulo, label: "Texto", type: string }
+              - { name: titulo_en, label: "Texto (inglés)", type: string }
+              - { name: url, label: "Dirección (ej. /difusion/podcast/)", type: string }
 
   - name: textos
     label: Textos del sitio
@@ -780,6 +799,54 @@ content:
         fields:
           - { name: es, label: "Español", type: string }
           - { name: en, label: "Inglés", type: string }
+      - name: difusion_podcast_titulo
+        label: "Difusión · Podcast · título"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_podcast_intro
+        label: "Difusión · Podcast · presentación"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
+      - name: difusion_clases_titulo
+        label: "Difusión · Materiales de clase · título"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_clases_intro
+        label: "Difusión · Materiales de clase · presentación"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
+      - name: difusion_ponencias_titulo
+        label: "Difusión · Ponencias · título"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_ponencias_intro
+        label: "Difusión · Ponencias · presentación"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
+      - name: difusion_divulgacion_titulo
+        label: "Difusión · Difusión (sección) · título"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: string }
+          - { name: en, label: "Inglés", type: string }
+      - name: difusion_divulgacion_intro
+        label: "Difusión · Difusión (sección) · presentación"
+        type: object
+        fields:
+          - { name: es, label: "Español", type: text }
+          - { name: en, label: "Inglés", type: text }
       - name: difusion_con
         label: "Difusión · rótulo «Con» (integrantes)"
         type: object

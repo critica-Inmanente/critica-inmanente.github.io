@@ -2,6 +2,7 @@
 title: "¿Qué es la crítica de la sociedad?"
 title_en: "What is the critique of society?"
 tipo: Conferencia
+seccion: ponencias
 fecha: 2023-09-26
 enlace: https://comsoc.udg.mx/printpdf/82467?page=9
 lugar: Universidad de Guadalajara

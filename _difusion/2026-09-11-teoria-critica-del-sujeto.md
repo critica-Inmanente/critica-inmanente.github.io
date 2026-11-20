@@ -2,6 +2,7 @@
 title: "La teoría crítica del sujeto en Marx y Adorno"
 title_en: "The critical theory of the subject in Marx and Adorno"
 tipo: Charla
+seccion: ponencias
 fecha: 2026-09-11
 enlace: https://www.youtube.com/watch?v=vdLrWpQf5aQ
 lugar: Instituto de Investigaciones Sociológicas de la UABJO, Oaxaca

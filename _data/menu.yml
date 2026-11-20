@@ -18,6 +18,11 @@ items:
   - titulo: Difusión
     titulo_en: Outreach
     url: /difusion/
+    hijos:
+      - { titulo: Podcast, titulo_en: Podcast, url: /difusion/podcast/ }
+      - { titulo: Materiales de clase, titulo_en: Teaching materials, url: /difusion/materiales-de-clase/ }
+      - { titulo: Ponencias, titulo_en: Talks and lectures, url: /difusion/ponencias/ }
+      - { titulo: Difusión, titulo_en: Outreach, url: /difusion/divulgacion/ }
   - titulo: Eventos
     titulo_en: Events
     url: /eventos/

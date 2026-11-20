@@ -52,6 +52,15 @@ p { margin: 0 0 1em; }
 .site-nav a { font-family: var(--serif); font-size: 1.05rem; text-decoration: none; padding: 4px 0; border-bottom: 1px solid transparent; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--rojo); border-bottom-color: var(--rojo); }
 .nav-toggle, .nav-button { display: none; }
+/* Submenús (ej. Difusión): se abren al pasar el cursor o con el teclado */
+.site-nav .has-sub { position: relative; }
+.sub-caret { display: inline-block; width: 0; height: 0; margin-left: 6px; vertical-align: middle; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; }
+.site-nav .sub-menu { display: none; position: absolute; top: 100%; left: -16px; z-index: 50; min-width: 220px; flex-direction: column; gap: 0; padding: 8px 0; margin: 0; background: var(--marfil); border: 1px solid var(--piedra); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+.site-nav .has-sub:hover > .sub-menu, .site-nav .has-sub:focus-within > .sub-menu { display: flex; }
+.site-nav .sub-menu a { display: block; padding: 8px 16px; font-size: 1rem; border: 0; white-space: nowrap; }
+.site-nav .sub-menu a:hover, .site-nav .sub-menu a[aria-current="page"] { background: var(--marfil-2); }
+.secciones-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.secciones-nav .chip { text-decoration: none; }
 .header-tools { display: flex; align-items: center; gap: 22px; }
 .header-tools .site-nav { order: 1; }
 .lang-toggle {
@@ -286,6 +295,10 @@ p { margin: 0 0 1em; }
   .site-nav ul { flex-direction: column; padding: 8px 28px 20px; gap: 0; }
   .site-nav li { border-top: 1px solid var(--piedra); }
   .site-nav a { display: block; padding: 14px 0; font-size: 1.15rem; border: 0; }
+  .site-nav .sub-menu { display: flex; position: static; box-shadow: none; border: 0; background: transparent; padding: 0 0 8px 18px; min-width: 0; }
+  .site-nav .sub-menu li { border-top: 0; }
+  .site-nav .sub-menu a { padding: 8px 0; font-size: 1rem; color: var(--gris); }
+  .sub-caret { display: none; }
 }
 @media (max-width: 960px) {
   .header-inner { min-height: 72px; }

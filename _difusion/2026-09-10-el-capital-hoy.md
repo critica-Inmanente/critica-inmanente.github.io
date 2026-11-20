@@ -2,6 +2,7 @@
 title: "El capital hoy. Más allá del marxismo tradicional"
 title_en: "Capital today. Beyond traditional Marxism"
 tipo: Conferencia
+seccion: ponencias
 fecha: 2026-09-10
 enlace: https://www.youtube.com/watch?v=ftNfLyxS7tA
 lugar: Instituto de Investigaciones Sociológicas de la UABJO, Oaxaca

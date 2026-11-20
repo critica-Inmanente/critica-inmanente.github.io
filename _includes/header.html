@@ -11,7 +11,16 @@
         <ul>
           {% for item in site.data.menu.items %}
           {% assign activo = false %}{% if page.url contains item.url %}{% assign activo = true %}{% endif %}
+          {% if item.hijos and item.hijos.size > 0 %}
+          <li class="has-sub">
+            <a href="{{ item.url | lurl }}" aria-haspopup="true"{% if activo %} aria-current="page"{% endif %}>{% include t.html es=item.titulo en=item.titulo_en %}<span class="sub-caret" aria-hidden="true"></span></a>
+            <ul class="sub-menu">
+              {% for h in item.hijos %}<li><a href="{{ h.url | lurl }}"{% if page.url contains h.url %} aria-current="page"{% endif %}>{% include t.html es=h.titulo en=h.titulo_en %}</a></li>{% endfor %}
+            </ul>
+          </li>
+          {% else %}
           <li><a href="{{ item.url | lurl }}"{% if activo %} aria-current="page"{% endif %}>{% include t.html es=item.titulo en=item.titulo_en %}</a></li>
+          {% endif %}
           {% endfor %}
         </ul>
       </nav>

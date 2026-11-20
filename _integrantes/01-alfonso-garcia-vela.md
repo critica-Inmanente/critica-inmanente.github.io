@@ -5,9 +5,9 @@ grado: Doctor en Sociología.
 foto: /assets/uploads/foto-alfonso-garcia-vela.jpg
 grado_en: PhD in Sociology.
 body_en: |
-  He is a professor and researcher at the Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego” of the Benemérita Universidad Autónoma de Puebla (BUAP), Mexico, where he currently coordinates the Graduate Program in Sociology and serves as editor of the journal [*Bajo el Volcán*](https://bajoelvolcanx.buap.mx/index.php/bajovolc). He completed a postdoctoral fellowship at the Faculty of Political and Social Sciences of the Universidad Nacional Autónoma de México (UNAM) and was a visiting scholar in the Department of History at the University of Chicago.
+  Professor and researcher at the Instituto de Ciencias Sociales y Humanidades “Alfonso Vélez Pliego” of the Benemérita Universidad Autónoma de Puebla (BUAP), Mexico. Currently coordinator of the university's Graduate Program in Sociology and editor-in-chief of the journal [*Bajo el Volcán*](https://bajoelvolcanx.buap.mx/index.php/bajovolc). Former postdoctoral fellow at the Faculty of Political and Social Sciences of the Universidad Nacional Autónoma de México (UNAM) and visiting scholar in the Department of History at the University of Chicago.
 
-  His research focuses on Frankfurt School Critical Theory, social philosophy, and contemporary readings of Marx's work. His current work addresses the problem of the social constitution of subjectivity through Marx, Freud, and Adorno, with the aim of contributing to a critical theory of subjectivity. He has published articles and book chapters and has edited volumes in English and Spanish.
+  Alfonso García Vela works on Frankfurt School Critical Theory, social philosophy and contemporary readings of Marx. Current research examines the social constitution of subjectivity through Marx, Freud and Adorno, with a view to developing a critical theory of subjectivity. Author of numerous articles and book chapters, and editor of several volumes in English and Spanish.
 slug: alfonso-garcia-vela
 nombre: Alfonso García Vela
 variantes:

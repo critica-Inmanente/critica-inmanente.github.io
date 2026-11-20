@@ -2,6 +2,7 @@
 title: "Teoría crítica, política y subjetividad"
 title_en: "Critical theory, politics and subjectivity"
 tipo: Ponencia
+seccion: ponencias
 fecha: 2021-05-11
 fecha_texto: "11 y 12 de mayo de 2021"
 fecha_texto_en: "May 11-12, 2021"

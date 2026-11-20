@@ -2,6 +2,7 @@
 title: "Dialéctica negativa: la transformación de la teoría crítica de la sociedad"
 title_en: "Negative dialectics: the transformation of the critical theory of society"
 tipo: Ponencia
+seccion: ponencias
 fecha: 2025-12-01
 fecha_texto: "1 al 5 de diciembre de 2025"
 fecha_texto_en: "December 1-5, 2025"

@@ -3,10 +3,10 @@ title: "Open Marxism 4"
 slug: open-marxism-4
 anio: 2020
 responsables:
-  - { nombre: Ana Cecilia Dinerstein, papel: Edición académica, integrante: "" }
-  - { nombre: Alfonso García Vela, papel: Edición académica, integrante: alfonso-garcia-vela }
-  - { nombre: Edith González, papel: Edición académica, integrante: "" }
-  - { nombre: John Holloway, papel: Edición académica, integrante: "" }
+  - { nombre: Ana Cecilia Dinerstein, papel: Coordinación, integrante: "" }
+  - { nombre: Alfonso García Vela, papel: Coordinación, integrante: alfonso-garcia-vela }
+  - { nombre: Edith González, papel: Coordinación, integrante: "" }
+  - { nombre: John Holloway, papel: Coordinación, integrante: "" }
 autores: ""
 subtitulo: Against a Closing World
 subtitulo_en: ""

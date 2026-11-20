@@ -263,3 +263,30 @@ sitios_intro:
 sitios_vacio:
   es: Pronto agregaremos sitios de interés.
   en: Links will be added soon.
+difusion_podcast_titulo:
+  es: Podcast
+  en: Podcast
+difusion_podcast_intro:
+  es: Episodios y conversaciones en audio con integrantes del grupo.
+  en: Audio episodes and conversations with members of the group.
+difusion_clases_titulo:
+  es: Materiales de clase
+  en: Teaching materials
+difusion_clases_intro:
+  es: Seminarios, cursos y clases grabadas de integrantes del grupo.
+  en: Recorded seminars, courses and classes by members of the group.
+difusion_ponencias_titulo:
+  es: Ponencias
+  en: Talks and lectures
+difusion_ponencias_intro:
+  es: Ponencias, conferencias y charlas de integrantes del grupo en congresos, universidades y otros espacios.
+  en: Papers, lectures and talks by members of the group at conferences, universities and other venues.
+difusion_divulgacion_titulo:
+  es: Difusión
+  en: Outreach
+difusion_divulgacion_intro:
+  es: Presentaciones de libros, entrevistas, ensayos y otros materiales de difusión.
+  en: Book launches, interviews, essays and other outreach materials.
+difusion_secciones:
+  es: Secciones
+  en: Sections

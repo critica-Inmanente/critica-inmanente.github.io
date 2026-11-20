@@ -2,6 +2,7 @@
 title: "Teoría crítica y marxismo contemporáneo"
 title_en: "Critical theory and contemporary Marxism"
 tipo: Seminario
+seccion: clases
 fecha: 2020-06-15
 fecha_texto: "15, 19, 22 y 26 de junio de 2020"
 fecha_texto_en: "June 15, 19, 22 and 26, 2020"

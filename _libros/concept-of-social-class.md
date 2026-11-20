@@ -3,9 +3,9 @@ title: "The Concept of Social Class in Contemporary Marxist Theory"
 slug: concept-of-social-class
 anio: 2022
 responsables:
-  - { nombre: Massimo Modonesi, papel: Edición académica, integrante: "" }
-  - { nombre: Alfonso García Vela, papel: Edición académica, integrante: alfonso-garcia-vela }
-  - { nombre: María Vignau Loría, papel: Edición académica, integrante: "" }
+  - { nombre: Massimo Modonesi, papel: Coordinación, integrante: "" }
+  - { nombre: Alfonso García Vela, papel: Coordinación, integrante: alfonso-garcia-vela }
+  - { nombre: María Vignau Loría, papel: Coordinación, integrante: "" }
 autores: ""
 subtitulo: ""
 subtitulo_en: ""
